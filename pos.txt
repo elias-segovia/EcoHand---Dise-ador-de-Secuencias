@@ -1,0 +1,14 @@
+pulgar_proximal: -0,27 0,74 1,68
+pulgar_distal : -0,5 0,74 1,9		0.7	.5	1.9
+
+indice_proximal: -0,115 0,622 2,2
+indice_distal : -0,16 0,64 2,5
+
+mayor_proximal:
+mayor_distal: 0,66 -0,13 2,545
+
+anular_proximal:
+anular_distal: 0,66 -0,388 2,47
+
+meñique_proximal: 0,66 -0,54 2,08
+meñique_distal: 0,674 -0,61 2,27
