@@ -1,0 +1,245 @@
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\EcoHand.exe.config
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\EcoHand.exe
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\EcoHand.pdb
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\HelixToolkit.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\HelixToolkit.xml
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\MainWindow.g.cs
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\App.g.cs
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\MainWindow.baml
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.g.resources
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.exe
+E:\Documentos\WorkSpace VisualStudio\EcoHand\EcoHand\obj\Debug\EcoHand.pdb
+G:\EcoHand\EcoHand\bin\Debug\EcoHand.exe.config
+G:\EcoHand\EcoHand\bin\Debug\EcoHand.exe
+G:\EcoHand\EcoHand\bin\Debug\EcoHand.pdb
+G:\EcoHand\EcoHand\bin\Debug\HelixToolkit.dll
+G:\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+G:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+G:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+G:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+G:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+G:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+G:\EcoHand\EcoHand\bin\Debug\HelixToolkit.xml
+G:\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+G:\EcoHand\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+G:\EcoHand\EcoHand\obj\Debug\MainWindow.g.cs
+G:\EcoHand\EcoHand\obj\Debug\App.g.cs
+G:\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+G:\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+G:\EcoHand\EcoHand\obj\Debug\MainWindow.baml
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.g.resources
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.exe
+G:\EcoHand\EcoHand\obj\Debug\EcoHand.pdb
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.exe.config
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.exe
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.pdb
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.xml
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\App.g.cs
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.g.resources
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.exe
+C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.pdb
+F:\EcoHand\EcoHand\bin\Debug\EcoHand.exe.config
+F:\EcoHand\EcoHand\bin\Debug\EcoHand.exe
+F:\EcoHand\EcoHand\bin\Debug\EcoHand.pdb
+F:\EcoHand\EcoHand\bin\Debug\HelixToolkit.dll
+F:\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+F:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\EcoHand\EcoHand\bin\Debug\HelixToolkit.xml
+F:\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+F:\EcoHand\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+F:\EcoHand\EcoHand\obj\Debug\MainWindow.g.cs
+F:\EcoHand\EcoHand\obj\Debug\App.g.cs
+F:\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+F:\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+F:\EcoHand\EcoHand\obj\Debug\MainWindow.baml
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.g.resources
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.exe
+F:\EcoHand\EcoHand\obj\Debug\EcoHand.pdb
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.exe.config
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.exe
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\EcoHand.pdb
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.xml
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\MainWindow.g.cs
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\App.g.cs
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\MainWindow.baml
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.g.resources
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.exe
+F:\Proyecto\EcoHand\EcoHand\obj\Debug\EcoHand.pdb
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.exe.config
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.exe
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.pdb
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.xml
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\MainWindow.g.cs
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\App.g.cs
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\MainWindow.baml
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.g.resources
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.exe
+F:\Proyecto\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.pdb
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.exe.config
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.exe
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\EcoHand.pdb
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.xml
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\MainWindow.g.cs
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\App.g.cs
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\MainWindow.baml
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.g.resources
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.exe
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.pdb
