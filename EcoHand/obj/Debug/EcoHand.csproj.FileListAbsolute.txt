@@ -243,3 +243,40 @@ C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInpu
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.exe
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.pdb
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.exe.config
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.exe
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.pdb
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.xml
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csprojAssemblyReference.cache
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\MainWindow.g.cs
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\App.g.cs
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\MainWindow.baml
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.g.resources
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.cache
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.exe
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.pdb
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\SecuenciaWindow.g.cs
+C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\SecuenciaWindow.baml

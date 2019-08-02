@@ -10,6 +10,23 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="EcoHand" Height="800" Width="1200">
     <Grid Name="overall_grid">
+        <Menu HorizontalAlignment = "Left" VerticalAlignment = "Top" Width = "517">
+            <MenuItem Header = "Gesto">
+                <MenuItem Header = "Listado Gestos" HorizontalAlignment = "Left" Width = "160" Click = "Listado_Gestos_click"/>
+                <MenuItem Header = "Crear Gesto" HorizontalAlignment = "Left" Width = "160" Click = "Crear_Gesto_click"/>
+
+            </MenuItem>
+            <MenuItem Header = "Secuencia">
+                <MenuItem Header = "Listado Secuencia" HorizontalAlignment = "Left"  Width = "200" Click = "Listado_Secuencias_click"/>
+
+                <MenuItem Header = "Crear Secuencia" HorizontalAlignment = "Left" Width = "200" Click = "Crear_Secuencia_click"/>
+
+                <Separator HorizontalAlignment = "Left" Width = "140"/>
+
+                <MenuItem Header = "Listado Eventos" HorizontalAlignment = "Left" Width = "200" Click = "Listado_Eventos_click"/>
+
+            </MenuItem>
+        </Menu>
         <Label DockPanel.Dock="Top" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="30">Generador de Secuencias</Label>
         <!--Sliders to move the model-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="265 90">Proximal</Label>-->
@@ -54,8 +71,8 @@
             <ModelVisual3D Content="{Binding our_Model}"/>
 
         </HelixToolkit:HelixViewport3D>
-        <Button Content="Grabar" HorizontalAlignment="Left" Margin="121,335,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="933,335,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Grabar" HorizontalAlignment="Left" Margin="121,335,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuardar_Click"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="933,335,0,0" VerticalAlignment="Top" Width="75" Click="BtnSalir_Click"/>
 
         <!--</Grid>-->
     </Grid>

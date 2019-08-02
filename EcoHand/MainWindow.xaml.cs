@@ -378,7 +378,7 @@ namespace EcoHand
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
             string[] lines = {
                 "D1" + pulgar_proximal_angle.ToString("X2"),
@@ -408,7 +408,7 @@ namespace EcoHand
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
             // Configure the message box to be displayed
             string messageBoxText = "¿Estás seguro/a que quieres salir del programa?";
@@ -430,5 +430,29 @@ namespace EcoHand
                     break;
             }
         }
+        private void Listado_Gestos_click(object sender, RoutedEventArgs e)
+        {
+            SecuenciaWindow secWindow = new SecuenciaWindow();
+            secWindow.Show();
+            this.Close();
+        }
+        private void Listado_Secuencias_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Crear_Gesto_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Crear_Secuencia_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Listado_Eventos_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
