@@ -31,37 +31,37 @@
         <!--Sliders to move the model-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="265 90">Proximal</Label>-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="665 90">Distal</Label>-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60 120">Pulgar:</Label>
-        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="45" Minimum="0" Height="21" VerticalAlignment="Top" Margin="121,124,777.6,0"/>
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,75,64,169">Pulgar:</Label>
+        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="45" Minimum="0" Height="21" VerticalAlignment="Top" Margin="535,83,479,0"/>
         <!--<Slider Value="{Binding pulgar_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,124,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60,150">Indice:</Label>
-        <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="121,154,777.6,0" />
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,104,64,196">Indice:</Label>
+        <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,109,479,0" />
         <!--<Slider Value="{Binding indice_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,154,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60 180">Mayor:</Label>
-        <Slider Value="{Binding mayor_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="121,184,777.6,0"/>
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,134,64,226">Mayor:</Label>
+        <Slider Value="{Binding mayor_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,138,479,0"/>
         <!--<Slider Value="{Binding mayor_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,184,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60 210">Anular:</Label>
-        <Slider Value="{Binding anular_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="121,214,777.6,0"/>
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,164,64,256">Anular:</Label>
+        <Slider Value="{Binding anular_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,165,479,0"/>
         <!--<Slider Value="{Binding anular_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,214,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60 240">Meñique:</Label>
-        <Slider Value="{Binding meñique_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="121,244,777.6,0"/>
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,194,64,286">Meñique:</Label>
+        <Slider Value="{Binding meñique_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,199,479,0"/>
         <!--<Slider Value="{Binding meñique_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,244,534,0" />-->
 
         <!--Helper to control the small box in order to find points in the 3D world, made invisible-->
         <!--<Grid Name="boxcontrol" Height="81" VerticalAlignment="Top" Margin="0,280,0,0">-->
-        <xctk:DecimalUpDown Value="{Binding boxheigth}" Margin="793,150,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxwidth}" Margin="893,150,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxlength}" Margin="993,150,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxheigth}" Margin="791,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxwidth}" Margin="880,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxlength}" Margin="969,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
 
-        <xctk:DecimalUpDown Value="{Binding boxX}" Margin="791,186,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxY}" Margin="893,186,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxZ}" Margin="993,186,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxX}" Margin="791,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxY}" Margin="880,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxZ}" Margin="969,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
 
 
 
 
         <!--The HelixViewport3D supports camera manipulation, and can be used just like the Viewport3D-->
-        <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="0,280,0,0" Name="m_helix_viewport">
+        <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="612,138,27,264" Name="m_helix_viewport">
 
 
             <!--Remember to add light to the scene-->
@@ -71,8 +71,15 @@
             <ModelVisual3D Content="{Binding our_Model}"/>
 
         </HelixToolkit:HelixViewport3D>
-        <Button Content="Grabar" HorizontalAlignment="Left" Margin="121,335,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuardar_Click"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="933,335,0,0" VerticalAlignment="Top" Width="75" Click="BtnSalir_Click"/>
+        <Button Content="Grabar" HorizontalAlignment="Left" Margin="828,174,0,0" VerticalAlignment="Top" Width="76" Click="BtnGuardar_Click"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="946,174,0,0" VerticalAlignment="Top" Width="74" Click="BtnSalir_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="520" Margin="30,77,0,0" VerticalAlignment="Top" Width="439">
+            <TabItem Header="Nuevo">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Editar"/>
+            <TabItem Header="Eliminar"/>
+        </TabControl>
 
         <!--</Grid>-->
     </Grid>
