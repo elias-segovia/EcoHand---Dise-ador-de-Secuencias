@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace APIController.Responses
 {
-    class GetGestosByUserIdResponse
+    public class GetGestosByUserIdResponse
     {
-        List<GestoModel> Result { get; set; }
+        public List<GestoModel> Result { get; set; }
     }
 }
