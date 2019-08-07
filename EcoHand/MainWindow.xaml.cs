@@ -1,25 +1,20 @@
 ﻿using HelixToolkit.Wpf;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Net.Http;
+using Newtonsoft.Json;
+using EcoHand.Handlers;
+using APIController.Model;
 
 namespace EcoHand
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
         //modelo de la mano agrupando todas las partes
@@ -205,6 +200,8 @@ namespace EcoHand
         //}
         #endregion
 
+
+
         //Property for the binding with the hand
         public Model3D our_Model { get; set; }
 
@@ -223,31 +220,10 @@ namespace EcoHand
             hand = new Model3DGroup();
 
             #region load_files
-            //load the files
-            mano_sin_dedos = importer.Load("../../Protesis/mano_sin_dedos.3ds");
-            pulgar_proximal = importer.Load("../../Protesis/pulgar_proximal.3ds");
-            pulgar_distal = importer.Load("../../Protesis/pulgar_distal.3ds");
-            indice_proximal = importer.Load("../../Protesis/indice_proximal.3ds");
-            indice_distal = importer.Load("../../Protesis/indice_distal.3ds");
-            mayor_proximal = importer.Load("../../Protesis/mayor_proximal.3ds");
-            mayor_distal = importer.Load("../../Protesis/mayor_distal.3ds");
-            anular_proximal = importer.Load("../../Protesis/anular_proximal.3ds");
-            anular_distal = importer.Load("../../Protesis/anular_distal.3ds");
-            meñique_proximal = importer.Load("../../Protesis/meñique_proximal.3ds");
-            meñique_distal = importer.Load("../../Protesis/meñique_distal.3ds");
+            CargarRecursos(importer);
 
             //add them to the group
-            hand.Children.Add(mano_sin_dedos);
-            hand.Children.Add(pulgar_proximal);
-            hand.Children.Add(pulgar_distal);
-            hand.Children.Add(indice_proximal);
-            hand.Children.Add(indice_distal);
-            hand.Children.Add(mayor_proximal);
-            hand.Children.Add(mayor_distal);
-            hand.Children.Add(anular_proximal);
-            hand.Children.Add(anular_distal);
-            hand.Children.Add(meñique_proximal);
-            hand.Children.Add(meñique_distal);
+            AgregarRecursos();
             #endregion
 
             //hand is complete assign it to the global variable
@@ -279,6 +255,37 @@ namespace EcoHand
             //set datacontext for the sliders and helper
             overall_grid.DataContext = this;
 
+        }
+
+        private void AgregarRecursos()
+        {
+            hand.Children.Add(mano_sin_dedos);
+            hand.Children.Add(pulgar_proximal);
+            hand.Children.Add(pulgar_distal);
+            hand.Children.Add(indice_proximal);
+            hand.Children.Add(indice_distal);
+            hand.Children.Add(mayor_proximal);
+            hand.Children.Add(mayor_distal);
+            hand.Children.Add(anular_proximal);
+            hand.Children.Add(anular_distal);
+            hand.Children.Add(meñique_proximal);
+            hand.Children.Add(meñique_distal);
+        }
+
+        private void CargarRecursos(ModelImporter importer)
+        {
+            //load the files
+            mano_sin_dedos = importer.Load("../../Recursos/Protesis/mano_sin_dedos.3ds");
+            pulgar_proximal = importer.Load("../../Recursos/Protesis/pulgar_proximal.3ds");
+            pulgar_distal = importer.Load("../../Recursos/Protesis/pulgar_distal.3ds");
+            indice_proximal = importer.Load("../../Recursos/Protesis/indice_proximal.3ds");
+            indice_distal = importer.Load("../../Recursos/Protesis/indice_distal.3ds");
+            mayor_proximal = importer.Load("../../Recursos/Protesis/mayor_proximal.3ds");
+            mayor_distal = importer.Load("../../Recursos/Protesis/mayor_distal.3ds");
+            anular_proximal = importer.Load("../../Recursos/Protesis/anular_proximal.3ds");
+            anular_distal = importer.Load("../../Recursos/Protesis/anular_distal.3ds");
+            meñique_proximal = importer.Load("../../Recursos/Protesis/meñique_proximal.3ds");
+            meñique_distal = importer.Load("../../Recursos/Protesis/meñique_distal.3ds");
         }
 
         //moves generic proximal
@@ -378,37 +385,53 @@ namespace EcoHand
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GuardarGesto(object sender, RoutedEventArgs e)
         {
-            string[] lines = {
-                "D1" + pulgar_proximal_angle.ToString("X2"),
-                "D2" + indice_proximal_angle.ToString("X2"),
-                "D3" + mayor_proximal_angle.ToString("X2"),
-                "D4" + anular_proximal_angle.ToString("X2"),
-                "D5" + meñique_proximal_angle.ToString("X2")
-            };
+            //string[] lines = {
+            //    "D1" + pulgar_proximal_angle.ToString("X2"),
+            //    "D2" + indice_proximal_angle.ToString("X2"),
+            //    "D3" + mayor_proximal_angle.ToString("X2"),
+            //    "D4" + anular_proximal_angle.ToString("X2"),
+            //    "D5" + meñique_proximal_angle.ToString("X2")
+            //};
 
             // Configure save file dialog box
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Secuencia"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            //Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            //dlg.FileName = "Secuencia"; //Default file name
+            //dlg.DefaultExt = ".txt"; //Default file extension
+            //dlg.Filter = "Text documents (.txt)|*.txt"; //Filter files by extension
 
-            // Show save file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
+            //// Show save file dialog box
+            //Nullable<bool> result = dlg.ShowDialog();
 
             // Process save file dialog box results
-            if (result == true)
+            //if (result == true)
+            //{
+            //    // Save document
+            //    string filename = dlg.FileName;
+            //    System.IO.File.WriteAllLines(filename, lines);
+            //}
+
+            GestoModel gesto = new GestoModel()
             {
-                // Save document
-                string filename = dlg.FileName;
-                System.IO.File.WriteAllLines(filename, lines);
-            }
+                PosPulgar = pulgar_proximal_angle,
+                PosMeñique = meñique_proximal_angle,
+                PosMayor = mayor_proximal_angle,
+                Posindice = indice_proximal_angle,
+                PosAnular = anular_proximal_angle,
+                Descripcion = "Prueba Post",
+                FechaCreacion = DateTime.Today,
+                Nombre = "Pruebaa Post",
+                UsuarioID = 1
+            };
+
+
+            GestoHandler.GuardarGesto(gesto);
 
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Salir(object sender, RoutedEventArgs e)
         {
             // Configure the message box to be displayed
             string messageBoxText = "¿Estás seguro/a que quieres salir del programa?";
@@ -429,6 +452,23 @@ namespace EcoHand
                     // User pressed No button
                     break;
             }
+        }
+
+        private async void CargarGesto(object sender, RoutedEventArgs e)
+        {
+         
+            GestoModel gesto =  await GestoHandler.ObtenerGestoPorId(2);
+            ActualizarGesto(gesto);
+        }
+
+        private void ActualizarGesto(GestoModel gesto)
+        {
+            this.pulgar_proximal_angle = gesto.PosPulgar;
+            this.indice_proximal_angle = gesto.Posindice;
+            this.mayor_proximal_angle = gesto.PosMayor;
+            this.anular_proximal_angle = gesto.PosAnular;
+            this.meñique_proximal_angle = gesto.PosMeñique;
+
         }
     }
 }
