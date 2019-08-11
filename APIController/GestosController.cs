@@ -84,29 +84,6 @@ namespace APIController
 
 
 
-
-        //public static async Task GetGestos()
-        //{
-        //    using (var response = await _httpClient.GetAsync(controller))
-        //    {
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            GetGestoResponse result = new GetGestoResponse();
-        //            string res = await response.Content.ReadAsStringAsync();
-        //            GestoModel gesto = new GestoModel();
-        //            JsonConvert.PopulateObject(res, gesto);
-        //            result.Result = gesto;
-        //            return result;
-        //        }
-        //        else
-        //        {
-        //            throw new Exception(response.ReasonPhrase);
-        //        }
-        //    }
-        //}
-
-
-
         public static async Task PostAsync(GestoModel gesto)
         {
 
@@ -120,7 +97,7 @@ namespace APIController
                 {
                     throw new Exception(response.ReasonPhrase);
                 }
-            }
+        z    }
         }
     }
 
