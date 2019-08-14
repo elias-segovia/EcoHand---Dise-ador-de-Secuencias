@@ -430,24 +430,13 @@ namespace EcoHand
                     break;
             }
         }
-        private void Listado_Gestos_click(object sender, RoutedEventArgs e)
+        private void Listado_Secuencias_click(object sender, RoutedEventArgs e)
         {
             SecuenciaWindow secWindow = new SecuenciaWindow();
             secWindow.Show();
             this.Close();
         }
-        private void Listado_Secuencias_click(object sender, RoutedEventArgs e)
-        {
 
-        }
-        private void Crear_Gesto_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Crear_Secuencia_click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void Listado_Eventos_click(object sender, RoutedEventArgs e)
         {
 

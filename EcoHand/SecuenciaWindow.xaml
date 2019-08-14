@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="SecuenciaWindow" Height="450" Width="800">
     <Grid>
-        
+        <Menu HorizontalAlignment = "Left" VerticalAlignment = "Top" Width = "1192" Height="30">
+            <MenuItem Header = "Gesto" Height="20" Width="73">
+                <MenuItem Header = "Listado Gestos" HorizontalAlignment = "Left" Width = "160" Click = "Listado_Gestos_click"/>
+                <MenuItem Header = "Crear Gesto" HorizontalAlignment = "Left" Width = "160" Click = "Crear_Gesto_click"/>
+
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

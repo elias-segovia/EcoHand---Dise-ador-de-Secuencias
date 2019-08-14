@@ -23,5 +23,12 @@ namespace EcoHand
         {
             InitializeComponent();
         }
+
+        private void Listado_Gestos_click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }
