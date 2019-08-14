@@ -453,6 +453,9 @@ namespace EcoHand
 
         }
 
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }

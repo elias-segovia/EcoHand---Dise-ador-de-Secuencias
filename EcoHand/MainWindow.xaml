@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="EcoHand" Height="800" Width="1200">
     <Grid Name="overall_grid">
-        <Menu HorizontalAlignment = "Left" VerticalAlignment = "Top" Width = "517">
+        <Menu HorizontalAlignment = "Left" VerticalAlignment = "Top" Width = "1192" Height="30">
             <MenuItem Header = "Gesto">
                 <MenuItem Header = "Listado Gestos" HorizontalAlignment = "Left" Width = "160" Click = "Listado_Gestos_click"/>
                 <MenuItem Header = "Crear Gesto" HorizontalAlignment = "Left" Width = "160" Click = "Crear_Gesto_click"/>
@@ -27,41 +27,40 @@
 
             </MenuItem>
         </Menu>
-        <Label DockPanel.Dock="Top" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="30">Generador de Secuencias</Label>
+        <Label DockPanel.Dock="Top" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="415,30,415,686">Generador de Secuencias</Label>
         <!--Sliders to move the model-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="265 90">Proximal</Label>-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="665 90">Distal</Label>-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,75,64,169">Pulgar:</Label>
-        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="45" Minimum="0" Height="21" VerticalAlignment="Top" Margin="535,83,479,0"/>
-        <!--<Slider Value="{Binding pulgar_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,124,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,104,64,196">Indice:</Label>
-        <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,109,479,0" />
-        <!--<Slider Value="{Binding indice_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,154,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,134,64,226">Mayor:</Label>
-        <Slider Value="{Binding mayor_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,138,479,0"/>
-        <!--<Slider Value="{Binding mayor_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,184,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,164,64,256">Anular:</Label>
-        <Slider Value="{Binding anular_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,165,479,0"/>
-        <!--<Slider Value="{Binding anular_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,214,534,0" />-->
-        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,194,64,286">Meñique:</Label>
-        <Slider Value="{Binding meñique_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,199,479,0"/>
-        <!--<Slider Value="{Binding meñique_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,244,534,0" />-->
 
         <!--Helper to control the small box in order to find points in the 3D world, made invisible-->
         <!--<Grid Name="boxcontrol" Height="81" VerticalAlignment="Top" Margin="0,280,0,0">-->
-        <xctk:DecimalUpDown Value="{Binding boxheigth}" Margin="791,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxwidth}" Margin="880,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxlength}" Margin="969,77,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <!--<xctk:DecimalUpDown Value="{Binding boxheigth}" Margin="880,45,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxwidth}" Margin="986,45,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxlength}" Margin="1108,45,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" RenderTransformOrigin="1.827,-0.019" />
 
-        <xctk:DecimalUpDown Value="{Binding boxX}" Margin="791,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxY}" Margin="880,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
-        <xctk:DecimalUpDown Value="{Binding boxZ}" Margin="969,109,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxX}" Margin="880,111,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" RenderTransformOrigin="1.143,1.13" />
+        <xctk:DecimalUpDown Value="{Binding boxY}" Margin="986,106,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />
+        <xctk:DecimalUpDown Value="{Binding boxZ}" Margin="1098,106,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" />-->
 
 
+        <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,83,652,654">Pulgar:</Label>
 
+        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="45" Minimum="0" Height="21" VerticalAlignment="Top" Margin="535,83,479,0"/>
+        --><!--<Slider Value="{Binding pulgar_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,124,534,0" />--><!--
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,115,657,631">Indice:</Label>
+        <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,109,479,0" />
+        --><!--<Slider Value="{Binding indice_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,154,534,0" />--><!--
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,138,657,602">Mayor:</Label>
+        <Slider Value="{Binding mayor_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,138,479,0"/>
+        --><!--<Slider Value="{Binding mayor_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,184,534,0" />--><!--
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,164,662,580">Anular:</Label>
+        <Slider Value="{Binding anular_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="535,165,479,0"/>
+        --><!--<Slider Value="{Binding anular_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,214,534,0" />--><!--
+        <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="474,194,652,541">Meñique:</Label>
+        --><!--<Slider Value="{Binding meñique_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,244,534,0" />-->
 
         <!--The HelixViewport3D supports camera manipulation, and can be used just like the Viewport3D-->
-        <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="612,138,27,264" Name="m_helix_viewport">
+        <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="893,58,23,477" Name="m_helix_viewport">
 
 
             <!--Remember to add light to the scene-->
@@ -71,16 +70,42 @@
             <ModelVisual3D Content="{Binding our_Model}"/>
 
         </HelixToolkit:HelixViewport3D>
-        <Button Content="Grabar" HorizontalAlignment="Left" Margin="828,174,0,0" VerticalAlignment="Top" Width="76" Click="BtnGuardar_Click"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="946,174,0,0" VerticalAlignment="Top" Width="74" Click="BtnSalir_Click"/>
-        <TabControl HorizontalAlignment="Left" Height="520" Margin="30,77,0,0" VerticalAlignment="Top" Width="439">
-            <TabItem Header="Nuevo">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Editar"/>
-            <TabItem Header="Eliminar"/>
-        </TabControl>
+        <TabControl HorizontalAlignment="Left" Height="520" Margin="163,197,0,0" VerticalAlignment="Top" Width="790">
+            <TabItem Header="Listado" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="72*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox HorizontalAlignment="Left" Height="248" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" SelectionChanged="ListBox_SelectionChanged" Grid.ColumnSpan="3"/>
+                </Grid>
 
-        <!--</Grid>-->
+            </TabItem>
+            <TabItem Header="Nuevo" HorizontalAlignment="Left" Width="51" Height="22" Margin="0,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="739*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Nombre: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Pulgar: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Indice: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,101,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Mayor: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,132,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Anular: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,167,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Meñique: " Grid.Column="1" HorizontalAlignment="Left" Margin="30,198,0,0" VerticalAlignment="Top"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="108,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Slider Value="{Binding pulgar_proximal_angle}" Grid.Column="1" HorizontalAlignment="Left" Maximum="45" Minimum="0" Margin="108,70,0,97"/>
+                    <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="130,407,884,0" />
+                    <Slider Value="{Binding mayor_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="130,441,884,0"/>
+                    <Slider Value="{Binding anular_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="130,475,884,0"/>
+                    <Slider Value="{Binding meñique_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="130,509,884,0"/>
+                    <!--<Label Content="Label" HorizontalAlignment="Left" Margin="367,138,0,0">Pulgarr:</Label>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="Editar" Margin="2,-2,-2,0"/>
+
+
+            <TabItem Header="Eliminar" Margin="2,-2,-2,0"/>
+        </TabControl>
+        
     </Grid>
 </Window>
