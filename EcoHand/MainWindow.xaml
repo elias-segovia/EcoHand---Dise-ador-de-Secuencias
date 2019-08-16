@@ -75,22 +75,15 @@
             <TabItem Header="Listado" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54" Margin="0">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="72*"/>
-                        <ColumnDefinition Width="13*"/>
-                        <ColumnDefinition Width="107*"/>
-                        <ColumnDefinition Width="912*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="903*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox HorizontalAlignment="Left" Height="573" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" SelectionChanged="ListBox_SelectionChanged" Grid.ColumnSpan="4"/>
-                    <Image Grid.Column="3" HorizontalAlignment="Left" Height="304" Margin="312,21,0,0" VerticalAlignment="Top" Width="322" Source="img/advertencia.png"/>
+                    <ListBox HorizontalAlignment="Left" Height="560" Margin="10,10,0,0" VerticalAlignment="Top" Width="282" SelectionChanged="ListBox_SelectionChanged" Grid.ColumnSpan="4"/>
+                    <Image Grid.Column="1" HorizontalAlignment="Left" Height="304" Margin="592,32,0,0" VerticalAlignment="Top" Width="322" Source="img/advertencia.png"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Nuevo" HorizontalAlignment="Left" Width="51" Height="22" Margin="0,-2,-2,0" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="9*"/>
-                        <ColumnDefinition Width="7*"/>
-                        <ColumnDefinition Width="536*"/>
-                    </Grid.ColumnDefinitions>
                     <Label Content="Nombre: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top"/>
                     <Label Content="Pulgar: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top"/>
                     <Label Content="Indice: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,101,0,0" VerticalAlignment="Top"/>
@@ -123,11 +116,44 @@
 
                     </HelixToolkit:HelixViewport3D>
                     <Button Content="Reestablecer" Grid.Column="2" HorizontalAlignment="Left" Margin="153,288,0,0" VerticalAlignment="Top" Width="75"/>
-
                 </Grid>
             </TabItem>
-            <TabItem Header="Editar" Margin="2,-2,-2,0"/>
+            <TabItem Header="Editar" HorizontalAlignment="Left" Width="51" Height="22" VerticalAlignment="Top" Margin="2,-2,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Nombre: &#x9;sarasa&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" Width="198"/>
+                    <Label Content="Pulgar: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Indice: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,101,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Mayor: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,132,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Anular: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,167,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Meñique: " Grid.Column="2" HorizontalAlignment="Left" Margin="30,198,0,0" VerticalAlignment="Top"/>
+                    <Slider Value="{Binding pulgar_proximal_angle}" Grid.Column="2" HorizontalAlignment="Left" Maximum="45" Minimum="0" Margin="108,70,0,485" Width="120"/>
+                    <Slider Value="{Binding indice_proximal_angle}" Grid.Column="2" HorizontalAlignment="Left" Maximum="45" Minimum="0" Margin="108,100,0,453"  Width="120" />
+                    <Slider Value="{Binding mayor_proximal_angle}"  Grid.Column="2" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="108,132,844,0"/>
+                    <Slider Value="{Binding anular_proximal_angle}" Grid.Column="2" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="108,164,844,0"/>
+                    <Slider Value="{Binding meñique_proximal_angle}" Grid.Column="2" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="108,198,844,0"/>
+                    <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="385,41,253,175" Name="n_helix_viewport" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                        <HelixToolkit:HelixViewport3D.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </HelixToolkit:HelixViewport3D.RenderTransform>
 
+
+                        <!--Remember to add light to the scene-->
+                        <HelixToolkit:SunLight/>
+
+                        <!--The content of this visual is defined in MainViewModel.cs-->
+                        <ModelVisual3D Content="{Binding our_Model}"/>
+
+                    </HelixToolkit:HelixViewport3D>
+                    <Button Content="Grabar" HorizontalAlignment="Left" Margin="58,288,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuardar_Click" Grid.Column="2"/>
+
+                    <Button Content="Reestablecer" Grid.Column="2" HorizontalAlignment="Left" Margin="153,288,0,0" VerticalAlignment="Top" Width="75"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Eliminar" Margin="2,-2,-2,0"/>
         </TabControl>
 

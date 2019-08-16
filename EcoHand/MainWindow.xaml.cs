@@ -261,6 +261,8 @@ namespace EcoHand
             //boxY = 0.3;
             //boxZ = 0.3;
             m_helix_viewport.Children.Add(mybox);
+            //n_helix_viewport.Children.Add(mybox);
+
             //boxcontrol.DataContext = this;
 
             //aplicar transformaciones al modelo 3D
@@ -446,5 +448,6 @@ namespace EcoHand
         {
 
         }
+
     }
 }
