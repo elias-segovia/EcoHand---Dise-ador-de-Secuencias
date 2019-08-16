@@ -80,10 +80,6 @@ namespace APIController
         }
 
 
-
-
-
-
         public static async Task PostAsync(GestoModel gesto)
         {
 
@@ -97,7 +93,7 @@ namespace APIController
                 {
                     throw new Exception(response.ReasonPhrase);
                 }
-        z    }
+            }
         }
     }
 

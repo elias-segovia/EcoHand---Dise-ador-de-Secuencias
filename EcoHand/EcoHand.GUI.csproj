@@ -50,6 +50,12 @@
     <Reference Include="HelixToolkit.Wpf, Version=2.7.0.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
       <HintPath>..\packages\HelixToolkit.Wpf.2.7.0\lib\net45\HelixToolkit.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Controls, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SDK.Expression.Blend.1.0.0\lib\net45\Microsoft.Expression.Controls.dll</HintPath>
     </Reference>
@@ -111,7 +117,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\GestoModel.cs" />
     <Compile Include="ViewModels\EditorDeGestosViewModel.cs" />
+    <Compile Include="ViewModels\ListadoGestosViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\EditorDeGestosView.xaml.cs">
       <DependentUpon>EditorDeGestosView.xaml</DependentUpon>

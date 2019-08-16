@@ -1,12 +1,51 @@
 ﻿<Window x:Class="EcoHand.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mat ="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcoHand.Views"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"          
+             
         mc:Ignorable="d"
         Title="ShellView" Height="600" Width="1000">
     <Grid>
-        <ContentControl x:Name="ActiveItem" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80">
+            </RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <mat:PackIcon HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center">
+
+        </mat:PackIcon>
+        <TextBlock x:Name="DiseñadordeSecuencias" FontSize="35" Grid.Column="1" Text="EcoHand" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ListView   x:Name="Menu" Grid.Column="0" Grid.Row="1">
+            <StackPanel>
+                <ListViewItem >
+                    <Button Content="Gestos"  x:Name="LoadListaGesto"/>
+                </ListViewItem>
+                <ListViewItem x:Name="LoadListaSecuencias">
+                    Secuencias
+                </ListViewItem>
+                <ListViewItem x:Name="LoadConfiguracion">
+                    Configuracion
+                </ListViewItem>
+
+
+            </StackPanel>
+        </ListView>
+        <ContentControl Grid.Column="1" Grid.Row="1" x:Name="ActiveItem" />
+
     </Grid>
 </Window>

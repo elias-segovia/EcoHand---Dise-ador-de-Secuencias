@@ -4,9 +4,78 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EcoHand.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:cal ="http://www.caliburnproject.org"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="900">
+
+
+
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--<ListView Grid.Column="1" Grid.Row="1" x:Name="Listado">
             
+        </ListView>-->
+
+
+        <!-- Row 1 Col 1 -->
+        <StackPanel Grid.Row="1" Grid.Column="1"  Orientation="Horizontal">
+            <Button Content="Nuevo" x:Name="LoadEditorDeGestos" />
+        </StackPanel>
+
+        <ListView Grid.Row="2" Grid.Column="1" x:Name="Gestos"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  SelectionMode="Single"
+                  >
+
+
+            <ItemsControl.ItemTemplate>
+
+                <DataTemplate>
+                    <DataTemplate.Triggers>
+                        <!-- Quiero  que cambie el is selected cuando apreto un boton 
+                        dentro de mi stack panel. Por ahora no pude-->
+                       
+                    </DataTemplate.Triggers>
+                    <StackPanel  Orientation="Horizontal">
+                        <ListViewItem>
+                            <TextBlock Text="{Binding Path=Nombre}"/>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <materialDesign:PackIcon  x:Name="LoadVerGesto" Kind="ShowOutline" Foreground="Green" />
+                        </ListViewItem>
+                        <ListViewItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById]">
+                            <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
+                        </ListViewItem>
+                    </StackPanel>
+
+
+                </DataTemplate>
+
+
+
+            </ItemsControl.ItemTemplate>
+
+        </ListView>
+
+
     </Grid>
 </UserControl>

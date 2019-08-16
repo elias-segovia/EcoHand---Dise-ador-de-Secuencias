@@ -139,6 +139,7 @@ namespace EcoHand.ViewModels
         //}
 
         int m_meñique_proximal_angle;
+
         public int Meñique_proximal_angle
         {
             get { return m_meñique_proximal_angle; }
@@ -207,6 +208,11 @@ namespace EcoHand.ViewModels
         public EditorDeGestosViewModel()
         {
             //The Importer to load .obj files
+            CargarMano();
+        }
+
+        private void CargarMano()
+        {
             ModelImporter importer = new ModelImporter();
 
             //The Material (Color) that is applyed to the importet objects
@@ -248,10 +254,27 @@ namespace EcoHand.ViewModels
             //transforms.Children.Add(myRotateTransform);
             ////transforms.Children.Add(myScale);
             //hand.Transform = transforms;
-            
+
             //set datacontext for the sliders and helper
             //overall_grid.DataContext = this;
         }
+
+        public EditorDeGestosViewModel(GestoModel gesto)
+        {
+
+
+            CargarMano();
+            //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
+            this.Anular_proximal_angle = gesto.PosAnular;
+            this.Mayor_proximal_angle = gesto.PosMayor;
+            this.Meñique_proximal_angle = gesto.PosMeñique;
+            this.Pulgar_proximal_angle = gesto.PosPulgar;
+            this.Indice_proximal_angle = gesto.Posindice;
+
+            this.NombreGesto = gesto.Nombre;
+            this.Descripcion = gesto.Descripcion;
+        }
+
         void Move_proximal(int angle, string dedo, Vector3D vec, Point3D punto)
         {
             //rotate the object by "angle", the vector describes the axis
