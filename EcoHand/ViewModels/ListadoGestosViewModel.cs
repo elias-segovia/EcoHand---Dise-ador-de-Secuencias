@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ListadoGestosViewModel : Screen
+    public class ListadoGestosViewModel : Conductor<object>
     {
 
         public int Id { get; set; }
@@ -52,6 +52,12 @@ namespace EcoHand.ViewModels
             var resp = await GestoHandler.ObtenerGestoPorId(SelectedItem.Id);
             conductor.ActivateItem(new EditorDeGestosViewModel(resp));
 
+        }
+
+        public async void LoadHandAsync()
+        {
+            var resp = await GestoHandler.ObtenerGestoPorId(SelectedItem.Id);
+            ActivateItem(new HandDetailsViewModel(resp));
         }
 
 
