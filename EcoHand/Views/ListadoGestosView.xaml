@@ -68,8 +68,8 @@
                         </ListViewItem>
                         <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
                             <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
-                        </ListViewItem>
-                        <ListViewItem >
+                        </ListViewItem >
+                            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action EliminarGesto]">
                             <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
                         </ListViewItem>
                         </StackPanel>

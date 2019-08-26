@@ -54,6 +54,13 @@ namespace EcoHand.ViewModels
 
         }
 
+        public async void EliminarGesto()
+        {
+            await GestoHandler.EliminarGesto(SelectedItem.Id);
+            this.Gestos.Remove(SelectedItem);
+
+        }
+
         public async void LoadHandAsync()
         {
             var resp = await GestoHandler.ObtenerGestoPorId(SelectedItem.Id);

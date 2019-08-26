@@ -37,6 +37,34 @@ namespace APIController
             }
         }
 
+        public static async Task EditarAsync(GestoModel gesto)
+        {
+            using (var response = await _httpClient.PutAsJsonAsync(controller, gesto))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    //todo ok
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        public static async Task Delete(int id)
+        {
+            using(var response = await _httpClient.DeleteAsync(controller + '/' + id))
+            {
+                if (!response.IsSuccessStatusCode)
+                {
+                   //manejar el error
+                    
+                }
+             
+            }
+        }
+
         public static async Task<GetGestosResponse> GetGestos()
         {
 

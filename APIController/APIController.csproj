@@ -41,6 +41,7 @@
     <Compile Include="ApiHelper.cs" />
     <Compile Include="GestosController.cs" />
     <Compile Include="Model\GestoModel.cs" />
+    <Compile Include="Requests\EditarGestoRequest.cs" />
     <Compile Include="Responses\GetGestoByIdResponse.cs" />
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />
     <Compile Include="Responses\GetGestosResponse.cs" />

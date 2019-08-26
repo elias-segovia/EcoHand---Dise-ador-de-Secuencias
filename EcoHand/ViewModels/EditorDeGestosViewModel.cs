@@ -166,7 +166,9 @@ namespace EcoHand.ViewModels
         public string NombreGesto { get => nombre; set { nombre = value; NotifyOfPropertyChange(); } }
         public string Descripcion { get => descripcion; set { descripcion = value; NotifyOfPropertyChange(); } }
 
+        public bool Editando = false;
 
+        public GestoModel MiGesto;
         #endregion
 
 
@@ -264,6 +266,8 @@ namespace EcoHand.ViewModels
 
 
             CargarMano();
+            MiGesto = gesto;
+            Editando = true;
             //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
             this.Anular_proximal_angle = gesto.PosAnular;
             this.Mayor_proximal_angle = gesto.PosMayor;
@@ -273,6 +277,7 @@ namespace EcoHand.ViewModels
 
             this.NombreGesto = gesto.Nombre;
             this.Descripcion = gesto.Descripcion;
+            
         }
 
         void Move_proximal(int angle, string dedo, Vector3D vec, Point3D punto)
@@ -381,6 +386,38 @@ namespace EcoHand.ViewModels
 
         public void GuardarGesto()
         {
+            if(Editando)
+            {
+                EditarGesto();
+            }
+            else
+            {
+                CrearGesto();
+            }
+            
+
+        }
+
+        private void EditarGesto()
+        {
+            GestoModel gesto = new GestoModel()
+            {
+                ID = MiGesto.ID,
+                PosPulgar = Pulgar_proximal_angle,
+                PosMeñique = Meñique_proximal_angle,
+                PosMayor = Mayor_proximal_angle,
+                Posindice = Indice_proximal_angle,
+                PosAnular = Anular_proximal_angle,
+                Descripcion = this.Descripcion,
+                FechaCreacion = DateTime.Today,
+                Nombre = this.NombreGesto,
+                UsuarioID = 1
+               
+            };
+        }
+
+        private void CrearGesto()
+        {
             GestoModel gesto = new GestoModel()
             {
                 PosPulgar = Pulgar_proximal_angle,
@@ -393,12 +430,8 @@ namespace EcoHand.ViewModels
                 Nombre = this.NombreGesto,
                 UsuarioID = 1
             };
-
-
             GestoHandler.GuardarGesto(gesto);
             LoadListaDeGestos();
-            
-
         }
 
         //private void Salir(object sender, RoutedEventArgs e)

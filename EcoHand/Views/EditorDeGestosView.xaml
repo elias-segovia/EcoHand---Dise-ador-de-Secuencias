@@ -67,13 +67,10 @@
         </HelixToolkit:HelixViewport3D>
 
         <Button x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="Click">
-                    <c:ActionMessage MethodName="GuardarGesto">
-                        <!--<c:Parameter Value="{Binding ElementName=GuardarGesto, Path=DataContext}" />-->
-                    </c:ActionMessage>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+            
+        </Button>
+        <Button x:Name="ModificarGesto" Visibility="Hidden" Grid.Column="2" Grid.Row="5" Content="Actualizar" >
+
         </Button>
         <StackPanel Margin="0,15,0,15" Grid.Row="4" Grid.Column="2" >
             <DockPanel>

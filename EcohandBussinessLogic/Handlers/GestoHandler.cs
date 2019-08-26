@@ -35,6 +35,14 @@ namespace EcoHand.Handlers
 
         }
 
+        public static async Task EliminarGesto(int id)
+        {
+            await GestosController.Delete(id);
+        }
 
+        public static async Task EditarGestoAsync(GestoModel gesto)
+        {
+            await GestosController.EditarAsync(gesto);
+        }
     }
 }
