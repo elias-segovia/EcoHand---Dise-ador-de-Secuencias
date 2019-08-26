@@ -20,7 +20,7 @@ namespace EcoHand.ViewModels
         }
         public void LoadMain()
         {
-            ActivateItem(new EditorDeGestosViewModel());
+            LoadListaGesto();
         }
 
         public BindableCollection<GestoModel> Gestos { get; set; }
@@ -30,7 +30,6 @@ namespace EcoHand.ViewModels
             Gestos = new BindableCollection<GestoModel>();
             foreach (var item in resp)
             {
-
                 Gestos.Add(new GestoModel() { Id = item.ID, Nombre = item.Nombre });
             }
 
@@ -38,17 +37,18 @@ namespace EcoHand.ViewModels
         }
         public async void LoadListaGesto()
         {
+            
             try
             {
                 var resp = await CargarListaDeGestosAsync();
                 ActivateItem(new ListadoGestosViewModel(resp));
-
             }
             catch (Exception e)
             {
-
+                ActivateItem(new ListadoGestosViewModel());
                 //mensaje no se pudo cargar los gestos
             }
+          
 
         }
     }

@@ -118,11 +118,15 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Models\GestoModel.cs" />
+    <Compile Include="ViewModels\HandDetailsViewModel.cs" />
     <Compile Include="ViewModels\EditorDeGestosViewModel.cs" />
     <Compile Include="ViewModels\ListadoGestosViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\EditorDeGestosView.xaml.cs">
       <DependentUpon>EditorDeGestosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HandDetailsView.xaml.cs">
+      <DependentUpon>HandDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListadoGestosView.xaml.cs">
       <DependentUpon>ListadoGestosView.xaml</DependentUpon>
@@ -143,6 +147,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\EditorDeGestosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HandDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

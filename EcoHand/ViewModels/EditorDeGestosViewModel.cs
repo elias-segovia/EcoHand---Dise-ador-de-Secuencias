@@ -371,6 +371,13 @@ namespace EcoHand.ViewModels
 
         }
 
+        public void LoadListaDeGestos()
+        {
+            var conductor = this.Parent as IConductor;
+            conductor.ActivateItem(new ListadoGestosViewModel());
+
+        }
+
 
         public void GuardarGesto()
         {
@@ -389,7 +396,8 @@ namespace EcoHand.ViewModels
 
 
             GestoHandler.GuardarGesto(gesto);
-
+            LoadListaDeGestos();
+            
 
         }
 

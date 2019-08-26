@@ -3,3 +3,8 @@
 ################################################################################
 
 /APIController/bin/Debug
+/APIController/obj/Debug
+/APIController/obj/Debug
+/APIController/obj/Debug
+/APIController/obj/Debug/APIController.csproj.FileListAbsolute.txt
+*.cache

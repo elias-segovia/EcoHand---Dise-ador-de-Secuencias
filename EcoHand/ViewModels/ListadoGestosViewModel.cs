@@ -45,7 +45,7 @@ namespace EcoHand.ViewModels
 
         }
 
-        public async void LoadEditarById()
+        public async void LoadEditarById(int Id)
         {
 
             var conductor = this.Parent as IConductor;

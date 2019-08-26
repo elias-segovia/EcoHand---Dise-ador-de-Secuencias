@@ -7,6 +7,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using EcoHand.Handlers;
 using APIController.Model;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace EcoHand
 {
@@ -387,31 +389,6 @@ namespace EcoHand
 
         private void GuardarGesto(object sender, RoutedEventArgs e)
         {
-            //string[] lines = {
-            //    "D1" + pulgar_proximal_angle.ToString("X2"),
-            //    "D2" + indice_proximal_angle.ToString("X2"),
-            //    "D3" + mayor_proximal_angle.ToString("X2"),
-            //    "D4" + anular_proximal_angle.ToString("X2"),
-            //    "D5" + meñique_proximal_angle.ToString("X2")
-            //};
-
-            // Configure save file dialog box
-            //Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            //dlg.FileName = "Secuencia"; //Default file name
-            //dlg.DefaultExt = ".txt"; //Default file extension
-            //dlg.Filter = "Text documents (.txt)|*.txt"; //Filter files by extension
-
-            //// Show save file dialog box
-            //Nullable<bool> result = dlg.ShowDialog();
-
-            // Process save file dialog box results
-            //if (result == true)
-            //{
-            //    // Save document
-            //    string filename = dlg.FileName;
-            //    System.IO.File.WriteAllLines(filename, lines);
-            //}
-
             GestoModel gesto = new GestoModel()
             {
                 PosPulgar = pulgar_proximal_angle,
@@ -463,12 +440,26 @@ namespace EcoHand
 
         private void ActualizarGesto(GestoModel gesto)
         {
+            //Actualizo los valores de la mano.
             this.pulgar_proximal_angle = gesto.PosPulgar;
             this.indice_proximal_angle = gesto.Posindice;
             this.mayor_proximal_angle = gesto.PosMayor;
             this.anular_proximal_angle = gesto.PosAnular;
             this.meñique_proximal_angle = gesto.PosMeñique;
+            
+            //actualizo el binding de los sliders
+            this.pulgar_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
+            this.indice_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
+            this.mayor_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
+            this.anular_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
+            this.meñique_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
+
+            NavigationWindow window = new NavigationWindow();
+            Uri source = new Uri("GestosLista.xaml", UriKind.Absolute);
+            window.Source = source; window.Show();
 
         }
+
+        
     }
 }

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+VisualStudioVersion = 15.0.26228.64
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHand", "EcoHand\EcoHand.csproj", "{5B989E25-B2FD-4A31-AF72-36C0515965A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHand.GUI", "EcoHand\EcoHand.GUI.csproj", "{5B989E25-B2FD-4A31-AF72-36C0515965A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcohandBussinessLogic", "EcohandBussinessLogic\EcohandBussinessLogic.csproj", "{13C1FB32-5771-4675-906D-FFCCC752BB4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIController", "APIController\APIController.csproj", "{2647561D-9BB4-4D7B-8D1B-6B3CB51FC962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5B989E25-B2FD-4A31-AF72-36C0515965A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B989E25-B2FD-4A31-AF72-36C0515965A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B989E25-B2FD-4A31-AF72-36C0515965A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C1FB32-5771-4675-906D-FFCCC752BB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C1FB32-5771-4675-906D-FFCCC752BB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C1FB32-5771-4675-906D-FFCCC752BB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C1FB32-5771-4675-906D-FFCCC752BB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2647561D-9BB4-4D7B-8D1B-6B3CB51FC962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2647561D-9BB4-4D7B-8D1B-6B3CB51FC962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2647561D-9BB4-4D7B-8D1B-6B3CB51FC962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2647561D-9BB4-4D7B-8D1B-6B3CB51FC962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

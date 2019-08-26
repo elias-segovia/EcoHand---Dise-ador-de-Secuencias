@@ -4,7 +4,9 @@
         xmlns:mat ="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cal="http://www.caliburnproject.org"
         xmlns:local="clr-namespace:EcoHand.Views"
+        
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -17,23 +19,19 @@
         Title="ShellView" Height="600" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80">
-            </RowDefinition>
+            <RowDefinition Height="auto"/>
+
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <mat:PackIcon HorizontalAlignment="Left" Margin="20" VerticalAlignment="Center">
-
-        </mat:PackIcon>
-        <TextBlock x:Name="DiseñadordeSecuencias" FontSize="35" Grid.Column="1" Text="EcoHand" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <ListView   x:Name="Menu" Grid.Column="0" Grid.Row="1">
-            <StackPanel>
-                <ListViewItem >
-                    <Button Content="Gestos"  x:Name="LoadListaGesto"/>
+   
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadListaGesto]" >
+                    Gestos
                 </ListViewItem>
                 <ListViewItem x:Name="LoadListaSecuencias">
                     Secuencias
@@ -41,10 +39,8 @@
                 <ListViewItem x:Name="LoadConfiguracion">
                     Configuracion
                 </ListViewItem>
-
-
             </StackPanel>
-        </ListView>
+   
         <ContentControl Grid.Column="1" Grid.Row="1" x:Name="ActiveItem" />
 
     </Grid>

@@ -16,7 +16,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
-            
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20"/>
@@ -26,7 +26,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
-            
+
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <!--<ListView Grid.Column="1" Grid.Row="1" x:Name="Listado">
@@ -35,38 +35,46 @@
 
 
         <!-- Row 1 Col 1 -->
-        <StackPanel Grid.Row="1" Grid.Column="1"  Orientation="Horizontal">
-            <Button Content="Nuevo" x:Name="LoadEditorDeGestos" />
-        </StackPanel>
-        <Border></Border>
-        <ListView Grid.Row="2" Grid.Column="1" x:Name="Gestos"
+
+        <Button  Grid.Column="1" Grid.Row="1"  Content="Nuevo" x:Name="LoadEditorDeGestos" />
+
+        
+        <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   SelectionMode="Single"
+                 
                   >
 
-            
-                <ItemsControl.ItemTemplate>
+            <ItemsControl.ItemTemplate>
 
                 <DataTemplate>
+                    
                     <DataTemplate.Triggers>
                         <!-- Quiero  que cambie el is selected cuando apreto un boton 
                         dentro de mi stack panel. Por ahora no pude-->
-                       
+
                     </DataTemplate.Triggers>
-                    <StackPanel  Orientation="Horizontal">
-                        <ListViewItem>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListViewItem Grid.Column="0">
                             <TextBlock Text="{Binding Path=Nombre}"/>
                         </ListViewItem>
-                        <ListViewItem>
-                            <materialDesign:PackIcon cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadHandAsync]" Kind="ShowOutline" Foreground="Green" />
+                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">     
+                            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadHandAsync]">
+                            <materialDesign:PackIcon  Kind="ShowOutline" Foreground="Green" />
                         </ListViewItem>
-                        <ListViewItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById]">
+                        <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
                             <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem >
                             <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
                         </ListViewItem>
-                    </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
 
 
                 </DataTemplate>
@@ -77,7 +85,7 @@
 
         </ListView>
 
-        <ContentControl Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
+        <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
 
     </Grid>
 </UserControl>

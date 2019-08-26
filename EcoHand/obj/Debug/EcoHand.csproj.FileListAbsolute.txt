@@ -243,3 +243,46 @@ C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CoreCompileInpu
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.csproj.CopyComplete
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.exe
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.pdb
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.exe.config
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.exe
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHand.pdb
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHandBL.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Services.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\EcoHandBL.pdb
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\Services.pdb
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.xml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\HelixToolkit.Wpf.xml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csprojResolveAssemblyReference.cache
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\MainWindow.g.cs
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\DiseñadorSecuencias.g.cs
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\GestosLista.g.cs
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\SecuenciasLista.g.cs
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\App.g.cs
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.cache
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand_MarkupCompile.lref
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\MainWindow.baml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\DiseñadorSecuencias.baml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\GestosLista.baml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\Views\SecuenciasLista.baml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.g.resources
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.Properties.Resources.resources
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.csproj.GenerateResource.Cache
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.exe
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\EcoHand.pdb

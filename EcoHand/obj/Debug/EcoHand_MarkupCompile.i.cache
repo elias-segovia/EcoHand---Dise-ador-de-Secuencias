@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\obj\Debug\
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\
 EcoHand
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\Proyecto\EcoHand\EcoHand\App.xaml
-11151548125
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\App.xaml
+5990389911
 
-91033419863
-73-1479683359
-MainWindow.xaml;
+19-2031159298
+89-1001909736
+MainWindow.xaml;Views\EditorDeGestosView.xaml;Views\HandDetailsView.xaml;Views\ListadoGestosView.xaml;Views\ShellView.xaml;
 
 False
 
