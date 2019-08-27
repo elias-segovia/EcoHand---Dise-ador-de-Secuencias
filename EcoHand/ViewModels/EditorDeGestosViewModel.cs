@@ -46,6 +46,7 @@ namespace EcoHand.ViewModels
                 Move_proximal(value, "pulgar", new Vector3D(1, 0.4, 0), new Point3D(-0.2, 0, 1.5));
                 Move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
                 m_pulgar_proximal_angle = value;
+     
             }
         }
 
@@ -378,8 +379,8 @@ namespace EcoHand.ViewModels
 
         public void LoadListaDeGestos()
         {
-            var conductor = this.Parent as IConductor;
-            conductor.ActivateItem(new ListadoGestosViewModel());
+            var shell = this.Parent as ShellViewModel;
+            shell.LoadListaGesto();
 
         }
 
@@ -388,7 +389,7 @@ namespace EcoHand.ViewModels
         {
             if(Editando)
             {
-                EditarGesto();
+                EditarGestoAsync();
             }
             else
             {
@@ -398,22 +399,21 @@ namespace EcoHand.ViewModels
 
         }
 
-        private void EditarGesto()
+        private async void EditarGestoAsync()
         {
-            GestoModel gesto = new GestoModel()
-            {
-                ID = MiGesto.ID,
-                PosPulgar = Pulgar_proximal_angle,
-                PosMeñique = Meñique_proximal_angle,
-                PosMayor = Mayor_proximal_angle,
-                Posindice = Indice_proximal_angle,
-                PosAnular = Anular_proximal_angle,
-                Descripcion = this.Descripcion,
-                FechaCreacion = DateTime.Today,
-                Nombre = this.NombreGesto,
-                UsuarioID = 1
-               
-            };
+            MiGesto.PosPulgar = Pulgar_proximal_angle;
+            MiGesto.PosAnular = Anular_proximal_angle;
+            MiGesto.Posindice = Indice_proximal_angle;
+            MiGesto.PosMayor = Mayor_proximal_angle;
+            MiGesto.PosMeñique = Meñique_proximal_angle;
+            MiGesto.Descripcion = Descripcion;
+            MiGesto.Nombre = NombreGesto;
+
+            await GestoHandler.EditarGestoAsync(MiGesto);
+
+            LoadListaDeGestos();
+
+
         }
 
         private void CrearGesto()
@@ -473,16 +473,7 @@ namespace EcoHand.ViewModels
             this.Anular_proximal_angle = gesto.PosAnular;
             this.Meñique_proximal_angle = gesto.PosMeñique;
 
-            //actualizo el binding de los sliders
-            //this.pulgar_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
-            //this.indice_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
-            //this.mayor_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
-            //this.anular_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
-            //this.meñique_proxi.GetBindingExpression(Slider.ValueProperty).UpdateTarget();
-
-            //NavigationWindow window = new NavigationWindow();
-            //Uri source = new Uri("GestosLista.xaml", UriKind.Absolute);
-            //window.Source = source; window.Show();
+  
 
         }
 
