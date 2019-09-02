@@ -14,21 +14,11 @@ using System.Windows.Shapes;
 
 namespace EcoHand
 {
-    /// <summary>
-    /// Lógica de interacción para SecuenciaWindow.xaml
-    /// </summary>
     public partial class SecuenciaWindow : Window
     {
         public SecuenciaWindow()
         {
             InitializeComponent();
-        }
-
-        private void Listado_Gestos_click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
         }
     }
 }

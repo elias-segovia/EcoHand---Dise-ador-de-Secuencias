@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:EcoHand"
+                    xmlns:c="clr-namespace:EcoHand.Controls">
+  <s:Toolbox x:Key="SymbolStencils" ItemSize="60,60">
+    <ItemsControl.Items>
+            <Image Uid="A" IsHitTestVisible="False" Stretch="Fill" Source="../Images/inicio.png" Tag="Movi"/>
+            <Image Uid="I" IsHitTestVisible="False" Stretch="Fill" Source="../Images/fin.png" Tag="Salto"/>
+            <Image Uid="S" IsHitTestVisible="False" Stretch="Fill" Source="../Images/arrow.png" Tag="Sensor"/>
+            <Image Uid="TT" IsHitTestVisible="False" Stretch="Fill" Source="../Images/plus.png" Tag="Tiempo"/>
+            <Image Uid="XX" IsHitTestVisible="False" Stretch="Fill" Source="../Images/chart3.png" Tag="SaltInc"/>
+      <!--<Image IsHitTestVisible="False" Stretch="Fill" Source="../Images/printer.png"/>
+      -->
+    </ItemsControl.Items>
+  </s:Toolbox>
+</ResourceDictionary>

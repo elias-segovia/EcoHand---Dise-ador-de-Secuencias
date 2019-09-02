@@ -79,7 +79,7 @@
                         <ColumnDefinition Width="903*"/>
                     </Grid.ColumnDefinitions>
                     <ListBox HorizontalAlignment="Left" Height="560" Margin="10,10,0,0" VerticalAlignment="Top" Width="282" SelectionChanged="ListBox_SelectionChanged" Grid.ColumnSpan="4"/>
-                    <Image Grid.Column="1" HorizontalAlignment="Left" Height="304" Margin="592,32,0,0" VerticalAlignment="Top" Width="322" Source="img/advertencia.png"/>
+                    <Image Grid.Column="1" HorizontalAlignment="Left" Height="304" Margin="592,32,0,0" VerticalAlignment="Top" Width="322" Source="/Resources/images/advertencia.png"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Nuevo" HorizontalAlignment="Left" Width="51" Height="22" Margin="0,-2,-2,0" VerticalAlignment="Top">

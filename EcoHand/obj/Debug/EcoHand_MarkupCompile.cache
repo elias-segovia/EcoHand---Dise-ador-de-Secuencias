@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Repositorios\EcoHand---Dise-ador-de-Secuencias\EcoHand\App.xaml
-2-1742682363
+151295001710
 
-6-13727464
+231911440165
 73410753818
-MainWindow.xaml;SecuenciaWindow.xaml;
+MainWindow.xaml;Resources\ApplicationToolbar.xaml;Resources\Connection.xaml;Resources\DesignerItem.xaml;Resources\Stencils\FlowChartStencils.xaml;Resources\Stencils\ShapeStencils.xaml;Resources\Stencils\SymbolStencils.xaml;Resources\Styles\Expander.xaml;Resources\Styles\GroupBox.xaml;Resources\Styles\ScrollBar.xaml;Resources\Styles\Shared.xaml;Resources\Styles\ToolBar.xaml;Resources\Toolbox.xaml;Resources\ToolboxItem.xaml;SecuenciaWindow.xaml;
 
 False
 

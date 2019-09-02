@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\
+D:\Repositorios\EcoHand---Dise-ador-de-Secuencias\EcoHand\obj\Debug\
 EcoHand
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Documents\EcoHand---Dise-ador-de-Secuencias\EcoHand\App.xaml
-2-1742682363
+D:\Repositorios\EcoHand---Dise-ador-de-Secuencias\EcoHand\App.xaml
+151295001710
 
-1099869115
-731479712968
-MainWindow.xaml;SecuenciaWindow.xaml;
+27150574408
+73410753818
+MainWindow.xaml;Resources\ApplicationToolbar.xaml;Resources\Connection.xaml;Resources\DesignerItem.xaml;Resources\Stencils\FlowChartStencils.xaml;Resources\Stencils\ShapeStencils.xaml;Resources\Stencils\SymbolStencils.xaml;Resources\Styles\Expander.xaml;Resources\Styles\GroupBox.xaml;Resources\Styles\ScrollBar.xaml;Resources\Styles\Shared.xaml;Resources\Styles\ToolBar.xaml;Resources\Toolbox.xaml;Resources\ToolboxItem.xaml;SecuenciaWindow.xaml;
 
 False
 
