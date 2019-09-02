@@ -37,19 +37,25 @@ namespace EcoHand.ViewModels
         }
         public async void LoadListaGesto()
         {
-            
+
             try
             {
                 var resp = await CargarListaDeGestosAsync();
+
                 ActivateItem(new ListadoGestosViewModel(resp));
             }
             catch (Exception e)
             {
-                ActivateItem(new ListadoGestosViewModel());
+
                 //mensaje no se pudo cargar los gestos
             }
-          
 
+
+        }
+
+        public void LoadEditor()
+        {
+            ActivateItem(new EditorDeGestosViewModel());
         }
     }
 }

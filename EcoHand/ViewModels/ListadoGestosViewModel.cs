@@ -59,6 +59,14 @@ namespace EcoHand.ViewModels
             await GestoHandler.EliminarGesto(SelectedItem.Id);
             this.Gestos.Remove(SelectedItem);
 
+            if (Gestos.Count > 0)
+            {
+                SelectedItem = Gestos.FirstOrDefault();
+                LoadHandAsync();
+            }
+            else
+                LoadEditorDeGestos();
+
         }
 
         public async void LoadHandAsync()

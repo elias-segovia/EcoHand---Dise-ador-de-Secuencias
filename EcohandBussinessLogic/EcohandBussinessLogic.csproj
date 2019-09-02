@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\GestoHandler.cs" />
+    <Compile Include="Handlers\SecuenciaHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APIController\APIController.csproj">

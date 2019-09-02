@@ -18,6 +18,7 @@ namespace APIController
             apiClient = value;
             apiClient.DefaultRequestHeaders.Accept.Clear();
             apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //Cambiar por la url de Azure
             apiClient.BaseAddress = new Uri("http://localhost:56303/");
 
         }

@@ -38,21 +38,24 @@
 
         <Button  Grid.Column="1" Grid.Row="1"  Content="Nuevo" x:Name="LoadEditorDeGestos" />
 
-        
+
         <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos"
+
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  IsSynchronizedWithCurrentItem="True"
                   SelectionMode="Single"
                  
                   >
 
-            <ItemsControl.ItemTemplate>
+            <ListView.ItemTemplate>
+               
+          
 
                 <DataTemplate>
-                    
                     <DataTemplate.Triggers>
-                        <!-- Quiero  que cambie el is selected cuando apreto un boton 
-                        dentro de mi stack panel. Por ahora no pude-->
-
+                        <Trigger Property="IsMouseOver" Value="true">
+                            
+                        </Trigger>
                     </DataTemplate.Triggers>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -62,16 +65,17 @@
                         <ListViewItem Grid.Column="0">
                             <TextBlock Text="{Binding Path=Nombre}"/>
                         </ListViewItem>
-                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">     
+                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">
                             <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadHandAsync]">
-                            <materialDesign:PackIcon  Kind="ShowOutline" Foreground="Green" />
-                        </ListViewItem>
-                        <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
-                            <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
-                        </ListViewItem >
+                              
+                                <materialDesign:PackIcon  Kind="ShowOutline" Foreground="Green" />
+                            </ListViewItem>
+                            <ListViewItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
+                                <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
+                            </ListViewItem >
                             <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action EliminarGesto]">
-                            <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
-                        </ListViewItem>
+                                <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
+                            </ListViewItem>
                         </StackPanel>
 
                     </Grid>
@@ -81,7 +85,7 @@
 
 
 
-            </ItemsControl.ItemTemplate>
+            </ListView.ItemTemplate>
 
         </ListView>
 

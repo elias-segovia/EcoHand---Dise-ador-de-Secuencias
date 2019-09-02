@@ -41,10 +41,10 @@
     <Compile Include="ApiHelper.cs" />
     <Compile Include="GestosController.cs" />
     <Compile Include="Model\GestoModel.cs" />
-    <Compile Include="Requests\EditarGestoRequest.cs" />
     <Compile Include="Responses\GetGestoByIdResponse.cs" />
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />
     <Compile Include="Responses\GetGestosResponse.cs" />
+    <Compile Include="SecuenciaController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +56,9 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Requests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
