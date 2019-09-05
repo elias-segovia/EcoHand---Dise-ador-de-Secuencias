@@ -10,3 +10,16 @@ C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcohandBussinessLogic\bin\De
 C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.csprojResolveAssemblyReference.cache
 C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.dll
 C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.pdb
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.csprojAssemblyReference.cache
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.csproj.CoreCompileInputs.cache
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.dll
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.pdb
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\EcohandBussinessLogic.dll.config
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\EcohandBussinessLogic.dll
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\EcohandBussinessLogic.pdb
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\APIController.dll
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\System.Net.Http.Formatting.dll
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\APIController.pdb
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\bin\Debug\APIController.dll.config
+C:\Git\Diseñador de Secuencias\EcohandBussinessLogic\obj\Debug\EcohandBussinessLogic.csproj.CopyComplete
