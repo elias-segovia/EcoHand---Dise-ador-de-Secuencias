@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\EcoHand\App.xaml
-4-161158214
+5327510375
 
-181352948321
+20643051326
 89-1001909736
-Views\EditorDeGestosView.xaml;Views\HandDetailsView.xaml;Views\ListadoGestosView.xaml;Views\ShellView.xaml;
+Views\EditorDeGestosView.xaml;Views\EditorSecuencias.xaml;Views\HandDetailsView.xaml;Views\ListadoGestosView.xaml;Views\ShellView.xaml;
 
-True
+False
 
