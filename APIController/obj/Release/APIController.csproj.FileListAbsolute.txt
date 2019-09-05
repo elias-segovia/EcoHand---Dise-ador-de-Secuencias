@@ -1,0 +1,8 @@
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\APIController.dll.config
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\APIController.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\APIController.pdb
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\Newtonsoft.Json.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\System.Net.Http.Formatting.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\bin\Release\System.Net.Http.Formatting.xml
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\obj\Release\APIController.dll
+C:\Github\EcoHand\EcoHand---Dise-ador-de-Secuencias\APIController\obj\Release\APIController.pdb

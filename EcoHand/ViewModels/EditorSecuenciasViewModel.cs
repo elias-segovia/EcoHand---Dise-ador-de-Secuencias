@@ -8,5 +8,6 @@ namespace EcoHand.ViewModels
 {
     public class EditorSecuenciasViewModel
     {
+
     }
 }
