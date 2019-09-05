@@ -143,3 +143,7 @@ C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.Properties.Resources.r
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.GUI.csproj.GenerateResource.cache
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.GUI.csproj.CoreCompileInputs.cache
 C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\EcoHand.GUI.csproj.CopyComplete
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\Views\Login.g.cs
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\Views\Login.baml
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\Views\InicioView.g.cs
+C:\Git\Diseñador de Secuencias\EcoHand\obj\Debug\Views\InicioView.baml

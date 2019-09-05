@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Git\Diseñador de Secuencias\EcoHand\App.xaml
-5327510375
+7-914165690
 
-20148106416
+23816456016
 94-597300520
-Views\EditorDeGestosView.xaml;Views\EditorSecuencias.xaml;Views\HandDetailsView.xaml;Views\ListadoGestosView.xaml;Views\ShellView.xaml;
+Views\EditorDeGestosView.xaml;Views\EditorSecuencias.xaml;Views\HandDetailsView.xaml;Views\InicioView.xaml;Views\ListadoGestosView.xaml;Views\Login.xaml;Views\ShellView.xaml;
 
 True
 
