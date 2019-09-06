@@ -1,0 +1,18 @@
+﻿<Window x:Class="EcoHand.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcoHand.Views"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar Nombre de Usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,150,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar Contraseña" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <Button Content="Ingresar" HorizontalAlignment="Left" Margin="231,282,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147"/>
+
+    </Grid>
+</Window>
