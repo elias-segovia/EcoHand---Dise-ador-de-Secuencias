@@ -15,26 +15,24 @@ using System.Windows.Shapes;
 namespace EcoHand.Views
 {
     /// <summary>
-    /// Lógica de interacción para Login.xaml
+    /// Lógica de interacción para RegistroView.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class RegistroView : Window
     {
-        public Login()
+        public RegistroView()
         {
             InitializeComponent();
         }
 
-        private void CrearCuenta(object sender, RoutedEventArgs e)
+        private void Cancelar(object sender, RoutedEventArgs e)
         {
-            RegistroView registro = new RegistroView();
-            registro.Show();
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 
-        private void Ingresar(object sender, RoutedEventArgs e)
+        private void CrearCuenta(object sender, RoutedEventArgs e)
         {
-
-
             ShellView shell = new ShellView();
             shell.Show();
             this.Close();

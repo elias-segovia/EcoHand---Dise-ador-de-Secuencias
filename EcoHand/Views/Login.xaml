@@ -11,8 +11,8 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar Nombre de Usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,150,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar Contraseña" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
-        <Button Content="Ingresar" HorizontalAlignment="Left" Margin="231,282,0,0" VerticalAlignment="Top" Width="106"/>
-        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147"/>
+        <Button Content="Ingresar" HorizontalAlignment="Left" Margin="231,282,0,0" VerticalAlignment="Top" Width="106" Click="Ingresar"/>
+        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147" Click="CrearCuenta"/>
 
     </Grid>
 </Window>

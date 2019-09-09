@@ -1,0 +1,19 @@
+﻿<Window x:Class="EcoHand.Views.RegistroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcoHand.Views"
+        mc:Ignorable="d"
+        Title="RegistroView" Height="450" Width="800">
+    <Grid>
+        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar nombre de usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="231,150,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar correo electrónico" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,200,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,200,0,0" TextWrapping="Wrap" Text="Ingresar contraseña" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="211,282,0,0" VerticalAlignment="Top" Width="126" Click="CrearCuenta"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147" Click="Cancelar"/>
+    </Grid>
+</Window>

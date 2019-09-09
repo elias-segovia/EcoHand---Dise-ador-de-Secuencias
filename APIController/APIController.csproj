@@ -46,6 +46,7 @@
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />
     <Compile Include="Responses\GetGestosResponse.cs" />
     <Compile Include="SecuenciaController.cs" />
+    <Compile Include="UsuarioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
