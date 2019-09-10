@@ -46,6 +46,36 @@ namespace APIController
             }
             return false;
         }
-        
+
+        public static async Task<bool> RegitroAsync(DTO_In_Usuario user)
+        {
+
+            using (var response = await _httpClient.PostAsJsonAsync<DTO_In_Usuario>(controller + "/User", user))
+            {
+
+                var result = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+
+                    var errorCode = JsonConvert.DeserializeObject<ErrorModel>(result);
+
+                    if (errorCode.Message == ErrorCodes.USUARIO_EXISTENTE)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+            return false;
+        }
+
     }
 }

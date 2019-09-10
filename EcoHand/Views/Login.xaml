@@ -8,7 +8,7 @@
         Title="Login" Height="450" Width="800">
     <Grid>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="Usuario" HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True"/>
+        <TextBox Name="Usuario" Text="Ingresar su nombre de usuario" HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True" GotFocus="Usuario_GotFocus" />
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,150,0,0" VerticalAlignment="Top"/>
         <Button Content="Ingresar" HorizontalAlignment="Left" Margin="231,282,0,0" VerticalAlignment="Top" Width="106" Click="Ingresar"/>
         <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="124" Click="CrearCuenta"/>

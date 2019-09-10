@@ -37,21 +37,37 @@ namespace EcoHand.Views
 
         private async void Ingresar(object sender, RoutedEventArgs e)
         {
-            DTO_In_Usuario usuario = new DTO_In_Usuario( Usuario.Text, Contraseña.Password);
-
-            bool result = await UsuarioHandler.Ingresar(usuario);
-
-            if (result)
-            {
-                ShellView shell = new ShellView();
-                shell.Show();
-                this.Close();
-            }
+            if (Usuario.Text == String.Empty || Contraseña.Password == String.Empty)
+                MsjErrorLabel.Visibility = Visibility.Visible;
             else
             {
-                MsjErrorLabel.Visibility = Visibility.Visible;
+
+                DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario.Text, Contraseña.Password);
+
+                bool result = await UsuarioHandler.Ingresar(usuario);
+
+                if (result)
+                {
+                    MsjErrorLabel.Visibility = Visibility.Hidden;
+                    ShellView shell = new ShellView();
+                    shell.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MsjErrorLabel.Visibility = Visibility.Visible;
+                }
             }
 
+
+        }
+
+        private void Usuario_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (Usuario.Text == "Ingresar su nombre de usuario")
+            {
+                Usuario.Text = "";
+            }
         }
     }
 }

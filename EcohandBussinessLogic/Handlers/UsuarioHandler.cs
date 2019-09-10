@@ -16,5 +16,13 @@ namespace EcohandBussinessLogic.Handlers
             return await UsuarioController.PostAsync(usuario);
 
         }
+
+        public static async Task<bool> Registrar(DTO_In_Usuario usuario)
+        {
+
+            return await UsuarioController.RegitroAsync(usuario);
+
+        }
+
     }
 }

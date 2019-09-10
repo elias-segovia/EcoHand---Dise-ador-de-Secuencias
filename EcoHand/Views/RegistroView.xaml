@@ -8,12 +8,15 @@
         Title="RegistroView" Height="450" Width="800">
     <Grid>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar nombre de usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <TextBox Name="Usuario" HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar un nombre de usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" GotFocus="TextBox_GotFocus" />
         <Label Content="Correo:" HorizontalAlignment="Left" Margin="231,150,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar correo electrónico" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <TextBox Name="Correo" HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar un correo electrónico" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" GotFocus="Correo_GotFocus"/>
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,200,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,200,0,0" TextWrapping="Wrap" Text="Ingresar contraseña" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
-        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="211,282,0,0" VerticalAlignment="Top" Width="126" Click="CrearCuenta"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147" Click="Cancelar"/>
+        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="211,324,0,0" VerticalAlignment="Top" Width="126" Click="CrearCuenta"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="383,324,0,0" VerticalAlignment="Top" Width="147" Click="Cancelar"/>
+        <PasswordBox Name="Contraseña" HorizontalAlignment="Left" Margin="303,200,0,0" VerticalAlignment="Top" Width="184"/>
+        <Label Name="ErrorLabel" Content="Todos los campos son requeridos" HorizontalAlignment="Left" Margin="272,243,0,0" VerticalAlignment="Top" Width="232" Foreground="Red" Visibility="Hidden"/>
+        <Label Name="ErrorMailLabel" Content="Correo invalido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,176,0,0" Width="256" Foreground="Red" Visibility="Hidden"/>
+        <Label Name="ErrorUsuarioExistente" Content="Ese usuario ya existe, intente con otro." HorizontalAlignment="Left" Margin="272,279,0,0" VerticalAlignment="Top" Width="258" Foreground="Red" Visibility="Hidden"/>
     </Grid>
 </Window>

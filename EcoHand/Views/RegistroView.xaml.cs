@@ -1,4 +1,6 @@
-﻿using System;
+﻿using APIController.Model.DTO_IN;
+using EcohandBussinessLogic.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,11 +33,65 @@ namespace EcoHand.Views
             this.Close();
         }
 
-        private void CrearCuenta(object sender, RoutedEventArgs e)
+        private async void CrearCuenta(object sender, RoutedEventArgs e)
         {
-            ShellView shell = new ShellView();
-            shell.Show();
-            this.Close();
+            if (Usuario.Text == String.Empty || Correo.Text == String.Empty || Contraseña.Password == String.Empty)
+            {
+                ErrorLabel.Visibility = Visibility.Visible;
+            }
+            else
+            if (!IsValidEmail(Correo.Text))
+                ErrorMailLabel.Visibility = Visibility.Visible;
+            else
+            {
+                ErrorMailLabel.Visibility = Visibility.Hidden;
+                ErrorLabel.Visibility = Visibility.Hidden;
+                ErrorUsuarioExistente.Visibility = Visibility.Hidden;
+
+                DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario.Text, Contraseña.Password, Correo.Text);
+
+                bool result = await UsuarioHandler.Registrar(usuario);
+
+                if (result)
+                {
+                    ShellView shell = new ShellView();
+                    shell.Show();
+                    this.Close();
+                }
+                else
+                {
+                    ErrorUsuarioExistente.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (Usuario.Text == "Ingresar un nombre de usuario")
+            {
+                Usuario.Text = "";
+            }
+        }
+
+        private void Correo_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (Correo.Text == "Ingresar un correo electrónico")
+            {
+                Correo.Text = "";
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
