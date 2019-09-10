@@ -41,7 +41,11 @@
   <ItemGroup>
     <Compile Include="ApiHelper.cs" />
     <Compile Include="GestosController.cs" />
+    <Compile Include="Model\DTO_IN\DTO_In_Usuario.cs" />
+    <Compile Include="Model\ErrorCodes.cs" />
+    <Compile Include="Model\ErrorModel.cs" />
     <Compile Include="Model\GestoModel.cs" />
+    <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Responses\GetGestoByIdResponse.cs" />
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />
     <Compile Include="Responses\GetGestosResponse.cs" />

@@ -8,11 +8,12 @@
         Title="Login" Height="450" Width="800">
     <Grid>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar Nombre de Usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
+        <TextBox Name="Usuario" HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True"/>
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,150,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar Contraseña" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray"/>
         <Button Content="Ingresar" HorizontalAlignment="Left" Margin="231,282,0,0" VerticalAlignment="Top" Width="106" Click="Ingresar"/>
-        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="147" Click="CrearCuenta"/>
+        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="383,282,0,0" VerticalAlignment="Top" Width="124" Click="CrearCuenta"/>
+        <Label Name="MsjErrorLabel" Content="Usuario o Contraseña incorrecta, corrijalo y vuelva a intentarlo" HorizontalAlignment="Left" Margin="211,212,0,0" VerticalAlignment="Top" Width="347" Foreground="Red" Height="28" Visibility="Hidden"/>
+        <PasswordBox Name="Contraseña" HorizontalAlignment="Left" Margin="303,151,0,0" VerticalAlignment="Top" Width="184" AutomationProperties.IsRequiredForForm="True"/>
 
     </Grid>
 </Window>

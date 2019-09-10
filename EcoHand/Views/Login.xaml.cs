@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using APIController;
+using APIController.Model.DTO_IN;
+using EcoHand.Handlers;
+using EcohandBussinessLogic.Handlers;
 
 namespace EcoHand.Views
 {
@@ -31,13 +35,23 @@ namespace EcoHand.Views
             this.Close();
         }
 
-        private void Ingresar(object sender, RoutedEventArgs e)
+        private async void Ingresar(object sender, RoutedEventArgs e)
         {
+            DTO_In_Usuario usuario = new DTO_In_Usuario( Usuario.Text, Contraseña.Password);
 
+            bool result = await UsuarioHandler.Ingresar(usuario);
 
-            ShellView shell = new ShellView();
-            shell.Show();
-            this.Close();
+            if (result)
+            {
+                ShellView shell = new ShellView();
+                shell.Show();
+                this.Close();
+            }
+            else
+            {
+                MsjErrorLabel.Visibility = Visibility.Visible;
+            }
+
         }
     }
 }

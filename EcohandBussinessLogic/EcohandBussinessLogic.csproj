@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Handlers\GestoHandler.cs" />
     <Compile Include="Handlers\SecuenciaHandler.cs" />
+    <Compile Include="Handlers\UsuarioHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APIController\APIController.csproj">

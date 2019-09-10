@@ -136,6 +136,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
     <Compile Include="ViewModels\EditorSecuenciasViewModel.cs" />
     <Compile Include="ViewModels\HandDetailsViewModel.cs" />
