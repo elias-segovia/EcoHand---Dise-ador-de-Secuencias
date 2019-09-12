@@ -49,8 +49,10 @@ namespace EcoHand.Views
                 if (result)
                 {
                     MsjErrorLabel.Visibility = Visibility.Hidden;
-                    ShellView shell = new ShellView();
-                    shell.Show();
+                    //ShellView shell = new ShellView();
+                    //shell.Show();
+                    SecuenciaWindow secuencia = new SecuenciaWindow();
+                    secuencia.Show();
                     this.Close();
                 }
                 else
