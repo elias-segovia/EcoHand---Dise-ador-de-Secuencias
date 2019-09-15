@@ -146,6 +146,9 @@
     <Compile Include="DesignerCanvas.Commands.cs" />
     <Compile Include="DesignerCanvas.cs" />
     <Compile Include="DesignerItem.cs" />
+    <Compile Include="EventModels\CrearCuentaEvent.cs" />
+    <Compile Include="EventModels\LogOnEvent.cs" />
+    <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="IGroupable.cs" />
     <Compile Include="ISelectable.cs" />
     <Compile Include="Models\ErrorModel.cs" />
@@ -160,6 +163,7 @@
     <Compile Include="ViewModels\EditorDeGestosViewModel.cs" />
     <Compile Include="ViewModels\InicioViewModel.cs" />
     <Compile Include="ViewModels\ListadoGestosViewModel.cs" />
+    <Compile Include="ViewModels\RegistroViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\EditorDeGestosView.xaml.cs">
       <DependentUpon>EditorDeGestosView.xaml</DependentUpon>
@@ -175,9 +179,6 @@
     </Compile>
     <Compile Include="Views\ListadoGestosView.xaml.cs">
       <DependentUpon>ListadoGestosView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegistroView.xaml.cs">
       <DependentUpon>RegistroView.xaml</DependentUpon>
@@ -261,10 +262,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ListadoGestosView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -400,6 +397,9 @@
     <Resource Include="Resources\Images\Ungroup.png" />
     <Resource Include="Resources\Images\walk.png" />
     <Resource Include="Resources\Images\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\img\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

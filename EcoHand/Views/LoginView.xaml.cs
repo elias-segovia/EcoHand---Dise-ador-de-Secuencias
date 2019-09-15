@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace EcoHand.Views
 {
     /// <summary>
-    /// Lógica de interacción para Inicio.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class InicioView : UserControl
+    public partial class LoginView : Window
     {
-        public InicioView()
+        public LoginView()
         {
             InitializeComponent();
         }
-
-        
     }
 }

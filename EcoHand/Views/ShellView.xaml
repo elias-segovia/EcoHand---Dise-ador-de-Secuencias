@@ -29,7 +29,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
    
-            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Visibility="{Binding MenuEsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadListaGesto]" >
                     Gestos
                 </ListViewItem>

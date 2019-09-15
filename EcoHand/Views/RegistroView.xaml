@@ -1,22 +1,46 @@
-﻿<Window x:Class="EcoHand.Views.RegistroView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EcoHand.Views"
-        mc:Ignorable="d"
-        Title="RegistroView" Height="450" Width="800">
+﻿<UserControl x:Class="EcoHand.Views.RegistroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EcoHand.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
     <Grid>
-        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="231,100,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="Usuario" HorizontalAlignment="Left" Height="23" Margin="303,103,0,0" TextWrapping="Wrap" Text="Ingresar un nombre de usuario" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" GotFocus="TextBox_GotFocus" />
-        <Label Content="Correo:" HorizontalAlignment="Left" Margin="231,150,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="Correo" HorizontalAlignment="Left" Height="23" Margin="303,151,0,0" TextWrapping="Wrap" Text="Ingresar un correo electrónico" VerticalAlignment="Top" Width="184" FontStyle="Italic" Foreground="Gray" GotFocus="Correo_GotFocus"/>
-        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="211,200,0,0" VerticalAlignment="Top"/>
-        <Button Content="Crear Cuenta" HorizontalAlignment="Left" Margin="211,324,0,0" VerticalAlignment="Top" Width="126" Click="CrearCuenta"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="383,324,0,0" VerticalAlignment="Top" Width="147" Click="Cancelar"/>
-        <PasswordBox Name="Contraseña" HorizontalAlignment="Left" Margin="303,200,0,0" VerticalAlignment="Top" Width="184"/>
-        <Label Name="ErrorLabel" Content="Todos los campos son requeridos" HorizontalAlignment="Left" Margin="272,243,0,0" VerticalAlignment="Top" Width="232" Foreground="Red" Visibility="Hidden"/>
-        <Label Name="ErrorMailLabel" Content="Correo invalido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,176,0,0" Width="256" Foreground="Red" Visibility="Hidden"/>
-        <Label Name="ErrorUsuarioExistente" Content="Ese usuario ya existe, intente con otro." HorizontalAlignment="Left" Margin="272,279,0,0" VerticalAlignment="Top" Width="258" Foreground="Red" Visibility="Hidden"/>
+        <Grid.RowDefinitions>
+           
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MaxHeight="200"  Source="/Recursos/img/Logo.png" />
+
+        <Label Grid.Column="1" Grid.Row="2" Margin="0 10 0 5" Content="Usuario:"  />
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="0 10 0 5" Name="Usuario"  TextWrapping="Wrap" Text="Ingresar un nombre de usuario"   FontStyle="Italic" Foreground="Gray" />
+        <Label Grid.Column="1" Grid.Row="3" Margin="0 5 0 5" Content="Correo:"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="0 5 0 5" Name="Correo" TextWrapping="Wrap" Text="Ingresar un correo electrónico" FontStyle="Italic" Foreground="Gray"/>
+        <Label Grid.Column="1" Grid.Row="4" Margin="0 5 0 5" Content="Contraseña:" />
+        <Button Name="CrearUsuario" Grid.Column="1" Grid.Row="5" Margin="15 20 0 5"  HorizontalAlignment="Stretch"  MaxWidth="120" Content="Crear Cuenta"/>
+        <Button Grid.Column="2" Grid.Row="5" Margin="0 20 0 5"  HorizontalAlignment="Stretch" MaxWidth="120"  Content="Cancelar"/>
+        <PasswordBox Grid.Column="2" Grid.Row="4"  Margin="0 5 0 5"  Name="Contraseña"/>
+        <Label Name="ErrorUsuario" Grid.Row="2" Grid.Column="3" Foreground="Red" />
+        <Label Name="ErrorMailLabel" Grid.Row="3" Grid.Column="3" Foreground="Red"/>
+        <Label Name="ErrorContraseña" Grid.Row="4" Grid.Column="3" Foreground="Red" />
     </Grid>
-</Window>
+</UserControl>
