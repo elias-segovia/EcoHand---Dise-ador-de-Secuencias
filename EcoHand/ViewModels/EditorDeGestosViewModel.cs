@@ -25,7 +25,7 @@ namespace EcoHand.ViewModels
         //partes de la mano
         Model3D mano_sin_dedos;
         Model3D pulgar_proximal;
-        Model3D pulgar_distal;
+        //Model3D pulgar_distal;
         Model3D indice_proximal;
         Model3D indice_distal;
         Model3D mayor_proximal;
@@ -43,7 +43,7 @@ namespace EcoHand.ViewModels
             get { return m_pulgar_proximal_angle; }
             set
             {
-                Move_proximal(value, "pulgar", new Vector3D(1, 0.4, 0), new Point3D(-0.2, 0, 1.5));
+                Move_proximal(value, "pulgar", new Vector3D(1, -0.4, 0), new Point3D(-0.2, 0, 1.5));
                 Move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
                 m_pulgar_proximal_angle = value;
      
@@ -181,7 +181,7 @@ namespace EcoHand.ViewModels
         {
             hand.Children.Add(mano_sin_dedos);
             hand.Children.Add(pulgar_proximal);
-            hand.Children.Add(pulgar_distal);
+            //hand.Children.Add(pulgar_distal);
             hand.Children.Add(indice_proximal);
             hand.Children.Add(indice_distal);
             hand.Children.Add(mayor_proximal);
@@ -197,7 +197,7 @@ namespace EcoHand.ViewModels
             //load the files
             mano_sin_dedos = importer.Load("../../Recursos/Protesis/mano_sin_dedos.3ds");
             pulgar_proximal = importer.Load("../../Recursos/Protesis/pulgar_proximal.3ds");
-            pulgar_distal = importer.Load("../../Recursos/Protesis/pulgar_distal.3ds");
+            //pulgar_distal = importer.Load("../../Recursos/Protesis/pulgar_distal.3ds");
             indice_proximal = importer.Load("../../Recursos/Protesis/indice_proximal.3ds");
             indice_distal = importer.Load("../../Recursos/Protesis/indice_distal.3ds");
             mayor_proximal = importer.Load("../../Recursos/Protesis/mayor_proximal.3ds");
@@ -246,17 +246,17 @@ namespace EcoHand.ViewModels
             //boxcontrol.DataContext = this;
 
             //aplicar transformaciones al modelo 3D
-            //var transforms = new Transform3DGroup();
+            // var transforms = new Transform3DGroup();
             //// resize model 3D
             ////ScaleTransform3D myScale = new ScaleTransform3D(3,2.5,2.5);
             ////rotate whole skeleton to have it upright
-            //RotateTransform3D myRotateTransform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), 90));
+            // RotateTransform3D myRotateTransform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 1, 0), 90));
             //myRotateTransform.CenterX = 0;
             //myRotateTransform.CenterY = 0;
             //myRotateTransform.CenterZ = 0;
-            //transforms.Children.Add(myRotateTransform);
+            //  transforms.Children.Add(myRotateTransform);
             ////transforms.Children.Add(myScale);
-            //hand.Transform = transforms;
+            //  hand.Transform = transforms;
 
             //set datacontext for the sliders and helper
             //overall_grid.DataContext = this;
@@ -359,7 +359,7 @@ namespace EcoHand.ViewModels
             switch (dedo)
             {
                 case "pulgar":
-                    pulgar_distal.Transform = Group_3D;
+                    //pulgar_distal.Transform = Group_3D;
                     break;
                 case "indice":
                     indice_distal.Transform = Group_3D;
