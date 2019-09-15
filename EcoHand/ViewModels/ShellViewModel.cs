@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ShellViewModel : Conductor<object> , IHandle<LogOnEvent>, IHandle<CrearCuentaEvent>
+    public class ShellViewModel : Conductor<object>, IHandle<LogOnEvent>, IHandle<CrearCuentaEvent>
     {
 
 
@@ -22,7 +22,7 @@ namespace EcoHand.ViewModels
 
         private SimpleContainer _container;
 
-        public ShellViewModel(SimpleContainer container, IEventAggregator events )
+        public ShellViewModel(SimpleContainer container, IEventAggregator events)
         {
             _events = events;
             events.Subscribe(this);
@@ -55,7 +55,7 @@ namespace EcoHand.ViewModels
         }
 
         public BindableCollection<GestoModel> Gestos { get; set; }
-        
+
         private async Task<BindableCollection<GestoModel>> CargarListaDeGestosAsync()
         {
             var resp = await GestoHandler.ObtenerListaDeGestosAsync();
@@ -99,7 +99,21 @@ namespace EcoHand.ViewModels
 
         public void Handle(CrearCuentaEvent message)
         {
-            ActivateItem(_container.GetInstance<RegistroViewModel>());
+            //NuevoUsuarioCancelar volver a pagina de login
+
+            //podria hacer uno generico con strings de msjs
+
+            // NuevoUsuarioOk se creo el usuario
+            //"" Ir a pagina de registro
+
+            if (message.Msg.Equals("NuevoUsuarioOk") || message.Msg.Equals("NuevoUsuarioCancelar"))
+            {
+                ActivateItem(_container.GetInstance<InicioViewModel>());
+            }
+            if (String.IsNullOrEmpty(message.Msg))
+            {
+                ActivateItem(_container.GetInstance<RegistroViewModel>());
+            }
         }
     }
 }

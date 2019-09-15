@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace EcoHand.EventModels
 {
+
     public class CrearCuentaEvent
     {
+        public string Msg { get; set; }
+
+        public CrearCuentaEvent(string msg)
+        {
+            Msg = msg;
+        }
+
     }
 }

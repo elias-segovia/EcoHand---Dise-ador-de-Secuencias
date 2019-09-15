@@ -5,10 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EcoHand.Views"
              mc:Ignorable="d" 
+             
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="20"
+            TextOptions.TextFormattingMode="Ideal"
+            TextOptions.TextRenderingMode="Auto"
+            Background="{DynamicResource MaterialDesignPaper}"
+            FontFamily="{DynamicResource MaterialDesignFont}"  
+             
              d:DesignHeight="600" d:DesignWidth="900">
     <Grid>
         <Grid.RowDefinitions>
-           
+
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -17,30 +26,30 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            
+
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Image Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MaxHeight="200"  Source="/Recursos/img/Logo.png" />
 
         <Label Grid.Column="1" Grid.Row="2" Margin="0 10 0 5" Content="Usuario:"  />
-        <TextBox Grid.Column="2" Grid.Row="2" Margin="0 10 0 5" Name="Usuario"  TextWrapping="Wrap" Text="Ingresar un nombre de usuario"   FontStyle="Italic" Foreground="Gray" />
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="0 10 0 5" Name="Usuario"  TextWrapping="Wrap"  MinWidth="200" FontStyle="Italic" Foreground="Gray" />
         <Label Grid.Column="1" Grid.Row="3" Margin="0 5 0 5" Content="Correo:"/>
-        <TextBox Grid.Column="2" Grid.Row="3" Margin="0 5 0 5" Name="Correo" TextWrapping="Wrap" Text="Ingresar un correo electrónico" FontStyle="Italic" Foreground="Gray"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="0 5 0 5" Name="Email" TextWrapping="Wrap" FontStyle="Italic" Foreground="Gray"/>
         <Label Grid.Column="1" Grid.Row="4" Margin="0 5 0 5" Content="Contraseña:" />
-        <Button Name="CrearUsuario" Grid.Column="1" Grid.Row="5" Margin="15 20 0 5"  HorizontalAlignment="Stretch"  MaxWidth="120" Content="Crear Cuenta"/>
-        <Button Grid.Column="2" Grid.Row="5" Margin="0 20 0 5"  HorizontalAlignment="Stretch" MaxWidth="120"  Content="Cancelar"/>
+        <Button Foreground="White" Name="CrearUsuario" Grid.Column="1" Grid.Row="5" Margin="0 20 10 5"  HorizontalAlignment="Stretch"  MaxWidth="120" Content="Crear Cuenta"/>
+        <Button Foreground="White" Name="Cancelar" Grid.Column="2" Grid.Row="5" Margin="0 20 0 5"  HorizontalAlignment="Stretch" MaxWidth="120"  Content="Cancelar"/>
         <PasswordBox Grid.Column="2" Grid.Row="4"  Margin="0 5 0 5"  Name="Contraseña"/>
-        <Label Name="ErrorUsuario" Grid.Row="2" Grid.Column="3" Foreground="Red" />
-        <Label Name="ErrorMailLabel" Grid.Row="3" Grid.Column="3" Foreground="Red"/>
-        <Label Name="ErrorContraseña" Grid.Row="4" Grid.Column="3" Foreground="Red" />
+        <Label Name="ErrorUsuario" Grid.Row="2"   Grid.Column="3" VerticalContentAlignment="Bottom" FontSize="12" Foreground="Red" />
+        <Label Name="ErrorEmail" Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Bottom" FontSize="12" Foreground="Red"/>
+        <Label Name="ErrorContraseña" Grid.Row="4" VerticalContentAlignment="Bottom" Grid.Column="3" FontSize="12" Foreground="Red" />
     </Grid>
 </UserControl>

@@ -82,7 +82,7 @@ namespace EcoHand.ViewModels
 
         public void CrearCuenta()
         {
-            _events.PublishOnUIThread(new CrearCuentaEvent());
+            _events.PublishOnUIThread(new CrearCuentaEvent(""));
         }
 
 
