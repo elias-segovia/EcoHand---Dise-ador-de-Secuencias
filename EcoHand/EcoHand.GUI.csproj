@@ -313,16 +313,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Recursos\Hand\angular.3ds" />
-    <None Include="Recursos\Hand\indice.3ds" />
-    <None Include="Recursos\Hand\mano_angular.3ds" />
-    <None Include="Recursos\Hand\mano_indice.3ds" />
-    <None Include="Recursos\Hand\mano_mayor.3ds" />
-    <None Include="Recursos\Hand\mano_meñique.3ds" />
-    <None Include="Recursos\Hand\mano_pulgar.3ds" />
-    <None Include="Recursos\Hand\mayor.3ds" />
-    <None Include="Recursos\Hand\meñique.3ds" />
-    <None Include="Recursos\Hand\pulgar.3ds" />
     <None Include="Recursos\Protesis\anular_distal.3ds" />
     <None Include="Recursos\Protesis\anular_proximal.3ds" />
     <None Include="Recursos\Protesis\indice_distal.3ds" />
@@ -332,8 +322,18 @@
     <None Include="Recursos\Protesis\mayor_proximal.3ds" />
     <None Include="Recursos\Protesis\meñique_distal.3ds" />
     <None Include="Recursos\Protesis\meñique_proximal.3ds" />
-    <None Include="Recursos\Protesis\pulgar_distal.3ds" />
     <None Include="Recursos\Protesis\pulgar_proximal.3ds" />
+    <None Include="Recursos\Mano_Humana\anular_distal.3ds" />
+    <None Include="Recursos\Mano_Humana\anular_proximal.3ds" />
+    <None Include="Recursos\Mano_Humana\indice_distal.3ds" />
+    <None Include="Recursos\Mano_Humana\indice_proximal.3ds" />
+    <None Include="Recursos\Mano_Humana\mano_sin_dedos.3ds" />
+    <None Include="Recursos\Mano_Humana\mayor_distal.3ds" />
+    <None Include="Recursos\Mano_Humana\mayor_proximal.3ds" />
+    <None Include="Recursos\Mano_Humana\meñique_distal.3ds" />
+    <None Include="Recursos\Mano_Humana\meñique_proximal.3ds" />
+    <None Include="Recursos\Mano_Humana\pulgar_distal.3ds" />
+    <None Include="Recursos\Mano_Humana\pulgar_proximal.3ds" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
