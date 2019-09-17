@@ -85,6 +85,11 @@ namespace EcoHand.ViewModels
 
         }
 
+        public void LoadEditorSecuencias()
+        {
+            ActivateItem(_container.GetInstance<EditorSecuenciasViewModel>());
+        }
+
         public void LoadEditor()
         {
             ActivateItem(new EditorDeGestosViewModel());

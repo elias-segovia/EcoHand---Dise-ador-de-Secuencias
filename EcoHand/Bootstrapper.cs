@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using EcoHand.Helpers;
+using EcoHand.Models;
 using EcoHand.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,8 @@ namespace EcoHand
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<LoggedInUser, LoggedInUser>();
 
 
             GetType().Assembly.GetTypes()

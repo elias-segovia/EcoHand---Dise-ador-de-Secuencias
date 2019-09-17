@@ -33,11 +33,11 @@
                 <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadListaGesto]" >
                     Gestos
                 </ListViewItem>
-                <ListViewItem x:Name="LoadListaSecuencias">
+            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditorSecuencias]" x:Name="LoadListaSecuencias">
                     Secuencias
                 </ListViewItem>
                 <ListViewItem x:Name="LoadConfiguracion">
-                    Configuracion
+                    Cuenta
                 </ListViewItem>
             </StackPanel>
    

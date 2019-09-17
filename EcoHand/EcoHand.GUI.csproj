@@ -147,12 +147,16 @@
     <Compile Include="DesignerCanvas.cs" />
     <Compile Include="DesignerItem.cs" />
     <Compile Include="EventModels\CrearCuentaEvent.cs" />
+    <Compile Include="EventModels\GestoSeleccionadoEvent.cs" />
     <Compile Include="EventModels\LogOnEvent.cs" />
+    <Compile Include="EventModels\LogOutEvent.cs" />
+    <Compile Include="EventModels\SecuenciaSeleccionadaEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="IGroupable.cs" />
     <Compile Include="ISelectable.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
+    <Compile Include="Models\LoggedInUser.cs" />
     <Compile Include="PathFinder.cs" />
     <Compile Include="RubberbandAdorner.cs" />
     <Compile Include="SelectionService.cs" />
@@ -168,8 +172,8 @@
     <Compile Include="Views\EditorDeGestosView.xaml.cs">
       <DependentUpon>EditorDeGestosView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditorSecuencias.xaml.cs">
-      <DependentUpon>EditorSecuencias.xaml</DependentUpon>
+    <Compile Include="Views\EditorSecuenciasView.xaml.cs">
+      <DependentUpon>EditorSecuenciasView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HandDetailsView.xaml.cs">
       <DependentUpon>HandDetailsView.xaml</DependentUpon>
@@ -182,9 +186,6 @@
     </Compile>
     <Compile Include="Views\RegistroView.xaml.cs">
       <DependentUpon>RegistroView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SecuenciaWindow.xaml.cs">
-      <DependentUpon>SecuenciaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -249,7 +250,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditorSecuencias.xaml">
+    <Page Include="Views\EditorSecuenciasView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,7 +274,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SecuenciaWindow.xaml">
+    <Page Include="Views\EditorSecuenciasView22.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

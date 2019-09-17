@@ -1,6 +1,7 @@
 ﻿using APIController.Model.DTO_IN;
 using Caliburn.Micro;
 using EcoHand.EventModels;
+using EcoHand.Models;
 using EcohandBussinessLogic.Handlers;
 using System;
 using System.Collections.Generic;
@@ -100,6 +101,8 @@ namespace EcoHand.ViewModels
                 {
 
                     Error = "";
+
+                    LoggedInUser user = new LoggedInUser() { UserName = "pep", Id = 1 };
 
                     _events.PublishOnUIThread(new LogOnEvent());
                     //ir a  home
