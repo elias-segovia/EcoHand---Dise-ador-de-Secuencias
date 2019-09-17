@@ -56,7 +56,7 @@
         </HelixToolkit:HelixViewport3D>
         <Button Content="Grabar" HorizontalAlignment="Left" Margin="121,335,0,0" VerticalAlignment="Top" Width="75" Click="GuardarGesto"/>
         <Button Content="Salir" HorizontalAlignment="Left" Margin="933,335,0,0" VerticalAlignment="Top" Width="75" Click="Salir"/>
-        <Button Content="Ver Gesto" HorizontalAlignment="Left" Margin="121,398,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-4.22,-0.55" Click="CargarGesto"/>
+        <Button Content="Ver Gesto" HorizontalAlignment="Left" Margin="121,398,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-4.22,-0.55" />
 
         <!--</Grid>-->
     </Grid>

@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using System.Net.Http;
-using Newtonsoft.Json;
-using EcoHand.Handlers;
-using APIController.Model;
+//using Newtonsoft.Json;
+//using EcoHand.Handlers;
+//using APIController.Model;
 
 namespace EcoHand
 {
@@ -412,21 +412,21 @@ namespace EcoHand
             //    System.IO.File.WriteAllLines(filename, lines);
             //}
 
-            GestoModel gesto = new GestoModel()
-            {
-                PosPulgar = pulgar_proximal_angle,
-                PosMeñique = meñique_proximal_angle,
-                PosMayor = mayor_proximal_angle,
-                Posindice = indice_proximal_angle,
-                PosAnular = anular_proximal_angle,
-                Descripcion = "Prueba Post",
-                FechaCreacion = DateTime.Today,
-                Nombre = "Pruebaa Post",
-                UsuarioID = 1
-            };
+            //GestoModel gesto = new GestoModel()
+            //{
+            //    PosPulgar = pulgar_proximal_angle,
+            //    PosMeñique = meñique_proximal_angle,
+            //    PosMayor = mayor_proximal_angle,
+            //    Posindice = indice_proximal_angle,
+            //    PosAnular = anular_proximal_angle,
+            //    Descripcion = "Prueba Post",
+            //    FechaCreacion = DateTime.Today,
+            //    Nombre = "Pruebaa Post",
+            //    UsuarioID = 1
+            //};
 
 
-            GestoHandler.GuardarGesto(gesto);
+            //GestoHandler.GuardarGesto(gesto);
 
 
         }
@@ -454,21 +454,21 @@ namespace EcoHand
             }
         }
 
-        private async void CargarGesto(object sender, RoutedEventArgs e)
-        {
+        //private async void CargarGesto(object sender, RoutedEventArgs e)
+        //{
          
-            GestoModel gesto =  await GestoHandler.ObtenerGestoPorId(2);
-            ActualizarGesto(gesto);
-        }
+        //    GestoModel gesto =  await GestoHandler.ObtenerGestoPorId(2);
+        //    ActualizarGesto(gesto);
+        //}
 
-        private void ActualizarGesto(GestoModel gesto)
-        {
-            this.pulgar_proximal_angle = gesto.PosPulgar;
-            this.indice_proximal_angle = gesto.Posindice;
-            this.mayor_proximal_angle = gesto.PosMayor;
-            this.anular_proximal_angle = gesto.PosAnular;
-            this.meñique_proximal_angle = gesto.PosMeñique;
+        //private void ActualizarGesto(GestoModel gesto)
+        //{
+        //    this.pulgar_proximal_angle = gesto.PosPulgar;
+        //    this.indice_proximal_angle = gesto.Posindice;
+        //    this.mayor_proximal_angle = gesto.PosMayor;
+        //    this.anular_proximal_angle = gesto.PosAnular;
+        //    this.meñique_proximal_angle = gesto.PosMeñique;
 
-        }
+        //}
     }
 }
