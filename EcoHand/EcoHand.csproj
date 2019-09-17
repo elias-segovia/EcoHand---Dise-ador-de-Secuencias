@@ -142,7 +142,6 @@
     <None Include="Protesis\mayor_proximal.3ds" />
     <None Include="Protesis\meñique_distal.3ds" />
     <None Include="Protesis\meñique_proximal.3ds" />
-    <None Include="Protesis\pulgar_distal.3ds" />
     <None Include="Protesis\pulgar_proximal.3ds" />
   </ItemGroup>
   <ItemGroup>
@@ -151,5 +150,6 @@
   <ItemGroup>
     <Resource Include="img\advertencia.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -85,8 +85,9 @@ namespace EcoHand
             get { return m_pulgar_proximal_angle; }
             set
             {
-                move_proximal(value, "pulgar", new Vector3D(1, 0.4, 0), new Point3D(-0.2, 0, 1.5));
-                move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
+                //move_proximal(value, "pulgar", new Vector3D(1, 0.4, 0), new Point3D(-0.2, 0, 1.5));
+                move_proximal(value, "pulgar", new Vector3D(-1, 0, 0), new Point3D(13 , 71, 4));
+                //move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
                 m_pulgar_proximal_angle = value;
             }
         }
@@ -109,8 +110,10 @@ namespace EcoHand
             get { return m_indice_proximal_angle; }
             set
             {
-                move_proximal(value, "indice", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
-                move_distal(value, "indice", new Point3D(0.5, 0, 2.5), new Vector3D(0, 1, 0));
+                //move_proximal(value, "indice", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
+                //move_distal(value, "indice", new Point3D(0.5, 0, 2.5), new Vector3D(0, 1, 0));
+                move_proximal(value, "indice", new Vector3D(0, 1, 0), new Point3D(84, 74, 9));
+                move_distal(value, "indice", new Point3D(123.5, 74, 8.5), new Vector3D(0, 1, 0));
                 m_indice_proximal_angle = value;
             }
         }
@@ -133,8 +136,10 @@ namespace EcoHand
             get { return m_mayor_proximal_angle; }
             set
             {
-                move_proximal(value, "mayor", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
-                move_distal(value, "mayor", new Point3D(0.6, -0.13, 2.545), new Vector3D(0, 1, 0));
+                //move_proximal(value, "mayor", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
+                //move_distal(value, "mayor", new Point3D(0.6, -0.13, 2.545), new Vector3D(0, 1, 0));
+                move_proximal(value, "mayor", new Vector3D(0, 1, 0), new Point3D(84, 54, 9 ));
+                move_distal(value, "mayor", new Point3D(122.5, 54, 8), new Vector3D(0, 1, 0));
                 m_mayor_proximal_angle = value;
             }
         }
@@ -157,8 +162,10 @@ namespace EcoHand
             get { return m_anular_proximal_angle; }
             set
             {
-                move_proximal(value, "anular", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
-                move_distal(value, "anular", new Point3D(0.66, -0.388, 2.47), new Vector3D(0, 1, 0));
+                //move_proximal(value, "anular", new Vector3D(0, 1, 0), new Point3D(0.5, 0, 2.2));
+                //move_distal(value, "anular", new Point3D(0.66, -0.388, 2.47), new Vector3D(0, 1, 0));
+                move_proximal(value, "anular", new Vector3D(0, 1, 0), new Point3D(84, 34, 9));
+                move_distal(value, "anular", new Point3D(123.5, 34, 8), new Vector3D(0, 1, 0));
                 m_anular_proximal_angle = value;
             }
         }
@@ -181,8 +188,10 @@ namespace EcoHand
             get { return m_meñique_proximal_angle; }
             set
             {
-                move_proximal(value, "meñique", new Vector3D(0, 1, 0), new Point3D(0.66, -0.54, 2.08));
-                move_distal(value, "meñique", new Point3D(0.674, -0.61, 2.27), new Vector3D(0, 1, 0));
+                //move_proximal(value, "meñique", new Vector3D(0, 1, 0), new Point3D(0.66, -0.54, 2.08));
+                //move_distal(value, "meñique", new Point3D(0.674, -0.61, 2.27), new Vector3D(0, 1, 0));
+                move_proximal(value, "meñique", new Vector3D(0, 1, 0), new Point3D(84, 14, 9));
+                move_distal(value, "meñique", new Point3D(113.5, 14, 9), new Vector3D(0, 1, 0));
                 m_meñique_proximal_angle = value;
             }
         }
@@ -233,9 +242,9 @@ namespace EcoHand
             mybox.Height = 0.01;
             mybox.Width = 0.3;
             mybox.Length = 0.3;
-            //boxX = 0.01;
-            //boxY = 0.3;
-            //boxZ = 0.3;
+            boxX = 13;
+            boxY = 71;
+            boxZ = 4d;
             m_helix_viewport.Children.Add(mybox);
             //boxcontrol.DataContext = this;
 
@@ -261,7 +270,7 @@ namespace EcoHand
         {
             hand.Children.Add(mano_sin_dedos);
             hand.Children.Add(pulgar_proximal);
-            hand.Children.Add(pulgar_distal);
+            //hand.Children.Add(pulgar_distal);
             hand.Children.Add(indice_proximal);
             hand.Children.Add(indice_distal);
             hand.Children.Add(mayor_proximal);
@@ -275,17 +284,17 @@ namespace EcoHand
         private void CargarRecursos(ModelImporter importer)
         {
             //load the files
-            mano_sin_dedos = importer.Load("../../Recursos/Protesis/mano_sin_dedos.3ds");
-            pulgar_proximal = importer.Load("../../Recursos/Protesis/pulgar_proximal.3ds");
-            pulgar_distal = importer.Load("../../Recursos/Protesis/pulgar_distal.3ds");
-            indice_proximal = importer.Load("../../Recursos/Protesis/indice_proximal.3ds");
-            indice_distal = importer.Load("../../Recursos/Protesis/indice_distal.3ds");
-            mayor_proximal = importer.Load("../../Recursos/Protesis/mayor_proximal.3ds");
-            mayor_distal = importer.Load("../../Recursos/Protesis/mayor_distal.3ds");
-            anular_proximal = importer.Load("../../Recursos/Protesis/anular_proximal.3ds");
-            anular_distal = importer.Load("../../Recursos/Protesis/anular_distal.3ds");
-            meñique_proximal = importer.Load("../../Recursos/Protesis/meñique_proximal.3ds");
-            meñique_distal = importer.Load("../../Recursos/Protesis/meñique_distal.3ds");
+            mano_sin_dedos = importer.Load("../../Protesis/mano_sin_dedos.3ds");
+            pulgar_proximal = importer.Load("../../Protesis/pulgar_proximal.3ds");
+            //pulgar_distal = importer.Load("../../Recursos/Protesis/pulgar_distal.3ds");
+            indice_proximal = importer.Load("../../Protesis/indice_proximal.3ds");
+            indice_distal = importer.Load("../../Protesis/indice_distal.3ds");
+            mayor_proximal = importer.Load("../../Protesis/mayor_proximal.3ds");
+            mayor_distal = importer.Load("../../Protesis/mayor_distal.3ds");
+            anular_proximal = importer.Load("../../Protesis/anular_proximal.3ds");
+            anular_distal = importer.Load("../../Protesis/anular_distal.3ds");
+            meñique_proximal = importer.Load("../../Protesis/meñique_proximal.3ds");
+            meñique_distal = importer.Load("../../Protesis/meñique_distal.3ds");
         }
 
         //moves generic proximal

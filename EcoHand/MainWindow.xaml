@@ -15,7 +15,7 @@
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="265 90">Proximal</Label>-->
         <!--<Label DockPanel.Dock="Left" FontWeight="Bold" Margin="665 90">Distal</Label>-->
         <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60 120">Pulgar:</Label>
-        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="45" Minimum="0" Height="21" VerticalAlignment="Top" Margin="121,124,777.6,0"/>
+        <Slider Value="{Binding pulgar_proximal_angle}" Maximum="90" Minimum="0" Height="21" VerticalAlignment="Top" Margin="121,124,777.6,0"/>
         <!--<Slider Value="{Binding pulgar_distal_angle}" Maximum="45" Minimum="0" Height="29" Width="400" VerticalAlignment="Top" Margin="560,124,534,0" />-->
         <Label DockPanel.Dock="Left" FontWeight="Bold" Margin="60,150">Indice:</Label>
         <Slider Value="{Binding indice_proximal_angle}" Maximum="45" Minimum="0" Height="29" VerticalAlignment="Top" Margin="121,154,777.6,0" />
