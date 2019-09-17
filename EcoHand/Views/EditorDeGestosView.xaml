@@ -35,7 +35,7 @@
         <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan ="3">
             <StackPanel HorizontalAlignment="Left"  Width="237">
                 <Label>Pulgar:</Label>
-                <Slider Name="Pulgar_Proximal_Angle" Minimum="0" Maximum="45" Value="{Binding Pulgar_proximal_angle}"/>
+                <Slider Name="Pulgar_Proximal_Angle" Minimum="0" Maximum="90" Value="{Binding Pulgar_proximal_angle}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left"  Width="237">
                 <Label>Anular:</Label>
