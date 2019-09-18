@@ -187,6 +187,9 @@
     <Compile Include="Views\RegistroView.xaml.cs">
       <DependentUpon>RegistroView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SecuenciaWindow.xaml.cs">
+      <DependentUpon>SecuenciaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
@@ -274,7 +277,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditorSecuenciasView22.xaml">
+    <Page Include="Views\SecuenciaWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
