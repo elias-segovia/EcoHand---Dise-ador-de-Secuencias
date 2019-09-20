@@ -38,16 +38,16 @@
                 <Slider Name="Pulgar_Proximal_Angle" Minimum="0" Maximum="90" Value="{Binding Pulgar_proximal_angle}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left"  Width="237">
-                <Label>Anular:</Label>
-                <Slider Name="Anular_Proximal_Angle" Minimum="0" Maximum="45" Value="{Binding Anular_proximal_angle}"/>
+                <Label>Indice:</Label>
+                <Slider Name="Indice_Proximal_Angle" Minimum="0" Maximum="45" Value ="{Binding Indice_proximal_angle}" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="237">
                 <Label>Mayor:</Label>
                 <Slider Name="Mayor_Proximal_Angle"  Minimum ="0"  Maximum="45" Value="{Binding Mayor_proximal_angle}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left"  Width="237">
-                <Label>Indice:</Label>
-                <Slider Name="Indice_Proximal_Angle" Minimum="0" Maximum="45" Value ="{Binding Indice_proximal_angle}" />
+                <Label>Anular:</Label>
+                <Slider Name="Anular_Proximal_Angle" Minimum="0" Maximum="45" Value="{Binding Anular_proximal_angle}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left"  Width="237">
                 <Label>Meñique:</Label>

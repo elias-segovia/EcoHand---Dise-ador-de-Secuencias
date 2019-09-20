@@ -16,7 +16,9 @@
         FontFamily="{DynamicResource MaterialDesignFont}"          
              
         mc:Ignorable="d"
-        Title="ShellView" Height="600" Width="1000">
+        Title="EcoHand" Height="600" Width="1000"
+        Icon="../../Recursos/img/Logo.png"
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

@@ -31,6 +31,8 @@ namespace EcoHand
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
             DisplayRootViewFor<ShellViewModel>();
+            //SecuenciaWindow sec = new SecuenciaWindow();
+            //sec.Show();
         }
 
         protected override void Configure()
