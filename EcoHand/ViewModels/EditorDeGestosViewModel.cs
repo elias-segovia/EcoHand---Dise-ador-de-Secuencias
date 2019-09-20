@@ -255,7 +255,7 @@ namespace EcoHand.ViewModels
             //boxcontrol.DataContext = this;
 
             //aplicar transformaciones al modelo 3D
-            // var transforms = new Transform3DGroup();
+            //var transforms = new Transform3DGroup();
             //// resize model 3D
             ////ScaleTransform3D myScale = new ScaleTransform3D(3,2.5,2.5);
             ////rotate whole skeleton to have it upright
