@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.Models
 {
-    public class LoggedInUser
+    public class LoggedInUser : ILoggedInUser
     {
 
         public string UserName { get; set; }

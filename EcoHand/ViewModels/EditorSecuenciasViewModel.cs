@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EcoHand.EventModels;
+using System.ComponentModel;
 
 namespace EcoHand.ViewModels
 {
@@ -17,6 +18,25 @@ namespace EcoHand.ViewModels
         {
             _events = events;
         }
+
+        private BindingList<string> _secuencia;
+
+        public void AgregarASecuencia()
+        {
+
+        }
+
+        public void EliminarDeSecuencia()
+        {
+
+        }
+
+        public void GuardarSecuencia()
+        {
+
+        }
+
+
 
     }
 }

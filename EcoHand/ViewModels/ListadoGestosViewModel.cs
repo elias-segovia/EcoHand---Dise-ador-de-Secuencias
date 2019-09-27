@@ -3,6 +3,7 @@ using EcoHand.Handlers;
 using EcoHand.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,23 +16,58 @@ namespace EcoHand.ViewModels
         public int Id { get; set; }
         public ListadoGestosViewModel()
         {
-            CargarListaDeGestosAsync();
+
         }
 
-        public ListadoGestosViewModel(BindableCollection<GestoModel> gestos)
+        protected override async void OnViewLoaded(object view)
         {
-            Gestos = gestos;
+            base.OnViewLoaded(view);
+            await CargarListaDeGestosAsync();
+            if(Gestos.Count > 0)
+            {
+                SelectedGesto = Gestos.First();
+            }
         }
 
-        private GestoModel _selectedItem;
 
-        public GestoModel SelectedItem { get { return _selectedItem; } set { _selectedItem = value; NotifyOfPropertyChange(); } }
+        private GestoModel _selectedGesto;
 
-        public BindableCollection<GestoModel> Gestos { get; set; }
-        private async void CargarListaDeGestosAsync()
+        public GestoModel SelectedGesto
+        {
+            get
+            {
+                return _selectedGesto;
+            }
+            set
+            {
+                _selectedGesto = value;
+                NotifyOfPropertyChange(() => SelectedGesto);
+                LoadHandAsync();
+
+            }
+        }
+
+        
+
+        private BindingList<GestoModel> _gestos;
+
+        public BindingList<GestoModel> Gestos
+        {
+            get { return _gestos; }
+            set
+            {
+                _gestos = value;
+                NotifyOfPropertyChange(() => Gestos);
+                
+            }
+        }
+
+
+        //public BindableCollection<GestoModel> Gestos { get; set; }
+        private async Task CargarListaDeGestosAsync()
         {
             var resp = await GestoHandler.ObtenerListaDeGestosAsync();
-            Gestos = new BindableCollection<GestoModel>();
+            Gestos = new BindingList<GestoModel>();
             foreach (var item in resp)
             {
                 Gestos.Add(new GestoModel() { Id = item.ID, Nombre = item.Nombre });
@@ -49,29 +85,23 @@ namespace EcoHand.ViewModels
         {
 
             var conductor = this.Parent as IConductor;
-            var resp = await GestoHandler.ObtenerGestoPorId(SelectedItem.Id);
+            var resp = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
             conductor.ActivateItem(new EditorDeGestosViewModel(resp));
 
         }
 
         public async void EliminarGesto()
         {
-            await GestoHandler.EliminarGesto(SelectedItem.Id);
-            this.Gestos.Remove(SelectedItem);
+            await GestoHandler.EliminarGesto(SelectedGesto.Id);
+            this.Gestos.Remove(SelectedGesto);
 
-            if (Gestos.Count > 0)
-            {
-                SelectedItem = Gestos.FirstOrDefault();
-                LoadHandAsync();
-            }
-            else
-                LoadEditorDeGestos();
+            NotifyOfPropertyChange(() => Gestos);
 
         }
 
-        public async void LoadHandAsync()
+        public async Task LoadHandAsync()
         {
-            var resp = await GestoHandler.ObtenerGestoPorId(SelectedItem.Id);
+            var resp = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
             ActivateItem(new HandDetailsViewModel(resp));
         }
 

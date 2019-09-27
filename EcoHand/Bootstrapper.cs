@@ -42,7 +42,7 @@ namespace EcoHand
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<LoggedInUser, LoggedInUser>();
+                .Singleton<ILoggedInUser, LoggedInUser>();
 
 
             GetType().Assembly.GetTypes()

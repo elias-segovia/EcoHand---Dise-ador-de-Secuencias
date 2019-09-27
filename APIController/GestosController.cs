@@ -58,8 +58,9 @@ namespace APIController
             {
                 if (!response.IsSuccessStatusCode)
                 {
-                   //manejar el error
-                    
+                    //manejar el error
+                    throw new Exception(response.ReasonPhrase);
+
                 }
              
             }

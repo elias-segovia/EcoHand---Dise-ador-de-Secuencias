@@ -19,6 +19,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
+   
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -39,57 +40,43 @@
         <Button  Grid.Column="1" Grid.Row="1"  Content="Nuevo" x:Name="LoadEditorDeGestos" />
 
 
-        <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos"
+        <ListBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos" 
+                 SelectedItem="{Binding SelectedGesto}">
 
-                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                  IsSynchronizedWithCurrentItem="True"
-                  SelectionMode="Single"
-                 
-                  >
-
-            <ListView.ItemTemplate>
-               
-          
-
-                <DataTemplate>
-                    <DataTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            
-                        </Trigger>
-                    </DataTemplate.Triggers>
-                    <Grid>
+            <ListBox.ItemTemplate>
+               <DataTemplate>
+                    <!--<Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <ListViewItem Grid.Column="0">
-                            <TextBlock Text="{Binding Path=Nombre}"/>
-                        </ListViewItem>
-                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">
-                            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadHandAsync]">
-                              
-                                <materialDesign:PackIcon  Kind="ShowOutline" Foreground="Green" />
-                            </ListViewItem>
-                            <ListViewItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
+                        </Grid.ColumnDefinitions>-->
+
+                        <TextBlock   Text="{Binding Path=Nombre}"/>
+                        
+                        <!--<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">
+                              <ListBoxItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
                                 <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
-                            </ListViewItem >
-                            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action EliminarGesto]">
+                            </ListBoxItem >
+                            <ListBoxItem cal:Message.Attach="[Event MouseDoubleClick] = [Action EliminarGesto]">
                                 <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
-                            </ListViewItem>
+                            </ListBoxItem>
                         </StackPanel>
 
-                    </Grid>
+                    </Grid>-->
 
 
                 </DataTemplate>
 
 
 
-            </ListView.ItemTemplate>
+            </ListBox.ItemTemplate>
 
-        </ListView>
+        </ListBox>
 
         <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
+
+        <Button Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" HorizontalAlignment="Right" > Editar </Button>
+        <Button Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="0,0,150,0" HorizontalAlignment="Right" MinWidth="120" MaxWidth="200" >Eliminar</Button>
 
     </Grid>
 </UserControl>

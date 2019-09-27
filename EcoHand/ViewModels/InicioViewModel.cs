@@ -14,15 +14,17 @@ namespace EcoHand.ViewModels
     public class InicioViewModel : Screen
     {
 
+        private ILoggedInUser _loggedInUser;
 
         private string _usuario;
 
         private string _contraseña;
 
         private IEventAggregator _events;
-        public InicioViewModel( IEventAggregator events)
+        public InicioViewModel( IEventAggregator events , ILoggedInUser user)
         {
             _events = events;
+            _loggedInUser = user;
         }
         public string Usuario
         {
@@ -94,22 +96,29 @@ namespace EcoHand.ViewModels
             {
 
                 DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario, Contraseña);
-
-                bool result = await UsuarioHandler.Ingresar(usuario);
-
-                if (result)
+                try
                 {
+                    bool result = await UsuarioHandler.Ingresar(usuario);
 
-                    Error = "";
+                    if (result)
+                    {
 
-                    LoggedInUser user = new LoggedInUser() { UserName = "pep", Id = 1 };
+                        Error = "";
 
-                    _events.PublishOnUIThread(new LogOnEvent());
-                    //ir a  home
+                        _loggedInUser.Id = 1;
+                        _loggedInUser.UserName = "pepe";
+
+                        _events.PublishOnUIThread(new LogOnEvent());
+                        //ir a  home
+                    }
+                    else
+                    {
+                        Error = "El usuario o contraseña no es valido";
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    Error = "El usuario o contraseña no es valido";
+                    Error = e.Message;
                 }
             }
             else

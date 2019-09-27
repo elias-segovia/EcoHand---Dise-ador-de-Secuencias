@@ -274,7 +274,6 @@ namespace EcoHand.ViewModels
         public EditorDeGestosViewModel(GestoModel gesto)
         {
 
-
             CargarMano();
             MiGesto = gesto;
             Editando = true;

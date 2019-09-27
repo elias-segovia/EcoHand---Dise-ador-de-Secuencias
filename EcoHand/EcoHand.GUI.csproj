@@ -156,6 +156,7 @@
     <Compile Include="ISelectable.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
+    <Compile Include="Models\ILoggedInUser.cs" />
     <Compile Include="Models\LoggedInUser.cs" />
     <Compile Include="PathFinder.cs" />
     <Compile Include="RubberbandAdorner.cs" />

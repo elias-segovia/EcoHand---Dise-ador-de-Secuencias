@@ -56,33 +56,12 @@ namespace EcoHand.ViewModels
 
         public BindableCollection<GestoModel> Gestos { get; set; }
 
-        private async Task<BindableCollection<GestoModel>> CargarListaDeGestosAsync()
+        
+        public  void LoadListaGesto()
         {
-            var resp = await GestoHandler.ObtenerListaDeGestosAsync();
-            Gestos = new BindableCollection<GestoModel>();
-            foreach (var item in resp)
-            {
-                Gestos.Add(new GestoModel() { Id = item.ID, Nombre = item.Nombre });
-            }
-
-            return Gestos;
-        }
-        public async void LoadListaGesto()
-        {
-
-            try
-            {
-                var resp = await CargarListaDeGestosAsync();
-
-                ActivateItem(new ListadoGestosViewModel(resp));
-            }
-            catch (Exception e)
-            {
-
-                //mensaje no se pudo cargar los gestos
-            }
-
-
+           
+           ActivateItem(_container.GetInstance<ListadoGestosViewModel>());
+           
         }
 
         public void LoadEditorSecuencias()
