@@ -36,13 +36,13 @@
         <StackPanel  Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" >
             <DockPanel>
                 <Label x:Name="Gesto">Nombre</Label>
-                <TextBox  VerticalAlignment="Center"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
+                <TextBox   VerticalAlignment="Center" IsReadOnly="True"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
                 <Label Visibility="Hidden"  >Autor:</Label>
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
             <StackPanel HorizontalAlignment="Left">
                 <Label x:Name="Descripcionlbl">Descripcion</Label>
-                <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
+                <TextBox AcceptsReturn="true" IsReadOnly="True" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left">
 

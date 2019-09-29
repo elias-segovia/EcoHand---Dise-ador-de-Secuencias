@@ -45,33 +45,14 @@
 
             <ListBox.ItemTemplate>
                <DataTemplate>
-                    <!--<Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>-->
-
-                        <TextBlock   Text="{Binding Path=Nombre}"/>
-                        
-                        <!--<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Grid.Column="1">
-                              <ListBoxItem  cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadEditarById(SelectedItem.Id)]">
-                                <materialDesign:PackIcon  Kind="EditOutline" Foreground="Blue"/>
-                            </ListBoxItem >
-                            <ListBoxItem cal:Message.Attach="[Event MouseDoubleClick] = [Action EliminarGesto]">
-                                <materialDesign:PackIcon x:Name="EliminarGesto"  Kind="DeleteOutline" Foreground="Red"/>
-                            </ListBoxItem>
-                        </StackPanel>
-
-                    </Grid>-->
-
-
-                </DataTemplate>
-
-
-
+                  <TextBlock   Text="{Binding Path=Nombre}"/>
+               </DataTemplate>
             </ListBox.ItemTemplate>
 
         </ListBox>
+        
+        
+        
 
         <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
 
