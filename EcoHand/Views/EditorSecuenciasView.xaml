@@ -28,13 +28,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <ListBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos" 
+        <ListBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"  x:Name="Gestos" 
                  SelectedItem="{Binding SelectedGesto}">
 
             <ListBox.ItemTemplate>
@@ -45,11 +43,11 @@
 
         </ListBox>
 
-        <GridSplitter Focusable="False" Width="2" Grid.Row="1" Grid.Column="1" Background="LightGray"
+        <GridSplitter Focusable="False" Width="2" Background="LightGray"
                     VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
         <!-- Designer -->
         
-        <GroupBox Header="Diagrama" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="5" Grid.Column="3" Margin="3,0,0,0">
+        <GroupBox Header="Secuencia" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Column="2" MinHeight="300">
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Auto">
                 <ItemsControl x:Name="Secuencia">
@@ -67,9 +65,9 @@
             </ScrollViewer>
         </GroupBox>
 
-        <Button x:Name="AgregarASecuencia" Grid.Column="3" Grid.Row="6" Content="Agregar" />
-        <Button x:Name="EliminarDeSecuencia"  Grid.Column="4" Grid.Row="6" Content="Quitar"/>
-        <Button x:Name="Guardar" Grid.Column="5" Grid.Row="6" Content="Guardar" />
+        <Button x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="3" Margin="20 0 20 0" Content="Agregar" />
+        <Button x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="3" Margin="20 0 20 0" Content="Quitar"/>
+        <Button x:Name="Guardar" Grid.Column="4" Grid.Row="3" Margin="20 0 20 0" Content="Guardar" />
 
     </Grid>
 </UserControl>

@@ -8,6 +8,7 @@ using EcoHand.EventModels;
 using System.ComponentModel;
 using EcoHand.Models;
 using EcoHand.Handlers;
+using EcohandBussinessLogic.Handlers;
 
 namespace EcoHand.ViewModels
 {
@@ -91,13 +92,14 @@ namespace EcoHand.ViewModels
 
         public void EliminarDeSecuencia()
         {
-            this.Secuencia.RemoveAt(Secuencia.Count);
+            this.Secuencia.RemoveAt(Secuencia.Count - 1);
             NotifyOfPropertyChange(() => Secuencia);
         }
 
         public void GuardarSecuencia()
         {
-            //logica para crear secuencia
+
+            SecuenciaHandler.Crear();            
         }
 
 

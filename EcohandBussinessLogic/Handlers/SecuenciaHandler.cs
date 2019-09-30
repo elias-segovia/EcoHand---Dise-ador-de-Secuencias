@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 
 namespace EcohandBussinessLogic.Handlers
 {
-    public class SecuenciaHandler
+    public  class SecuenciaHandler
     {
-        Dictionary<int, object> Secuencia = new Dictionary<int, object>();
-        public void CrearSecuencia() { }
+        
+        private static void CrearSecuencia() { }
 
-        public void Editar() { }
+        public static void Editar() { }
 
-        public void Eliminar() { }
+        public static void Eliminar() { }
 
-        private void CrearSecuenciaArduino() { }
+        public static void Crear() {
+
+            CrearSecuencia();
+
+            CrearSecuenciaArduino();
+        }
+
+        private static  void CrearSecuenciaArduino() { }
 
         
 
