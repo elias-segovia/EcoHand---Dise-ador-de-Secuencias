@@ -66,7 +66,7 @@
 
         <Button x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="3" Margin="20 0 20 0" Content="Agregar" />
         <Button x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="3" Margin="20 0 20 0" Content="Quitar"/>
-        <Button x:Name="Guardar" Grid.Column="4" Grid.Row="3" Margin="20 0 20 0" Content="Guardar" />
+        <Button x:Name="GuardarSecuencia" Grid.Column="4" Grid.Row="3" Margin="20 0 20 0" Content="Guardar" />
 
     </Grid>
 </UserControl>

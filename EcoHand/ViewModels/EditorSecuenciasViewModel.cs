@@ -9,6 +9,7 @@ using System.ComponentModel;
 using EcoHand.Models;
 using EcoHand.Handlers;
 using EcohandBussinessLogic.Handlers;
+using EcohandBussinessLogic.Data;
 
 
 namespace EcoHand.ViewModels
@@ -18,9 +19,13 @@ namespace EcoHand.ViewModels
 
         private IEventAggregator _events;
 
-        public EditorSecuenciasViewModel(IEventAggregator events)
+        private ILoggedInUser _user;
+
+        public EditorSecuenciasViewModel(IEventAggregator events, ILoggedInUser user)
         {
             _events = events;
+            _events.Subscribe(this);
+            _user = user;
             Secuencia = new BindingList<ISecuenciable>();
         }
 
@@ -92,6 +97,7 @@ namespace EcoHand.ViewModels
 
         public void AgregarASecuencia()
         {
+            SelectedGesto.Posicion = Secuencia.Count;
             this.Secuencia.Add(SelectedGesto);
         }
 
@@ -101,9 +107,40 @@ namespace EcoHand.ViewModels
             NotifyOfPropertyChange(() => Secuencia);
         }
 
-        public void GuardarSecuencia()
+        public async void GuardarSecuencia()
         {
-            SecuenciaHandler.Crear();
+
+            Secuencia s = new Secuencia();
+            foreach (var item in Secuencia)
+            {
+                var type = item.GetType();
+                if (type.Name.StartsWith("Gesto"))
+                {
+                    //es un gesto
+                    var i = item as GestoModel;
+                    var gesto = await GestoHandler.ObtenerGestoPorId(i.Id);
+
+
+
+                    //esto esta horrible
+                    s.Secuencias.Add(new SecuenciaItem
+                    {
+                        Posicion = item.Posicion,
+                        CodigoHexa = gesto.Hexa,
+                        Tipo = 1
+                    });
+                }
+                else
+                {
+                    s.Secuencias.Add(new SecuenciaItem
+                    {
+                        Posicion = item.Posicion,
+                        CodigoHexa = "verComoFormarEsto",
+                        Tipo = 0
+                    });
+                }
+            }
+            await SecuenciaHandler.Crear(s);
         }
 
 

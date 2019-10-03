@@ -284,24 +284,7 @@ namespace EcoHand.ViewModels
             //overall_grid.DataContext = this;
         }
 
-        //public EditorDeGestosViewModel(GestoModel gesto)
-        //{
-
-        //    CargarMano();
-        //    MiGesto = gesto;
-        //    Editando = true;
-        //    //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
-        //    this.Anular_proximal_angle = gesto.PosAnular;
-        //    this.Mayor_proximal_angle = gesto.PosMayor;
-        //    this.Meñique_proximal_angle = gesto.PosMeñique;
-        //    this.Pulgar_proximal_angle = gesto.PosPulgar;
-        //    this.Indice_proximal_angle = gesto.Posindice;
-
-        //    this.NombreGesto = gesto.Nombre;
-        //    this.Descripcion = gesto.Descripcion;
-            
-        //}
-
+       
         void Move_proximal(int angle, string dedo, Vector3D vec, Point3D punto)
         {
             //rotate the object by "angle", the vector describes the axis

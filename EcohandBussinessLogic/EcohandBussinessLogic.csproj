@@ -38,6 +38,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Secuencia.cs" />
     <Compile Include="Handlers\GestoHandler.cs" />
     <Compile Include="Handlers\SecuenciaHandler.cs" />
     <Compile Include="Handlers\UsuarioHandler.cs" />

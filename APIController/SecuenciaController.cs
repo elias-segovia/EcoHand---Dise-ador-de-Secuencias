@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using APIController.Model;
 
 namespace APIController
 {
@@ -34,5 +35,19 @@ namespace APIController
 
         }
 
+        public static async Task PostAsync(Secuencia secu)
+        {
+            using (var response = await _httpClient.PostAsJsonAsync<Secuencia>(controller, secu))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    //todo ok
+                }
+                else
+                {
+                   throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
     }
 }

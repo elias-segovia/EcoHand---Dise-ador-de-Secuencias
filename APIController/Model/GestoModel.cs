@@ -27,5 +27,17 @@ namespace APIController.Model
         public int PosMeñique { get; set; }
 
         public int UsuarioID { get; set; }
+
+        public string Hexa
+        {
+            get
+            {
+                return "D1" + PosPulgar.ToString("X") +
+                       "D2" + Posindice.ToString("X") +
+                       "D3" + PosMayor.ToString("X") +
+                       "D4" + PosAnular.ToString("X") +
+                       "D5" + PosMeñique.ToString("X");
+            }
+        }
     }
 }

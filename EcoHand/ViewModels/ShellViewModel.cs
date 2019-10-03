@@ -91,12 +91,7 @@ namespace EcoHand.ViewModels
 
         public void Handle(CrearCuentaEvent message)
         {
-            //NuevoUsuarioCancelar volver a pagina de login
-
-            //podria hacer uno generico con strings de msjs
-
-            // NuevoUsuarioOk se creo el usuario
-            //"" Ir a pagina de registro
+   
 
             if (message.Msg.Equals("NuevoUsuarioOk") || message.Msg.Equals("NuevoUsuarioCancelar"))
             {
