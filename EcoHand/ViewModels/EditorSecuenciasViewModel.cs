@@ -132,6 +132,7 @@ namespace EcoHand.ViewModels
                 }
                 else
                 {
+                    //esto deberia ser un evento
                     s.Secuencias.Add(new SecuenciaItem
                     {
                         Posicion = item.Posicion,

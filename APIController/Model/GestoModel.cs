@@ -32,11 +32,11 @@ namespace APIController.Model
         {
             get
             {
-                return "D1" + PosPulgar.ToString("X") +
-                       "D2" + Posindice.ToString("X") +
-                       "D3" + PosMayor.ToString("X") +
-                       "D4" + PosAnular.ToString("X") +
-                       "D5" + PosMeñique.ToString("X");
+                return "D1" + PosPulgar.ToString("X2") +
+                       "D2" + Posindice.ToString("X2") +
+                       "D3" + PosMayor.ToString("X2") +
+                       "D4" + PosAnular.ToString("X2") +
+                       "D5" + PosMeñique.ToString("X2");
             }
         }
     }

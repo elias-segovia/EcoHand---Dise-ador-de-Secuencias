@@ -18,10 +18,10 @@ namespace APIController
             apiClient = value;
             apiClient.DefaultRequestHeaders.Accept.Clear();
             apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //Cambiar por la url de Azure
-            //https://ecohand-backend.azurewebsites.net/
-            //http://localhost:56303/
-            apiClient.BaseAddress = new Uri("https://ecohand-backend.azurewebsites.net/");
+            //AZURE URL
+            //apiClient.BaseAddress = new Uri("https://ecohand-backend.azurewebsites.net/");
+            //prueba local
+            apiClient.BaseAddress = new Uri("http://localhost:56303/");
 
         }
 

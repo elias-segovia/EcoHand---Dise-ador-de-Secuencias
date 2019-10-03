@@ -42,6 +42,7 @@ namespace EcohandBussinessLogic.Handlers
             secu.FechaCreacion = DateTime.Now;
             secu.FechaModificacion = DateTime.Now;
             secu.Nombre = "Secu Prueba";
+            secu.UsuarioID = 1;
 
             await SecuenciaController.PostAsync(secu);
             

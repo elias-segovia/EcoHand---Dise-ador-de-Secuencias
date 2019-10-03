@@ -12,7 +12,7 @@ namespace APIController
     {
         private static HttpClient _httpClient = ApiHelper.EnsureHttpClientCreated();
 
-        private static string controller = "api/Secuencia";
+        private static string controller = "api/Secuencias";
 
         
         public static async Task Get()
