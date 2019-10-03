@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using EcoHand.EventModels;
 using EcoHand.Handlers;
 using EcoHand.Models;
 using System;
@@ -10,13 +11,21 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ListadoGestosViewModel : Conductor<object>
+    public class ListadoGestosViewModel : Conductor<object> , IHandle<EditarGestoEvent>
     {
 
         public int Id { get; set; }
-        public ListadoGestosViewModel()
-        {
 
+        private ILoggedInUser _user;
+
+        private IEventAggregator _events;
+
+        private SimpleContainer _container;
+        public ListadoGestosViewModel(IEventAggregator events , SimpleContainer container)
+        {
+            _events = events;
+            _events.Subscribe(this);
+            _container = container;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -76,17 +85,27 @@ namespace EcoHand.ViewModels
 
         public void LoadEditorDeGestos()
         {
-            var conductor = this.Parent as IConductor;
-            conductor.ActivateItem(new EditorDeGestosViewModel());
+            var conductor = this.Parent as ShellViewModel;
+            conductor.LoadEditor();
+            //conductor.ActivateItem(new EditorDeGestosViewModel());
+            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
 
         }
 
         public async void LoadEditarById(int Id)
         {
 
-            var conductor = this.Parent as IConductor;
-            var resp = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
-            conductor.ActivateItem(new EditorDeGestosViewModel(resp));
+            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
+            var conductor = this.Parent as ShellViewModel;
+            var evente = new EditarGestoEvent();
+            evente.Gesto = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
+            conductor.LoadEditor(evente);
+           
+            //_events.PublishOnUIThread(evente);
+           
+            //conductor.LoadEditor();
+ 
+           
 
         }
 
@@ -105,7 +124,9 @@ namespace EcoHand.ViewModels
             ActivateItem(new HandDetailsViewModel(resp));
         }
 
-
-
+        public void Handle(EditarGestoEvent message)
+        {
+            
+        }
     }
 }

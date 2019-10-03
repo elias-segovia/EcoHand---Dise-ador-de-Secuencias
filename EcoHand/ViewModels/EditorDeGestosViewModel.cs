@@ -1,5 +1,6 @@
 ﻿using APIController.Model;
 using Caliburn.Micro;
+using EcoHand.EventModels;
 using EcoHand.Handlers;
 using HelixToolkit.Wpf;
 using System;
@@ -13,8 +14,11 @@ using System.Windows.Media.Media3D;
 
 namespace EcoHand.ViewModels
 {
-    public class EditorDeGestosViewModel: Screen
+    public class EditorDeGestosViewModel: Screen , IHandle<EditarGestoEvent>
     {
+
+       
+
         #region Modelo3D Variables
         //modelo de la mano agrupando todas las partes
         Model3DGroup hand;
@@ -38,6 +42,8 @@ namespace EcoHand.ViewModels
 
         #region Modelo Mano Variables
         int m_pulgar_proximal_angle;
+
+
         public int Pulgar_proximal_angle
         {
             get { return m_pulgar_proximal_angle; }
@@ -217,10 +223,17 @@ namespace EcoHand.ViewModels
             meñique_distal = importer.Load("../../Recursos/Protesis/meñique_distal.3ds");
         }
 
-        public EditorDeGestosViewModel()
+        private IEventAggregator _events;
+
+        EcoHand.Models.ILoggedInUser _user;
+        public EditorDeGestosViewModel(IEventAggregator events, EcoHand.Models.ILoggedInUser user)
         {
             //The Importer to load .obj files
+            _events = events;
+            _events.Subscribe(this);
+            _user = user;
             CargarMano();
+
         }
 
         private void CargarMano()
@@ -271,23 +284,23 @@ namespace EcoHand.ViewModels
             //overall_grid.DataContext = this;
         }
 
-        public EditorDeGestosViewModel(GestoModel gesto)
-        {
+        //public EditorDeGestosViewModel(GestoModel gesto)
+        //{
 
-            CargarMano();
-            MiGesto = gesto;
-            Editando = true;
-            //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
-            this.Anular_proximal_angle = gesto.PosAnular;
-            this.Mayor_proximal_angle = gesto.PosMayor;
-            this.Meñique_proximal_angle = gesto.PosMeñique;
-            this.Pulgar_proximal_angle = gesto.PosPulgar;
-            this.Indice_proximal_angle = gesto.Posindice;
+        //    CargarMano();
+        //    MiGesto = gesto;
+        //    Editando = true;
+        //    //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
+        //    this.Anular_proximal_angle = gesto.PosAnular;
+        //    this.Mayor_proximal_angle = gesto.PosMayor;
+        //    this.Meñique_proximal_angle = gesto.PosMeñique;
+        //    this.Pulgar_proximal_angle = gesto.PosPulgar;
+        //    this.Indice_proximal_angle = gesto.Posindice;
 
-            this.NombreGesto = gesto.Nombre;
-            this.Descripcion = gesto.Descripcion;
+        //    this.NombreGesto = gesto.Nombre;
+        //    this.Descripcion = gesto.Descripcion;
             
-        }
+        //}
 
         void Move_proximal(int angle, string dedo, Vector3D vec, Point3D punto)
         {
@@ -436,7 +449,7 @@ namespace EcoHand.ViewModels
                 Descripcion = this.Descripcion,
                 FechaCreacion = DateTime.Today,
                 Nombre = this.NombreGesto,
-                UsuarioID = 1
+                UsuarioID = _user.Id
             };
             GestoHandler.GuardarGesto(gesto);
             LoadListaDeGestos();
@@ -485,5 +498,19 @@ namespace EcoHand.ViewModels
 
         }
 
+        public void Handle(EditarGestoEvent message)
+        {
+            MiGesto = message.Gesto;
+            Editando = true;
+            //lo ideal seria bindear por gesto pero eso lo dejo para otro refinamiento
+            this.Anular_proximal_angle = MiGesto.PosAnular;
+            this.Mayor_proximal_angle = MiGesto.PosMayor;
+            this.Meñique_proximal_angle = MiGesto.PosMeñique;
+            this.Pulgar_proximal_angle = MiGesto.PosPulgar;
+            this.Indice_proximal_angle = MiGesto.Posindice;
+
+            this.NombreGesto = MiGesto.Nombre;
+            this.Descripcion = MiGesto.Descripcion;
+        }
     }
 }

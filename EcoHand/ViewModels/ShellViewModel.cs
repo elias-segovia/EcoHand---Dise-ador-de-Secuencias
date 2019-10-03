@@ -27,7 +27,7 @@ namespace EcoHand.ViewModels
             _events = events;
             events.Subscribe(this);
             _container = container;
-
+    
             ActivateItem(_container.GetInstance<InicioViewModel>());
         }
 
@@ -71,7 +71,15 @@ namespace EcoHand.ViewModels
 
         public void LoadEditor()
         {
-            ActivateItem(new EditorDeGestosViewModel());
+            // ActivateItem(new EditorDeGestosViewModel());
+            ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
+        }
+
+        public void LoadEditor(EditarGestoEvent events)
+        {
+            // ActivateItem(new EditorDeGestosViewModel());
+            ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
+            _events.PublishOnUIThread(events);
         }
 
         public void Handle(LogOnEvent message)

@@ -45,6 +45,7 @@
     <Compile Include="Model\ErrorCodes.cs" />
     <Compile Include="Model\ErrorModel.cs" />
     <Compile Include="Model\GestoModel.cs" />
+    <Compile Include="Model\Secuencia.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Responses\GetGestoByIdResponse.cs" />
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />

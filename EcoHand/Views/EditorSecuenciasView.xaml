@@ -6,7 +6,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
              xmlns:c ="http://www.caliburnproject.org"
-                
+             xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"  
              xmlns:local="clr-namespace:EcoHand.Views"
              xmlns:s="clr-namespace:EcoHand"
              mc:Ignorable="d" 
@@ -53,10 +53,9 @@
                 <ItemsControl x:Name="Secuencia">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel>
-                                <TextBox IsReadOnly="True" Text="{Binding Path=Nombre}"/>
-                                <!--  una imagen -->
-                            </StackPanel>
+                            
+                                <TextBox Margin="0 0 0 5" IsReadOnly="True" TextAlignment="Center" Text="{Binding Path=Nombre}"/>
+                             
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     

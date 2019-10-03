@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EcoHand.Handlers
 {
     public class GestoHandler
@@ -52,6 +53,7 @@ namespace EcoHand.Handlers
             }
 
         }
+        
     }
 }
  

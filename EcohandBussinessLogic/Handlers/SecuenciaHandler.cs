@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APIController.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,12 @@ namespace EcohandBussinessLogic.Handlers
 {
     public  class SecuenciaHandler
     {
+
+        private static void CrearSecuencia()
+        {
+
         
-        private static void CrearSecuencia() { }
+        }
 
         public static void Editar() { }
 
@@ -25,6 +30,8 @@ namespace EcohandBussinessLogic.Handlers
         private static  void CrearSecuenciaArduino() { }
 
         
+       
 
+       
     }
 }

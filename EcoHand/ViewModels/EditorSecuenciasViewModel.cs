@@ -10,6 +10,7 @@ using EcoHand.Models;
 using EcoHand.Handlers;
 using EcohandBussinessLogic.Handlers;
 
+
 namespace EcoHand.ViewModels
 {
     public class EditorSecuenciasViewModel : Screen
@@ -20,14 +21,14 @@ namespace EcoHand.ViewModels
         public EditorSecuenciasViewModel(IEventAggregator events)
         {
             _events = events;
-            Secuencia = new BindingList<GestoModel>();
+            Secuencia = new BindingList<ISecuenciable>();
         }
 
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
             await CargarListaDeGestosAsync();
-         
+
         }
 
         private async Task CargarListaDeGestosAsync()
@@ -36,14 +37,18 @@ namespace EcoHand.ViewModels
             Gestos = new BindingList<GestoModel>();
             foreach (var item in resp)
             {
-                Gestos.Add(new GestoModel() { Id = item.ID, Nombre = item.Nombre });
+                Gestos.Add(new GestoModel()
+                {
+                    Id = item.ID,
+                    Nombre = item.Nombre
+                });
             }
         }
 
         //deberia ser de gestos y eventos
-        private BindingList<GestoModel> _secuencia;
+        private BindingList<ISecuenciable> _secuencia;
 
-        public BindingList<GestoModel> Secuencia
+        public BindingList<ISecuenciable> Secuencia
         {
             get { return _secuencia; }
             set
@@ -80,7 +85,7 @@ namespace EcoHand.ViewModels
             {
                 _selectedGesto = value;
                 NotifyOfPropertyChange(() => SelectedGesto);
-                
+
             }
         }
 
@@ -98,8 +103,7 @@ namespace EcoHand.ViewModels
 
         public void GuardarSecuencia()
         {
-
-            SecuenciaHandler.Crear();            
+            SecuenciaHandler.Crear();
         }
 
 
