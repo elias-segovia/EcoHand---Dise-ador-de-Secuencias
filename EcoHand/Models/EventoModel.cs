@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace EcoHand.Models
 {
-    public class Evento : ISecuenciable
+    
+    public class EventoModel : ISecuenciable
     {
         public int Posicion { get; set; }
         public int SecuenciaID { get; set; }
 
+        TipoEvento Tipo { get; set; }
+
+        int ValorEntrada { get; set; }
 
     }
+
+
 }
+

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APIController.Model
 {
-    public class GestoModel 
+    public class GestoModel
     {
         public int ID { get; set; }
 

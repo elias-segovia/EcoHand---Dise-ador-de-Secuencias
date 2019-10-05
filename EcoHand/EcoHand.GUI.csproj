@@ -154,11 +154,13 @@
     <Compile Include="IGroupable.cs" />
     <Compile Include="ISelectable.cs" />
     <Compile Include="Models\ErrorModel.cs" />
-    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\EventoModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
     <Compile Include="Models\ILoggedInUser.cs" />
     <Compile Include="Models\ISecuenciable.cs" />
     <Compile Include="Models\LoggedInUser.cs" />
+    <Compile Include="Models\SecuenciaModel.cs" />
+    <Compile Include="Models\TipoEvento.cs" />
     <Compile Include="PathFinder.cs" />
     <Compile Include="RubberbandAdorner.cs" />
     <Compile Include="SelectionService.cs" />

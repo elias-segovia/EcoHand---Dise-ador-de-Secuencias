@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace EcoHand.Models
 {
-    public interface ISecuenciable
+    public enum TipoEvento
     {
-         int Posicion { get; set; }
-         
-         int SecuenciaID { get; set; }
-
-       
-        
+        Tiempo,
+        SaltoMusculo1,
+        SaltoMusculo2,
+        SaltoIncondicional,
+        SaltoFSR
 
     }
 }

@@ -69,14 +69,12 @@
         <Button x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
             
         </Button>
-        <Button x:Name="ModificarGesto" Visibility="Hidden" Grid.Column="2" Grid.Row="5" Content="Actualizar" >
-
-        </Button>
+        
         <StackPanel Margin="0,15,0,15" Grid.Row="4" Grid.Column="2" >
             <DockPanel>
                 <Label x:Name="Gesto">Nombre</Label>
                 <TextBox  VerticalAlignment="Center"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
-                <Label Visibility="Hidden"  >Autor:</Label>
+                
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
             <StackPanel HorizontalAlignment="Left">

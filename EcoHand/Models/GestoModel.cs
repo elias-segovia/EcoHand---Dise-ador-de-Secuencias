@@ -15,5 +15,15 @@ namespace EcoHand.Models
         public int SecuenciaID { get; set; }
         public int Posicion { get; set; }
 
+        public int PosPulgar { get; set; }
+
+        public int PosIndice { get; set; }
+
+        public int PosMayor { get; set; }
+
+        public int PosAnular { get; set; }
+
+        public int PosMeñique { get; set; }
+         
     }
 }

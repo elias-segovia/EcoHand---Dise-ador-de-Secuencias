@@ -17,6 +17,54 @@ namespace EcoHand.ViewModels
     public class EditorSecuenciasViewModel : Screen
     {
 
+           
+
+        //deberia ser de gestos y eventos
+        private BindingList<ISecuenciable> _secuencia;
+
+        public BindingList<ISecuenciable> Secuencia
+        {
+            get { return _secuencia; }
+            set
+            {
+                _secuencia = value;
+                NotifyOfPropertyChange(() => Secuencia);
+
+            }
+        }
+        
+
+        private BindingList<GestoModel> _gestos;
+
+        public BindingList<GestoModel> Gestos
+        {
+            get { return _gestos; }
+            set
+            {
+                _gestos = value;
+                NotifyOfPropertyChange(() => Gestos);
+
+            }
+        }
+
+        private GestoModel _selectedGesto;
+
+        public GestoModel SelectedGesto
+        {
+            get
+            {
+                return _selectedGesto;
+            }
+            set
+            {
+                _selectedGesto = value;
+                NotifyOfPropertyChange(() => SelectedGesto);
+
+            }
+        }
+
+        
+
         private IEventAggregator _events;
 
         private ILoggedInUser _user;
@@ -49,51 +97,6 @@ namespace EcoHand.ViewModels
                 });
             }
         }
-
-        //deberia ser de gestos y eventos
-        private BindingList<ISecuenciable> _secuencia;
-
-        public BindingList<ISecuenciable> Secuencia
-        {
-            get { return _secuencia; }
-            set
-            {
-                _secuencia = value;
-                NotifyOfPropertyChange(() => Secuencia);
-
-            }
-        }
-
-
-        private BindingList<GestoModel> _gestos;
-
-        public BindingList<GestoModel> Gestos
-        {
-            get { return _gestos; }
-            set
-            {
-                _gestos = value;
-                NotifyOfPropertyChange(() => Gestos);
-
-            }
-        }
-
-        private GestoModel _selectedGesto;
-
-        public GestoModel SelectedGesto
-        {
-            get
-            {
-                return _selectedGesto;
-            }
-            set
-            {
-                _selectedGesto = value;
-                NotifyOfPropertyChange(() => SelectedGesto);
-
-            }
-        }
-
 
         public void AgregarASecuencia()
         {
