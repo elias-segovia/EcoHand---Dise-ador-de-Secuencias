@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.Models
 {
-    
+
     public class EventoModel : ISecuenciable
     {
         public int Posicion { get; set; }
@@ -16,6 +16,27 @@ namespace EcoHand.Models
 
         int ValorEntrada { get; set; }
 
+        public string Hexa
+        {
+            get
+            {
+                return ObtenerCodigo() + ValorEntrada.ToString("X2");
+            }
+        }
+
+        private string ObtenerCodigo()
+        {
+            //segun el tipo tiene un prefijo 
+            switch (Tipo)
+            {
+                case TipoEvento.Tiempo:
+                    return "TT";
+                case TipoEvento.SaltoFSR:
+                    return "S0";
+                default: return "";
+
+            }
+        }
     }
 
 

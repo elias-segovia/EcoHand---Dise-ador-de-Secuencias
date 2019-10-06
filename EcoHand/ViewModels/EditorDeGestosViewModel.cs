@@ -1,7 +1,7 @@
-﻿using APIController.Model;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using EcoHand.EventModels;
 using EcoHand.Handlers;
+using EcoHand.Models;
 using HelixToolkit.Wpf;
 using System;
 using System.Collections.Generic;
@@ -53,6 +53,8 @@ namespace EcoHand.ViewModels
                 //Move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
                 Move_proximal(value, "pulgar", new Vector3D(-1, 0, 0), new Point3D(13, 71, 4));
                 m_pulgar_proximal_angle = value;
+
+                
      
             }
         }
@@ -405,16 +407,29 @@ namespace EcoHand.ViewModels
 
         private async void EditarGestoAsync()
         {
-            MiGesto.PosPulgar = Pulgar_proximal_angle;
-            MiGesto.PosAnular = Anular_proximal_angle;
-            MiGesto.Posindice = Indice_proximal_angle;
-            MiGesto.PosMayor = Mayor_proximal_angle;
-            MiGesto.PosMeñique = Meñique_proximal_angle;
-            MiGesto.Descripcion = Descripcion;
-            MiGesto.Nombre = NombreGesto;
 
-            await GestoHandler.EditarGestoAsync(MiGesto);
 
+            APIController.Model.GestoModel gesto = new APIController.Model.GestoModel()
+            {
+                UsuarioID = _user.Id,
+                Descripcion = this.Descripcion,
+                FechaCreacion = MiGesto.FechaCreacion,
+                FechaModificacion = DateTime.Now,
+                Nombre = NombreGesto,
+                ID = MiGesto.ID,
+                PosAnular = Anular_proximal_angle,
+                Posindice = Indice_proximal_angle,
+                PosMayor = Mayor_proximal_angle,
+                PosMeñique = Meñique_proximal_angle,
+                PosPulgar = Pulgar_proximal_angle
+
+            };
+
+
+
+            await GestoHandler.EditarGestoAsync(gesto);
+
+            
             LoadListaDeGestos();
 
 
@@ -422,7 +437,7 @@ namespace EcoHand.ViewModels
 
         private void CrearGesto()
         {
-            GestoModel gesto = new GestoModel()
+            APIController.Model.GestoModel gesto = new APIController.Model.GestoModel()
             {
                 PosPulgar = Pulgar_proximal_angle,
                 PosMeñique = Meñique_proximal_angle,
@@ -461,12 +476,7 @@ namespace EcoHand.ViewModels
         //    }
         //}
 
-        private async void CargarGesto(object sender, RoutedEventArgs e)
-        {
-
-            GestoModel gesto = await GestoHandler.ObtenerGestoPorId(2);
-            ActualizarGesto(gesto);
-        }
+        
 
         private void ActualizarGesto(GestoModel gesto)
         {

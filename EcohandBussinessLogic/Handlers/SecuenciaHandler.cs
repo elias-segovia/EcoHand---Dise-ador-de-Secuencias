@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EcohandBussinessLogic.Data;
+
 using APIController;
 
 namespace EcohandBussinessLogic.Handlers
@@ -12,41 +12,23 @@ namespace EcohandBussinessLogic.Handlers
     public  class SecuenciaHandler
     {
 
-        private static void CrearSecuencia()
-        {
-
         
-        }
-
         public static void Editar() { }
 
-        public static void Eliminar() { }
+        public static void Eliminar(int id) { }
+        
+        
 
-        public static void Crear() {
+        public static async Task Crear(Secuencia s)
+        {
 
-            CrearSecuencia();
+            await SecuenciaController.PostAsync(s);
 
-            CrearSecuenciaArduino();
         }
 
-        private static  void CrearSecuenciaArduino() { }
-
-        public static async Task Crear(Data.Secuencia s)
+        public static List<Secuencia> GetSecuencias()
         {
-            APIController.Model.Secuencia secu = new APIController.Model.Secuencia();
-            foreach(SecuenciaItem i in s.Secuencias)
-            {
-                secu.CodigoEjecutable += i.CodigoHexa;
-            }
-            secu.Descripcion = "Esta es una descri de prueba";
-            secu.FechaCreacion = DateTime.Now;
-            secu.FechaModificacion = DateTime.Now;
-            secu.Nombre = "Secu Prueba";
-            secu.UsuarioID = 1;
-
-            await SecuenciaController.PostAsync(secu);
-            
-
+            return new List<Secuencia>();
         }
     }
 }

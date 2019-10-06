@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ListadoGestosViewModel : Conductor<object> , IHandle<EditarGestoEvent>
+    public class ListadoGestosViewModel : Conductor<object>, IHandle<EditarGestoEvent>
     {
 
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace EcoHand.ViewModels
         private IEventAggregator _events;
 
         private SimpleContainer _container;
-        public ListadoGestosViewModel(IEventAggregator events , SimpleContainer container)
+        public ListadoGestosViewModel(IEventAggregator events, SimpleContainer container)
         {
             _events = events;
             _events.Subscribe(this);
@@ -32,7 +32,7 @@ namespace EcoHand.ViewModels
         {
             base.OnViewLoaded(view);
             await CargarListaDeGestosAsync();
-            if(Gestos.Count > 0)
+            if (Gestos.Count > 0)
             {
                 SelectedGesto = Gestos.First();
             }
@@ -56,7 +56,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        
+
 
         private BindingList<GestoModel> _gestos;
 
@@ -67,7 +67,7 @@ namespace EcoHand.ViewModels
             {
                 _gestos = value;
                 NotifyOfPropertyChange(() => Gestos);
-                
+
             }
         }
 
@@ -79,7 +79,20 @@ namespace EcoHand.ViewModels
             Gestos = new BindingList<GestoModel>();
             foreach (var item in resp)
             {
-                Gestos.Add(new GestoModel() { Id = item.ID, Nombre = item.Nombre });
+                Gestos.Add(new GestoModel()
+                {
+                    Descripcion = item.Descripcion,
+                    FechaCreacion = item.FechaCreacion,
+                    FechaModificacion = item.FechaModificacion,
+                    ID = item.ID,
+                    Nombre = item.Nombre,
+                    PosAnular = item.PosAnular,
+                    Posindice = item.Posindice,
+                    PosMayor = item.PosMayor,
+                    PosMeñique = item.PosMeñique,
+                    PosPulgar = item.PosPulgar,
+                    UsuarioID = item.UsuarioID
+                });
             }
         }
 
@@ -98,20 +111,21 @@ namespace EcoHand.ViewModels
             //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
             var conductor = this.Parent as ShellViewModel;
             var evente = new EditarGestoEvent();
-            evente.Gesto = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
+            evente.Gesto = SelectedGesto;
+            //evente.Gesto = await GestoHandler.ObtenerGestoPorId(SelectedGesto.ID);
             conductor.LoadEditor(evente);
-           
+
             //_events.PublishOnUIThread(evente);
-           
+
             //conductor.LoadEditor();
- 
-           
+
+
 
         }
 
         public async void EliminarGesto()
         {
-            await GestoHandler.EliminarGesto(SelectedGesto.Id);
+            await GestoHandler.EliminarGesto(SelectedGesto.ID);
             this.Gestos.Remove(SelectedGesto);
 
             NotifyOfPropertyChange(() => Gestos);
@@ -120,13 +134,13 @@ namespace EcoHand.ViewModels
 
         public async Task LoadHandAsync()
         {
-            var resp = await GestoHandler.ObtenerGestoPorId(SelectedGesto.Id);
-            ActivateItem(new HandDetailsViewModel(resp));
+            
+            ActivateItem(new HandDetailsViewModel(SelectedGesto));
         }
 
         public void Handle(EditarGestoEvent message)
         {
-            
+
         }
     }
 }

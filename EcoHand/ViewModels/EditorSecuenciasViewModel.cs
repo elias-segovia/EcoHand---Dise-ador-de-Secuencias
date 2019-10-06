@@ -9,15 +9,14 @@ using System.ComponentModel;
 using EcoHand.Models;
 using EcoHand.Handlers;
 using EcohandBussinessLogic.Handlers;
-using EcohandBussinessLogic.Data;
-
+using System.Xml.Serialization;
 
 namespace EcoHand.ViewModels
 {
     public class EditorSecuenciasViewModel : Screen
     {
 
-           
+
 
         //deberia ser de gestos y eventos
         private BindingList<ISecuenciable> _secuencia;
@@ -32,7 +31,36 @@ namespace EcoHand.ViewModels
 
             }
         }
-        
+
+        private string _nombre;
+
+        public string Nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                _nombre = value;
+            }
+        }
+
+        private string _descripcion;
+
+        public string Descripcion
+        {
+            get
+            {
+                return _descripcion;
+            }
+            set
+            {
+                _descripcion = value;
+            }
+        }
+
+
 
         private BindingList<GestoModel> _gestos;
 
@@ -63,7 +91,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        
+
 
         private IEventAggregator _events;
 
@@ -92,8 +120,17 @@ namespace EcoHand.ViewModels
             {
                 Gestos.Add(new GestoModel()
                 {
-                    Id = item.ID,
-                    Nombre = item.Nombre
+                    Descripcion = item.Descripcion,
+                    FechaCreacion = item.FechaCreacion,
+                    FechaModificacion = item.FechaModificacion,
+                    ID = item.ID,
+                    Nombre = item.Nombre,
+                    PosAnular = item.PosAnular,
+                    Posindice = item.Posindice,
+                    PosMayor = item.PosMayor,
+                    PosMeñique = item.PosMeñique,
+                    PosPulgar = item.PosPulgar,
+                    UsuarioID = item.UsuarioID
                 });
             }
         }
@@ -113,41 +150,60 @@ namespace EcoHand.ViewModels
         public async void GuardarSecuencia()
         {
 
-            Secuencia s = new Secuencia();
-            foreach (var item in Secuencia)
-            {
-                var type = item.GetType();
-                if (type.Name.StartsWith("Gesto"))
-                {
-                    //es un gesto
-                    var i = item as GestoModel;
-                    var gesto = await GestoHandler.ObtenerGestoPorId(i.Id);
+            APIController.Model.Secuencia s = new APIController.Model.Secuencia();
+
+            s.UsuarioID = _user.Id;
+            s.Nombre = Nombre;
+            s.FechaCreacion = DateTime.Now;
+            s.FechaModificacion = s.FechaModificacion;
 
 
+            //s.CodigoEstructura = CrearEstructura();
+            s.CodigoEstructura = "";
 
-                    //esto esta horrible
-                    s.Secuencias.Add(new SecuenciaItem
-                    {
-                        Posicion = item.Posicion,
-                        CodigoHexa = gesto.Hexa,
-                        Tipo = 1
-                    });
-                }
-                else
-                {
-                    //esto deberia ser un evento
-                    s.Secuencias.Add(new SecuenciaItem
-                    {
-                        Posicion = item.Posicion,
-                        CodigoHexa = "verComoFormarEsto",
-                        Tipo = 0
-                    });
-                }
-            }
+            s.CodigoEjecutable = CrearArduinoCodigo();
+
+            
             await SecuenciaHandler.Crear(s);
         }
 
+        private string CrearArduinoCodigo()
+        {
+            string codigoArduino = "";
 
+            foreach (var item in Secuencia)
+            {
+                var type = item.GetType();
+                
+                if (type.Name.StartsWith("Gesto"))
+                {
+                    var i = item as GestoModel;
 
+                    codigoArduino += i.Hexa;
+                    
+                }
+                else
+                {
+                    
+                    var e = item as EventoModel;
+
+                    codigoArduino += e.Hexa;
+                }
+            }
+
+            return codigoArduino;
+        }
+
+        private string CrearEstructura()
+        {
+            
+
+            XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel) , typeof(EventoModel) });
+
+            var stringwriter = new System.IO.StringWriter();
+            serializer.Serialize(stringwriter, Secuencia);
+
+            return stringwriter.ToString();
+        }
     }
 }

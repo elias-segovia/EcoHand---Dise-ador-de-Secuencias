@@ -28,16 +28,6 @@ namespace APIController.Model
 
         public int UsuarioID { get; set; }
 
-        public string Hexa
-        {
-            get
-            {
-                return "D1" + PosPulgar.ToString("X2") +
-                       "D2" + Posindice.ToString("X2") +
-                       "D3" + PosMayor.ToString("X2") +
-                       "D4" + PosAnular.ToString("X2") +
-                       "D5" + PosMeñique.ToString("X2");
-            }
-        }
+        
     }
 }
