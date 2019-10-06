@@ -12,7 +12,7 @@ namespace EcoHand.Models
          
          int SecuenciaID { get; set; }
 
-       
+        string DisplayPos { get;  }
         
 
     }

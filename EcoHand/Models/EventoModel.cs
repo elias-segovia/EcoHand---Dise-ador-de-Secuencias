@@ -26,6 +26,15 @@ namespace EcoHand.Models
             }
         }
 
+        public string DisplayPos
+        {
+            get
+            {
+                return "[" + Posicion + "] " + Nombre;
+            }
+        }
+        
+
         private string ObtenerCodigo()
         {
             //segun el tipo tiene un prefijo 

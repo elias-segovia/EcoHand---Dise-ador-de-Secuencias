@@ -72,21 +72,21 @@ namespace EcoHand.ViewModels
             }
         }
 
-        private GestoModel _selectedGesto;
+        private ISecuenciable _selectedITem;
 
-        public GestoModel SelectedGesto
+        public ISecuenciable SelectedItem
         {
             get
             {
-                return _selectedGesto;
+                return _selectedITem;
             }
             set
             {
-                _selectedGesto = value;
-                NotifyOfPropertyChange(() => SelectedGesto);
-
+                _selectedITem = value;
+                NotifyOfPropertyChange();
             }
         }
+
 
         private BindingList<EventoModel> _eventos;
 
@@ -101,22 +101,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        private EventoModel _selectedEvento;
-
-        public EventoModel SelectedEvento
-        {
-            get
-            {
-                return _selectedEvento;
-            }
-            set
-            {
-                _selectedEvento = value;
-                NotifyOfPropertyChange(() => SelectedEvento);
-
-            }
-        }
-
+       
 
         private IEventAggregator _events;
 
@@ -185,16 +170,10 @@ namespace EcoHand.ViewModels
 
         public void AgregarASecuencia()
         {
-            SelectedGesto.Posicion = Secuencia.Count;
-            this.Secuencia.Add(SelectedGesto);
+            SelectedItem.Posicion = Secuencia.Count;
+            this.Secuencia.Add(SelectedItem);
         }
-
-        public void AgregarEventoASecuencia()
-        {
-
-            SelectedEvento.Posicion = Secuencia.Count;
-            //Secuencia.add
-        }
+        
 
         public void EliminarDeSecuencia()
         {
