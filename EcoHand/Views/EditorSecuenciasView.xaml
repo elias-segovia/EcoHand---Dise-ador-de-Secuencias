@@ -33,16 +33,36 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <ListBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="3"  x:Name="Gestos" 
-                 SelectedItem="{Binding SelectedGesto}"  >
+        <TabControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" >
+            <TabItem Header="Gestos">
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock   Text="{Binding Path=Nombre}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+                <ListBox  x:Name="Gestos" 
+                 SelectedItem="{Binding SelectedGesto}">
 
-        </ListBox>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock   Text="{Binding Path=Nombre}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+                
+            </TabItem>
+            <TabItem Header="Eventos">
+                <ListBox  x:Name="Eventos" 
+                 SelectedItem="{Binding SelectedEvento}">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock   Text="{Binding Path=Nombre}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+            </TabItem>
+
+        </TabControl>
+
 
 
 
@@ -53,7 +73,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <TextBox Margin="0 0 0 5" IsReadOnly="True" TextAlignment="Center" Text="{Binding Path=Nombre}"/>
+                            <TextBox Margin="0 0 0 5" IsReadOnly="True" TextAlignment="Center" Text="{Binding Path=DisplayPos, Mode=OneWay}"/>
 
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

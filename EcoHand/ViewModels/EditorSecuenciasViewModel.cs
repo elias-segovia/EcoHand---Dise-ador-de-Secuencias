@@ -16,9 +16,6 @@ namespace EcoHand.ViewModels
     public class EditorSecuenciasViewModel : Screen
     {
 
-
-
-        //deberia ser de gestos y eventos
         private BindingList<ISecuenciable> _secuencia;
 
         public BindingList<ISecuenciable> Secuencia
@@ -91,6 +88,34 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private BindingList<EventoModel> _eventos;
+
+        public BindingList<EventoModel> Eventos
+        {
+            get { return _eventos; }
+            set
+            {
+                _eventos = value;
+                NotifyOfPropertyChange(() => Eventos);
+
+            }
+        }
+
+        private EventoModel _selectedEvento;
+
+        public EventoModel SelectedEvento
+        {
+            get
+            {
+                return _selectedEvento;
+            }
+            set
+            {
+                _selectedEvento = value;
+                NotifyOfPropertyChange(() => SelectedEvento);
+
+            }
+        }
 
 
         private IEventAggregator _events;
@@ -103,12 +128,35 @@ namespace EcoHand.ViewModels
             _events.Subscribe(this);
             _user = user;
             Secuencia = new BindingList<ISecuenciable>();
+
         }
 
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
             await CargarListaDeGestosAsync();
+            CargarListaDeEventos();
+
+        }
+
+        private void CargarListaDeEventos()
+        {
+            EventoModel Tiempo = new EventoModel()
+            {
+                Tipo = TipoEvento.Tiempo,
+                Nombre = "TIEMPO DE ESPERA",
+
+            };
+            EventoModel SaltoFSR = new EventoModel()
+            {
+                Tipo = TipoEvento.SaltoFSR,
+                Nombre = "Salto Por FSR"
+            };
+
+            Eventos = new BindingList<EventoModel>();
+
+            Eventos.Add(Tiempo);
+            Eventos.Add(SaltoFSR);
 
         }
 
@@ -141,6 +189,13 @@ namespace EcoHand.ViewModels
             this.Secuencia.Add(SelectedGesto);
         }
 
+        public void AgregarEventoASecuencia()
+        {
+
+            SelectedEvento.Posicion = Secuencia.Count;
+            //Secuencia.add
+        }
+
         public void EliminarDeSecuencia()
         {
             this.Secuencia.RemoveAt(Secuencia.Count - 1);
@@ -163,7 +218,7 @@ namespace EcoHand.ViewModels
 
             s.CodigoEjecutable = CrearArduinoCodigo();
 
-            
+
             await SecuenciaHandler.Crear(s);
         }
 
@@ -174,17 +229,17 @@ namespace EcoHand.ViewModels
             foreach (var item in Secuencia)
             {
                 var type = item.GetType();
-                
+
                 if (type.Name.StartsWith("Gesto"))
                 {
                     var i = item as GestoModel;
 
                     codigoArduino += i.Hexa;
-                    
+
                 }
                 else
                 {
-                    
+
                     var e = item as EventoModel;
 
                     codigoArduino += e.Hexa;
@@ -196,9 +251,9 @@ namespace EcoHand.ViewModels
 
         private string CrearEstructura()
         {
-            
 
-            XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel) , typeof(EventoModel) });
+
+            XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel), typeof(EventoModel) });
 
             var stringwriter = new System.IO.StringWriter();
             serializer.Serialize(stringwriter, Secuencia);

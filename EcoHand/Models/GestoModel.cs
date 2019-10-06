@@ -43,6 +43,14 @@ namespace EcoHand.Models
                        "D5" + PosMeñique.ToString("X2");
             }
         }
+
+        public string DisplayPos
+        {
+            get
+            {
+                return "[" + Posicion + "] " + Nombre;
+            }
+        }
     }
     
 }

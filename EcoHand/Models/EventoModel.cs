@@ -12,9 +12,11 @@ namespace EcoHand.Models
         public int Posicion { get; set; }
         public int SecuenciaID { get; set; }
 
-        TipoEvento Tipo { get; set; }
+        public string Nombre { get; set; }
 
-        int ValorEntrada { get; set; }
+        public TipoEvento Tipo { get; set; }
+
+        public int ValorEntrada { get; set; }
 
         public string Hexa
         {
@@ -37,6 +39,9 @@ namespace EcoHand.Models
 
             }
         }
+
+
+
     }
 
 
