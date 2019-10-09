@@ -10,11 +10,16 @@ using EcoHand.Models;
 using EcoHand.Handlers;
 using EcohandBussinessLogic.Handlers;
 using System.Xml.Serialization;
+using System.Dynamic;
+using System.Windows;
 
 namespace EcoHand.ViewModels
 {
     public class EditorSecuenciasViewModel : Screen
     {
+
+        
+
 
         private BindingList<ISecuenciable> _secuencia;
 
@@ -57,7 +62,21 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private bool _eventoAgregado;
 
+        public bool EventoAgregado
+        {
+
+            get
+            {
+                return _eventoAgregado;
+            }
+            set
+            {
+                _eventoAgregado = value;
+                NotifyOfPropertyChange(() => EventoAgregado);
+            }
+        }
 
         private BindingList<GestoModel> _gestos;
 
@@ -101,17 +120,20 @@ namespace EcoHand.ViewModels
             }
         }
 
-       
+
 
         private IEventAggregator _events;
 
         private ILoggedInUser _user;
+
+        private IWindowManager _mag;
 
         public EditorSecuenciasViewModel(IEventAggregator events, ILoggedInUser user)
         {
             _events = events;
             _events.Subscribe(this);
             _user = user;
+            
             Secuencia = new BindingList<ISecuenciable>();
 
         }
@@ -168,12 +190,62 @@ namespace EcoHand.ViewModels
             }
         }
 
-        public void AgregarASecuencia()
+        public async Task AgregarASecuenciaAsync()
         {
             SelectedItem.Posicion = Secuencia.Count;
-            this.Secuencia.Add(SelectedItem);
-        }
+            
+
         
+            if (SelectedItem.GetType().Name.StartsWith("EventoModel"))
+            {
+                var aux = SelectedItem as EventoModel;
+                string msj;
+                switch (aux.Tipo)
+                {
+                    case TipoEvento.Tiempo:
+                        //MostrarMensajeEvento(_msjPorTiempo);
+                        msj = "Ingrese el tiempo de espera";
+                        break;
+
+                    default:
+                        //MostrarMensajeEvento(_msjPorSalto);
+                        msj = "Ingrese la posicion de salto";
+                        break;
+                }
+                var dialogo = new DialogEventoViewModel(msj);
+                WindowManager windowManager = new WindowManager();
+                dynamic settings = new ExpandoObject();
+                settings.WindowStyle = WindowStyle.ThreeDBorderWindow;
+                settings.ShowInTaskbar = true;
+                settings.Title = "Agregar Evento";
+                settings.WindowState = WindowState.Normal;
+                settings.ResizeMode = ResizeMode.CanMinimize;
+
+                windowManager.ShowDialog(dialogo, null, settings);
+
+
+                if (dialogo.IsCancelled)
+                {
+                    // Handle 
+                    return;
+                }
+                else
+                {
+                    // Handle other case(s)
+                }
+                //Meter popup con campo para entrada del usuario
+                //Va a depender del tipo de evento
+                
+               
+
+
+            }
+            Secuencia.Add(SelectedItem);
+
+
+        }
+
+
 
         public void EliminarDeSecuencia()
         {
@@ -239,5 +311,13 @@ namespace EcoHand.ViewModels
 
             return stringwriter.ToString();
         }
+
+        public void  MostrarMensajeEvento(string msj)
+        {
+            EventoAgregado = true;
+            
+        }
+
+      
     }
 }

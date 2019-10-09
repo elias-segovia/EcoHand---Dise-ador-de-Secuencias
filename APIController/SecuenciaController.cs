@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using APIController.Model;
+using Newtonsoft.Json;
 
 namespace APIController
 {
@@ -15,9 +16,24 @@ namespace APIController
         private static string controller = "api/Secuencias";
 
         
-        public static async Task Get()
+        public static async Task<List<Secuencia>> Get()
         {
-
+            using (var response = await _httpClient.GetAsync(controller))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    
+                    string res = await response.Content.ReadAsStringAsync();
+                    List<Secuencia> secuencias = new List<Secuencia>();
+                    JsonConvert.PopulateObject(res, secuencias);
+                    
+                    return secuencias;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
         }
 
         public static async Task Delete(int id)
@@ -25,7 +41,7 @@ namespace APIController
 
         }
 
-        public static async Task Put()
+        public static async Task Put(Secuencia secu)
         {
 
         }

@@ -9,15 +9,23 @@ using APIController;
 
 namespace EcohandBussinessLogic.Handlers
 {
-    public  class SecuenciaHandler
+    public class SecuenciaHandler
     {
 
-        
-        public static void Editar() { }
 
-        public static void Eliminar(int id) { }
-        
-        
+        public static async Task Editar(Secuencia s) {
+
+           await SecuenciaController.Put(s);
+            
+        }
+
+        public static async Task EliminarAsync(int id)
+        {
+            await SecuenciaController.Delete(id);
+
+        }
+
+
 
         public static async Task Crear(Secuencia s)
         {
@@ -26,9 +34,14 @@ namespace EcohandBussinessLogic.Handlers
 
         }
 
-        public static List<Secuencia> GetSecuencias()
+        public static async Task<List<Secuencia>> GetSecuenciasAsync()
         {
-            return new List<Secuencia>();
+            var resp = new List<Secuencia>();
+
+            resp = await SecuenciaController.Get();
+
+            return resp;
+
         }
     }
 }
