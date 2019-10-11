@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class DialogEventoViewModel : Screen , IDialogo
+    public class DialogEventoTiempoViewModel : Screen , IDialogo
     {
         #region Agregar Evento MSj
 
-        
-
         private int _input;
 
-        private int _MaxPosicion;
+      
 
         public int Input
         {
@@ -24,16 +22,22 @@ namespace EcoHand.ViewModels
             {
                 _input = value;
                 NotifyOfPropertyChange(() => Input);
+                NotifyOfPropertyChange(() => InputShow);
             }
+        }
+
+        public string InputShow
+        {
+            get { return "" +_input + " (s)"; }
         }
 
         public bool IsCancelled { get; set; }
 
 
-        public DialogEventoViewModel(int maxPosicion)
+
+        public DialogEventoTiempoViewModel()
         {
             
-            _MaxPosicion = maxPosicion;
         }
 
       
@@ -41,22 +45,11 @@ namespace EcoHand.ViewModels
         public void Aceptar()
         {
             IsCancelled = false;
-
-            ValidarEntrada();
+            
             TryClose(true);
         }
 
-        private void ValidarEntrada()
-        {
-            if (Input < 0)
-                Input = 0;
-     
-            else
-            {
-                //es por salto
-                Input = Input > _MaxPosicion ? _MaxPosicion : Input;
-            }
-        }
+   
 
         public void Cancel()
         {

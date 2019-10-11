@@ -169,14 +169,21 @@
     <Compile Include="SelectionService.cs" />
     <Compile Include="Toolbox.cs" />
     <Compile Include="ToolboxItem.cs" />
+    <Compile Include="ViewModels\DialogEventoTiempoViewModel.cs" />
     <Compile Include="ViewModels\DialogEventoViewModel.cs" />
+    <Compile Include="ViewModels\EditarSecuenciaEvent.cs" />
     <Compile Include="ViewModels\EditorSecuenciasViewModel.cs" />
     <Compile Include="ViewModels\HandDetailsViewModel.cs" />
     <Compile Include="ViewModels\EditorDeGestosViewModel.cs" />
+    <Compile Include="ViewModels\IDialogo.cs" />
     <Compile Include="ViewModels\InicioViewModel.cs" />
+    <Compile Include="ViewModels\ListadoSecuenciasViewModel.cs" />
     <Compile Include="ViewModels\ListadoGestosViewModel.cs" />
     <Compile Include="ViewModels\RegistroViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\DialogEventoTiempoView.xaml.cs">
+      <DependentUpon>DialogEventoTiempoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DialogEventoView.xaml.cs">
       <DependentUpon>DialogEventoView.xaml</DependentUpon>
     </Compile>
@@ -191,6 +198,9 @@
     </Compile>
     <Compile Include="Views\InicioView.xaml.cs">
       <DependentUpon>InicioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListadoSecuenciasView.xaml.cs">
+      <DependentUpon>ListadoSecuenciasView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListadoGestosView.xaml.cs">
       <DependentUpon>ListadoGestosView.xaml</DependentUpon>
@@ -260,6 +270,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\DialogEventoTiempoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\DialogEventoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -279,6 +293,10 @@
     <Page Include="Views\InicioView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListadoSecuenciasView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ListadoGestosView.xaml">
       <SubType>Designer</SubType>

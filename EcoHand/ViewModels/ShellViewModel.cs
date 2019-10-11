@@ -64,6 +64,14 @@ namespace EcoHand.ViewModels
            
         }
 
+        //public void LoadListaSecuencias()
+        //{
+
+        //   ActivateItem(_container.GetInstance<ListadoSecuenciasViewModel>());
+
+        //}
+
+
         public void LoadEditorSecuencias()
         {
             ActivateItem(_container.GetInstance<EditorSecuenciasViewModel>());
@@ -101,6 +109,12 @@ namespace EcoHand.ViewModels
             {
                 ActivateItem(_container.GetInstance<RegistroViewModel>());
             }
+        }
+
+        internal void LoadEditorSecuencias(EditarSecuenciaEvent evento)
+        {
+            ActivateItem(_container.GetInstance<EditorSecuenciasViewModel>());
+            _events.PublishOnUIThread(evento);
         }
     }
 }

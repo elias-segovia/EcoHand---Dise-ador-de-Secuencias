@@ -19,6 +19,10 @@ namespace EcoHand.Models
 
         public string XmlCode { get; set; }
 
+        public DateTime FechaCreacion { get; set; }
+
+        public DateTime FechaActualizacion { get; set; }
+
 
 
     }

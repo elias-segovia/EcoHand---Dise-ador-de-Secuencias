@@ -40,6 +40,14 @@ namespace EcoHand.Models
             }
         }
 
+        public new string DisplayPos
+        {
+            get
+            {
+                return "[" + Posicion + "] " + Nombre + " " + ValorEntrada;
+            }
+        }
+
 
 
     }

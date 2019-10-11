@@ -35,11 +35,11 @@ namespace EcoHand.Models
         {
             get
             {
-                return "D1" + PosPulgar.ToString("X2") +
-                       "D2" + Posindice.ToString("X2") +
-                       "D3" + PosMayor.ToString("X2") +
-                       "D4" + PosAnular.ToString("X2") +
-                       "D5" + PosMeñique.ToString("X2");
+                return "D1" + (PosPulgar*2).ToString("X2") +
+                       "D2" + (Posindice*4).ToString("X2") +
+                       "D3" + (PosMayor*4).ToString("X2") +
+                       "D4" + (PosAnular*4).ToString("X2") +
+                       "D5" + (PosMeñique*4).ToString("X2");
             }
         }
         

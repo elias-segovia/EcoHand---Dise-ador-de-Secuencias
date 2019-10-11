@@ -18,7 +18,7 @@ namespace EcoHand.ViewModels
     public class EditorSecuenciasViewModel : Screen
     {
 
-        
+
 
 
         private BindingList<Secuenciable> _secuencia;
@@ -59,6 +59,7 @@ namespace EcoHand.ViewModels
             set
             {
                 _descripcion = value;
+                NotifyOfPropertyChange(() => Descripcion);
             }
         }
 
@@ -126,14 +127,14 @@ namespace EcoHand.ViewModels
 
         private ILoggedInUser _user;
 
-        private IWindowManager _mag;
+
 
         public EditorSecuenciasViewModel(IEventAggregator events, ILoggedInUser user)
         {
             _events = events;
             _events.Subscribe(this);
             _user = user;
-            
+
             Secuencia = new BindingList<Secuenciable>();
 
         }
@@ -190,45 +191,40 @@ namespace EcoHand.ViewModels
             }
         }
 
-        public async Task AgregarASecuenciaAsync()
+        public void  AgregarASecuencia()
         {
-            SelectedItem.Posicion = Secuencia.Count;
-            
 
-        
+            if (SelectedItem == null) return;
+
+            SelectedItem.Posicion = Secuencia.Count;
+
             if (SelectedItem.GetType().Name.StartsWith("EventoModel"))
             {
                 var aux = SelectedItem as EventoModel;
-                string msj;
+
                 int max;
-                switch (aux.Tipo)
-                {
-                    case TipoEvento.Tiempo:
-                        //MostrarMensajeEvento(_msjPorTiempo);
-                        msj = "Ingrese el tiempo de espera";
-                        max = -1;
-                        break;
 
-                    default:
-                        //MostrarMensajeEvento(_msjPorSalto);
-                        msj = "Ingrese la posicion de salto";
-                        max = Secuencia.Count -1 ;
-                        break;
-                }
-
-                
-
-                var dialogo = new DialogEventoViewModel(msj,max);
                 WindowManager windowManager = new WindowManager();
                 dynamic settings = new ExpandoObject();
                 settings.WindowStyle = WindowStyle.ThreeDBorderWindow;
                 settings.Title = "Agregar Evento";
                 settings.WindowState = WindowState.Normal;
                 settings.ResizeMode = ResizeMode.NoResize;
-                
+                IDialogo dialogo = null;
 
-                windowManager.ShowDialog(dialogo);
-           
+                if (aux.Tipo == TipoEvento.Tiempo)
+                {
+                    dialogo = new DialogEventoTiempoViewModel();
+                }
+                else
+                {
+                    max = Secuencia.Count - 1;
+                    dialogo = new DialogEventoViewModel(max);
+
+                }
+
+
+                windowManager.ShowDialog(dialogo, null, settings);
 
                 if (dialogo.IsCancelled)
                 {
@@ -236,7 +232,7 @@ namespace EcoHand.ViewModels
                     return;
                 }
                 aux.ValorEntrada = dialogo.Input;
-           
+
 
             }
             Secuencia.Add(SelectedItem);
@@ -248,6 +244,7 @@ namespace EcoHand.ViewModels
 
         public void EliminarDeSecuencia()
         {
+            if (Secuencia.Count == 0) return;
             this.Secuencia.RemoveAt(Secuencia.Count - 1);
             NotifyOfPropertyChange(() => Secuencia);
         }
@@ -262,9 +259,7 @@ namespace EcoHand.ViewModels
             s.FechaCreacion = DateTime.Now;
             s.FechaModificacion = s.FechaModificacion;
 
-
             s.CodigoEstructura = CrearEstructura();
-            //s.CodigoEstructura = "";
 
             s.CodigoEjecutable = CrearArduinoCodigo();
 
@@ -307,11 +302,11 @@ namespace EcoHand.ViewModels
             list.ElementosDeSecuencia = Secuencia.ToList();
 
             // Serialize 
-            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel),typeof(TipoEvento) };
+            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
             XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
             var stringwriter = new System.IO.StringWriter();
             serializer.Serialize(stringwriter, list);
-            
+
 
             // Deserialize 
             //fs = new FileStream("Personenliste.xml", FileMode.Open);
@@ -319,20 +314,16 @@ namespace EcoHand.ViewModels
             //serializer.Serialize(Console.Out, personen);
             //Console.ReadLine()
 
-            //XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel), typeof(EventoModel) });
-
-            
-            //serializer.Serialize(stringwriter, Secuencia);
 
             return stringwriter.ToString();
         }
 
-        public void  MostrarMensajeEvento(string msj)
+        public void MostrarMensajeEvento(string msj)
         {
             EventoAgregado = true;
-            
+
         }
 
-      
+
     }
 }

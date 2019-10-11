@@ -54,6 +54,7 @@
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
+                             
                             <TextBlock   Text="{Binding Path=Nombre}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
