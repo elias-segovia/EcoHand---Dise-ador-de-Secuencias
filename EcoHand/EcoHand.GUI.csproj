@@ -159,7 +159,7 @@
     <Compile Include="Models\EventoModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
     <Compile Include="Models\ILoggedInUser.cs" />
-    <Compile Include="Models\ISecuenciable.cs" />
+    <Compile Include="Models\Secuenciable.cs" />
     <Compile Include="Models\ListaSecuenciable.cs" />
     <Compile Include="Models\LoggedInUser.cs" />
     <Compile Include="Models\SecuenciaModel.cs" />

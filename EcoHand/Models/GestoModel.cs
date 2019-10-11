@@ -8,17 +8,14 @@ using System.Xml.Serialization;
 namespace EcoHand.Models
 {
     [XmlType("Gesto")]
-    public class GestoModel : ISecuenciable
+    public class GestoModel : Secuenciable
     {
-        [XmlElement("Id")]
+        [XmlIgnore]
         public int ID { get; set; }
-        [XmlElement("Nombre")]
-        public string Nombre { get; set; }
-        [XmlElement("Descripcion")]
-        public string Descripcion { get; set; }
-        
+
+        [XmlIgnore]
         public DateTime FechaCreacion { get; set; }
-        
+        [XmlIgnore]
         public DateTime FechaModificacion { get; set; }
         [XmlElement("Pulgar")]
         public int PosPulgar { get; set; }
@@ -30,13 +27,10 @@ namespace EcoHand.Models
         public int PosAnular { get; set; }
         [XmlElement("Meñique")]
         public int PosMeñique { get; set; }
-
+        [XmlIgnore]
         public int UsuarioID { get; set; }
 
-        [XmlElement("Posicion")]
-        public int Posicion { get ; set; }
-        public int SecuenciaID { get; set; }
-
+        [XmlIgnore]
         public string Hexa
         {
             get
@@ -48,14 +42,7 @@ namespace EcoHand.Models
                        "D5" + PosMeñique.ToString("X2");
             }
         }
-
-        public string DisplayPos
-        {
-            get
-            {
-                return "[" + Posicion + "] " + Nombre;
-            }
-        }
+        
     }
     
 }

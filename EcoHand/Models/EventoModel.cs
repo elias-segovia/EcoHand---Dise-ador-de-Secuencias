@@ -10,18 +10,13 @@ namespace EcoHand.Models
 
     [XmlType("Evento")]
     [XmlInclude(typeof(TipoEvento))]
-    public class EventoModel : ISecuenciable
+    public class EventoModel : Secuenciable
     {
-        [XmlElement("Posicion")]
-        public int Posicion { get; set; }
-        public int SecuenciaID { get; set; }
-        [XmlElement("Nombre")]
-        public string Nombre { get; set; }
-        [XmlElement("Tipo")]
         public TipoEvento Tipo { get; set; }
+
         [XmlElement("Entrada")]
         public int ValorEntrada { get; set; }
-
+        [XmlIgnore]
         public string Hexa
         {
             get
@@ -30,15 +25,7 @@ namespace EcoHand.Models
             }
         }
 
-        public string DisplayPos
-        {
-            get
-            {
-                return "[" + Posicion + "] " + Nombre;
-            }
-        }
         
-
         private string ObtenerCodigo()
         {
             //segun el tipo tiene un prefijo 

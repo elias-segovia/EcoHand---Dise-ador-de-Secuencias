@@ -21,9 +21,9 @@ namespace EcoHand.ViewModels
         
 
 
-        private BindingList<ISecuenciable> _secuencia;
+        private BindingList<Secuenciable> _secuencia;
 
-        public BindingList<ISecuenciable> Secuencia
+        public BindingList<Secuenciable> Secuencia
         {
             get { return _secuencia; }
             set
@@ -91,9 +91,9 @@ namespace EcoHand.ViewModels
             }
         }
 
-        private ISecuenciable _selectedITem;
+        private Secuenciable _selectedITem;
 
-        public ISecuenciable SelectedItem
+        public Secuenciable SelectedItem
         {
             get
             {
@@ -134,7 +134,7 @@ namespace EcoHand.ViewModels
             _events.Subscribe(this);
             _user = user;
             
-            Secuencia = new BindingList<ISecuenciable>();
+            Secuencia = new BindingList<Secuenciable>();
 
         }
 
@@ -264,7 +264,7 @@ namespace EcoHand.ViewModels
 
 
             s.CodigoEstructura = CrearEstructura();
-            s.CodigoEstructura = "";
+            //s.CodigoEstructura = "";
 
             s.CodigoEjecutable = CrearArduinoCodigo();
 
@@ -307,7 +307,7 @@ namespace EcoHand.ViewModels
             list.ElementosDeSecuencia = Secuencia.ToList();
 
             // Serialize 
-            Type[] types = { typeof(ISecuenciable), typeof(GestoModel), typeof(EventoModel),typeof(TipoEvento) };
+            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel),typeof(TipoEvento) };
             XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
             var stringwriter = new System.IO.StringWriter();
             serializer.Serialize(stringwriter, list);

@@ -8,12 +8,12 @@ using System.Xml.Serialization;
 namespace EcoHand.Models
 {
     [XmlRoot("Secuencia")]
-    [XmlInclude((typeof(ISecuenciable)))]
+    [XmlInclude((typeof(Secuenciable)))]
     public class ListaSecuenciable
     {
         [XmlArray("Elementos")]
         [XmlArrayItem("SecuItem")]
-        public List<ISecuenciable> ElementosDeSecuencia { get; set; }
+        public List<Secuenciable> ElementosDeSecuencia { get; set; }
 
     }
 }
