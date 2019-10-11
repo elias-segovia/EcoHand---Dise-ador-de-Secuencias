@@ -200,44 +200,43 @@ namespace EcoHand.ViewModels
             {
                 var aux = SelectedItem as EventoModel;
                 string msj;
+                int max;
                 switch (aux.Tipo)
                 {
                     case TipoEvento.Tiempo:
                         //MostrarMensajeEvento(_msjPorTiempo);
                         msj = "Ingrese el tiempo de espera";
+                        max = -1;
                         break;
 
                     default:
                         //MostrarMensajeEvento(_msjPorSalto);
                         msj = "Ingrese la posicion de salto";
+                        max = Secuencia.Count -1 ;
                         break;
                 }
-                var dialogo = new DialogEventoViewModel(msj);
+
+                
+
+                var dialogo = new DialogEventoViewModel(msj,max);
                 WindowManager windowManager = new WindowManager();
                 dynamic settings = new ExpandoObject();
                 settings.WindowStyle = WindowStyle.ThreeDBorderWindow;
-                settings.ShowInTaskbar = true;
                 settings.Title = "Agregar Evento";
                 settings.WindowState = WindowState.Normal;
-                settings.ResizeMode = ResizeMode.CanMinimize;
+                settings.ResizeMode = ResizeMode.NoResize;
+                
 
-                windowManager.ShowDialog(dialogo, null, settings);
-
+                windowManager.ShowDialog(dialogo);
+           
 
                 if (dialogo.IsCancelled)
                 {
                     // Handle 
                     return;
                 }
-                else
-                {
-                    // Handle other case(s)
-                }
-                //Meter popup con campo para entrada del usuario
-                //Va a depender del tipo de evento
-                
-               
-
+                aux.ValorEntrada = dialogo.Input;
+           
 
             }
             Secuencia.Add(SelectedItem);
@@ -264,7 +263,7 @@ namespace EcoHand.ViewModels
             s.FechaModificacion = s.FechaModificacion;
 
 
-            //s.CodigoEstructura = CrearEstructura();
+            s.CodigoEstructura = CrearEstructura();
             s.CodigoEstructura = "";
 
             s.CodigoEjecutable = CrearArduinoCodigo();
@@ -303,11 +302,27 @@ namespace EcoHand.ViewModels
         private string CrearEstructura()
         {
 
+            ListaSecuenciable list = new ListaSecuenciable();
 
-            XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel), typeof(EventoModel) });
+            list.ElementosDeSecuencia = Secuencia.ToList();
 
+            // Serialize 
+            Type[] types = { typeof(ISecuenciable), typeof(GestoModel), typeof(EventoModel),typeof(TipoEvento) };
+            XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
             var stringwriter = new System.IO.StringWriter();
-            serializer.Serialize(stringwriter, Secuencia);
+            serializer.Serialize(stringwriter, list);
+            
+
+            // Deserialize 
+            //fs = new FileStream("Personenliste.xml", FileMode.Open);
+            //personen = (PersonalList)serializer.Deserialize(fs);
+            //serializer.Serialize(Console.Out, personen);
+            //Console.ReadLine()
+
+            //XmlSerializer serializer = new XmlSerializer(Secuencia.GetType(), new Type[] { typeof(GestoModel), typeof(EventoModel) });
+
+            
+            //serializer.Serialize(stringwriter, Secuencia);
 
             return stringwriter.ToString();
         }

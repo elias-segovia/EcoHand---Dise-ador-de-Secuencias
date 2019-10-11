@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace EcoHand.Models
 {
 
+    [XmlType("Evento")]
+    [XmlInclude(typeof(TipoEvento))]
     public class EventoModel : ISecuenciable
     {
+        [XmlElement("Posicion")]
         public int Posicion { get; set; }
         public int SecuenciaID { get; set; }
-
+        [XmlElement("Nombre")]
         public string Nombre { get; set; }
-
+        [XmlElement("Tipo")]
         public TipoEvento Tipo { get; set; }
-
+        [XmlElement("Entrada")]
         public int ValorEntrada { get; set; }
 
         public string Hexa
