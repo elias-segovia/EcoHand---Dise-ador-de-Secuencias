@@ -40,7 +40,7 @@ namespace EcohandBussinessLogic.Handlers
 
             resp = await SecuenciaController.Get();
 
-            return resp.Where(x => x.CodigoEstructura != null).ToList();
+            return resp.Where(x => !String.IsNullOrEmpty(x.CodigoEstructura)).ToList();
             
 
         }

@@ -15,11 +15,11 @@ using System.Windows;
 
 namespace EcoHand.ViewModels
 {
-    public class EditorSecuenciasViewModel : Screen
+    public class EditorSecuenciasViewModel : Screen , IHandle<EditarSecuenciaEvent>
     {
 
 
-
+        private SecuenciaModel _secuenciaModel;
 
         private BindingList<Secuenciable> _secuencia;
 
@@ -45,6 +45,7 @@ namespace EcoHand.ViewModels
             set
             {
                 _nombre = value;
+                NotifyOfPropertyChange(() => Nombre);
             }
         }
 
@@ -126,8 +127,7 @@ namespace EcoHand.ViewModels
         private IEventAggregator _events;
 
         private ILoggedInUser _user;
-
-
+        private bool Editando ;
 
         public EditorSecuenciasViewModel(IEventAggregator events, ILoggedInUser user)
         {
@@ -253,18 +253,30 @@ namespace EcoHand.ViewModels
         {
 
             APIController.Model.Secuencia s = new APIController.Model.Secuencia();
+                       
 
             s.UsuarioID = _user.Id;
             s.Nombre = Nombre;
-            s.FechaCreacion = DateTime.Now;
+            s.Descripcion = Descripcion;
             s.FechaModificacion = s.FechaModificacion;
-
             s.CodigoEstructura = CrearEstructura();
 
             s.CodigoEjecutable = CrearArduinoCodigo();
 
+            if (Editando)
+            {
+                s.FechaCreacion = _secuenciaModel.FechaCreacion;
+                s.ID = _secuenciaModel.ID;
+                await SecuenciaHandler.Editar(s);
+            }
+            else
+            {
+                s.FechaCreacion = DateTime.Now;
+                await SecuenciaHandler.Crear(s);
+            }
 
-            await SecuenciaHandler.Crear(s);
+
+            
         }
 
         private string CrearArduinoCodigo()
@@ -308,11 +320,6 @@ namespace EcoHand.ViewModels
             serializer.Serialize(stringwriter, list);
 
 
-            // Deserialize 
-            //fs = new FileStream("Personenliste.xml", FileMode.Open);
-            //personen = (PersonalList)serializer.Deserialize(fs);
-            //serializer.Serialize(Console.Out, personen);
-            //Console.ReadLine()
 
 
             return stringwriter.ToString();
@@ -324,6 +331,26 @@ namespace EcoHand.ViewModels
 
         }
 
+        public void Handle(EditarSecuenciaEvent message)
+        {
+            _secuenciaModel = message.Secuencia;
+            Nombre = _secuenciaModel.Nombre;
+            Descripcion = _secuenciaModel.Descripcion;
 
+            Editando = true;
+
+            Secuencia = ReconstruirSecuencia(_secuenciaModel.XmlCode);
+        }
+
+        private BindingList<Secuenciable> ReconstruirSecuencia(string xmlCode)
+        {
+            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
+            XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
+            System.IO.StringReader reader = new System.IO.StringReader(xmlCode); 
+            var list = (ListaSecuenciable)serializer.Deserialize(reader);
+
+            return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
+
+        }
     }
 }

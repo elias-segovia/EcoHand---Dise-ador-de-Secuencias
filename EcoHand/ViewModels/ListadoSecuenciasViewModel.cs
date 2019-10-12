@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ListadoSecuenciasViewModel : Conductor<object>, IHandle<EditarSecuenciaEvent>
+    public class ListadoSecuenciasViewModel : Conductor<object>
     {
 
         public int Id { get; set; }
@@ -98,21 +98,15 @@ namespace EcoHand.ViewModels
 
         }
 
-        public async void LoadEditarById(int Id)
+        public  void LoadEditarById(int Id)
         {
 
             var conductor = this.Parent as ShellViewModel;
             var evento = new EditarSecuenciaEvent();
             evento.Secuencia = SelectedSecuencia;
-            //evente.Gesto = await GestoHandler.ObtenerGestoPorId(SelectedGesto.ID);
+            
             conductor.LoadEditorSecuencias(evento);
-
-            //_events.PublishOnUIThread(evente);
-
-            //conductor.LoadEditor();
-
-
-
+            
         }
 
         public async void EliminarGesto()
@@ -130,9 +124,6 @@ namespace EcoHand.ViewModels
         //    ActivateItem(new HandDetailsViewModel(SelectedGesto));
         //}
 
-        public void Handle(EditarSecuenciaEvent message)
-        {
-
-        }
+        
     }
 }
