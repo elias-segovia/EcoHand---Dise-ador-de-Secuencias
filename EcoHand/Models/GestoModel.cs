@@ -42,7 +42,21 @@ namespace EcoHand.Models
                        "D5" + (PosMeñique*4).ToString("X2");
             }
         }
-        
+
+        public  GestoModel Clone()
+        {
+            return new GestoModel()
+            {
+                Nombre = this.Nombre,
+                Descripcion = this.Descripcion,
+                PosAnular = this.PosAnular,
+                Posicion = this.Posicion,
+                Posindice = this.Posindice,
+                PosMayor = this.PosMayor,
+                PosMeñique = this.PosMeñique,
+                PosPulgar = this.PosPulgar
+            };
+        }
     }
     
 }

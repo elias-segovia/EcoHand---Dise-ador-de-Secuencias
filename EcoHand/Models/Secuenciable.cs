@@ -9,7 +9,7 @@ namespace EcoHand.Models
 {
     [XmlType("SecuenciaItem")]
     [XmlInclude(typeof(EventoModel)), XmlInclude(typeof(GestoModel))]
-    public class Secuenciable
+    public class Secuenciable 
     {
         [XmlIgnore]
         public int Posicion { get; set; }
@@ -29,6 +29,7 @@ namespace EcoHand.Models
             }
         }
 
-
+        
+        
     }
 }

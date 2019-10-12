@@ -92,7 +92,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        public void LoadEditorDeSecuencias()
+        public void LoadEditorSecuencias()
         {
             var conductor = this.Parent as ShellViewModel;
             conductor.LoadEditorSecuencias();
@@ -110,7 +110,7 @@ namespace EcoHand.ViewModels
             
         }
 
-        public async void EliminarGesto()
+        public async void EliminarSecuencia()
         {
             await SecuenciaHandler.EliminarAsync(SelectedSecuencia.ID);
             this.Secuencias.Remove(SelectedSecuencia);
@@ -119,7 +119,7 @@ namespace EcoHand.ViewModels
 
         }
 
-        public async Task LoadSecuenciaDetail()
+        public void LoadSecuenciaDetail()
         {
             var evento = new VerSecuenciaEvent();
             evento.Secuencia = SelectedSecuencia;

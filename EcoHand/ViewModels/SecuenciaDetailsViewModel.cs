@@ -48,6 +48,7 @@ namespace EcoHand.ViewModels
             set
             {
                 _nombre = value;
+                NotifyOfPropertyChange(() => Nombre);
             }
         }
 
@@ -89,6 +90,7 @@ namespace EcoHand.ViewModels
 
         public void Handle(VerSecuenciaEvent message)
         {
+            if (message.Secuencia == null) return;
             _secuenciaModel = message.Secuencia;
             Secuencia = ReconstruirSecuencia(_secuenciaModel.XmlCode);
             Nombre = _secuenciaModel.Nombre;

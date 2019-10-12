@@ -11,14 +11,13 @@
              xmlns:s="clr-namespace:EcoHand"
              mc:Ignorable="d" 
              
-             d:DesignHeight="600" d:DesignWidth="350">
-    <Grid x:Name="EditorDeGestos">
+             d:DesignHeight="500" d:DesignWidth="600">
+    <Grid x:Name="EditorDeGestos" >
         <Grid.ColumnDefinitions>
-            
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             
         </Grid.RowDefinitions>

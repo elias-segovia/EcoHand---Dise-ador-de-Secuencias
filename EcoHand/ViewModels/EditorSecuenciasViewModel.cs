@@ -196,7 +196,7 @@ namespace EcoHand.ViewModels
 
             if (SelectedItem == null) return;
 
-            SelectedItem.Posicion = Secuencia.Count;
+            SelectedItem.Posicion = Secuencia.Count();
 
             if (SelectedItem.GetType().Name.StartsWith("EventoModel"))
             {
@@ -233,9 +233,14 @@ namespace EcoHand.ViewModels
                 }
                 aux.ValorEntrada = dialogo.Input;
 
-
+                Secuencia.Add(aux.Clone());
             }
-            Secuencia.Add(SelectedItem);
+            else
+            {
+                var gesto = SelectedItem as GestoModel;
+                Secuencia.Add(gesto.Clone());
+            }
+            
 
 
         }
@@ -275,8 +280,14 @@ namespace EcoHand.ViewModels
                 await SecuenciaHandler.Crear(s);
             }
 
-
+            LoadListaSecuencias();
             
+        }
+
+        private void LoadListaSecuencias()
+        {
+            var parent = this.Parent as ShellViewModel;
+            parent.LoadSecuencias();
         }
 
         private string CrearArduinoCodigo()

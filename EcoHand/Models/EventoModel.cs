@@ -48,6 +48,17 @@ namespace EcoHand.Models
             }
         }
 
+        public EventoModel Clone()
+        {
+            return new EventoModel()
+            {
+                Nombre = this.Nombre,
+                Descripcion = this.Descripcion,
+                Posicion = this.Posicion,
+                ValorEntrada = this.ValorEntrada
+            };
+        }
+
 
 
     }
