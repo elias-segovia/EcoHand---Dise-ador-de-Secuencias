@@ -52,6 +52,7 @@ namespace EcoHand.ViewModels
             {
                 _selectedSecuencia = value;
                 NotifyOfPropertyChange(() => _selectedSecuencia);
+                LoadSecuenciaDetail();
             }
         }
 
@@ -118,11 +119,14 @@ namespace EcoHand.ViewModels
 
         }
 
-        //public async Task LoadHandAsync()
-        //{
+        public async Task LoadSecuenciaDetail()
+        {
+            var evento = new VerSecuenciaEvent();
+            evento.Secuencia = SelectedSecuencia;
+            ActivateItem(_container.GetInstance<SecuenciaDetailsViewModel>());
 
-        //    ActivateItem(new HandDetailsViewModel(SelectedGesto));
-        //}
+            _events.PublishOnUIThread(evento);
+        }
 
         
     }

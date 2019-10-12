@@ -171,6 +171,7 @@
     <Compile Include="ToolboxItem.cs" />
     <Compile Include="ViewModels\DialogEventoTiempoViewModel.cs" />
     <Compile Include="ViewModels\DialogEventoViewModel.cs" />
+    <Compile Include="ViewModels\VerSecuenciaEvent.cs" />
     <Compile Include="ViewModels\EditarSecuenciaEvent.cs" />
     <Compile Include="ViewModels\SecuenciaDetailsViewModel.cs" />
     <Compile Include="ViewModels\EditorSecuenciasViewModel.cs" />
