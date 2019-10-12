@@ -172,6 +172,7 @@
     <Compile Include="ViewModels\DialogEventoTiempoViewModel.cs" />
     <Compile Include="ViewModels\DialogEventoViewModel.cs" />
     <Compile Include="ViewModels\EditarSecuenciaEvent.cs" />
+    <Compile Include="ViewModels\SecuenciaDetailsViewModel.cs" />
     <Compile Include="ViewModels\EditorSecuenciasViewModel.cs" />
     <Compile Include="ViewModels\HandDetailsViewModel.cs" />
     <Compile Include="ViewModels\EditorDeGestosViewModel.cs" />
@@ -189,6 +190,9 @@
     </Compile>
     <Compile Include="Views\EditorDeGestosView.xaml.cs">
       <DependentUpon>EditorDeGestosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecuenciaDetailsView.xaml.cs">
+      <DependentUpon>SecuenciaDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditorSecuenciasView.xaml.cs">
       <DependentUpon>EditorSecuenciasView.xaml</DependentUpon>
@@ -281,6 +285,10 @@
     <Page Include="Views\EditorDeGestosView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecuenciaDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\EditorSecuenciasView.xaml">
       <SubType>Designer</SubType>

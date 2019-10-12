@@ -71,13 +71,13 @@ namespace EcoHand.ViewModels
         }
 
 
-        //public BindableCollection<GestoModel> Gestos { get; set; }
         private async Task CargarSecuencias()
         {
             var resp = await SecuenciaHandler.GetSecuenciasAsync();
             Secuencias = new BindingList<SecuenciaModel>();
             foreach (var item in resp)
             {
+                
                 Secuencias.Add(new SecuenciaModel()
                 {
                     Descripcion = item.Descripcion,
@@ -95,15 +95,12 @@ namespace EcoHand.ViewModels
         {
             var conductor = this.Parent as ShellViewModel;
             conductor.LoadEditorSecuencias();
-            //conductor.ActivateItem(new EditorDeGestosViewModel());
-            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
 
         }
 
         public async void LoadEditarById(int Id)
         {
 
-            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
             var conductor = this.Parent as ShellViewModel;
             var evento = new EditarSecuenciaEvent();
             evento.Secuencia = SelectedSecuencia;

@@ -64,12 +64,12 @@ namespace EcoHand.ViewModels
            
         }
 
-        //public void LoadListaSecuencias()
-        //{
+        public void LoadSecuencias()
+        {
 
-        //   ActivateItem(_container.GetInstance<ListadoSecuenciasViewModel>());
+            ActivateItem(_container.GetInstance<ListadoSecuenciasViewModel>());
 
-        //}
+        }
 
 
         public void LoadEditorSecuencias()

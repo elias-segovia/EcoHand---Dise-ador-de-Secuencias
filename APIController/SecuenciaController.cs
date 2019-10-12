@@ -18,7 +18,7 @@ namespace APIController
         
         public static async Task<List<Secuencia>> Get()
         {
-            using (var response = await _httpClient.GetAsync(controller))
+            using (var response = await _httpClient.GetAsync(controller + "/get/"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -38,12 +38,31 @@ namespace APIController
 
         public static async Task Delete(int id)
         {
+            using (var response = await _httpClient.DeleteAsync(controller + '/' + id))
+            {
+                if (!response.IsSuccessStatusCode)
+                {
+                    //manejar el error
+                    throw new Exception(response.ReasonPhrase);
 
+                }
+
+            }
         }
 
         public static async Task Put(Secuencia secu)
         {
-
+            using (var response = await _httpClient.PutAsJsonAsync(controller, secu))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    //todo ok
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
         }
 
         public static async Task GetById()
