@@ -104,9 +104,47 @@ namespace EcoHand.ViewModels
             set
             {
                 _selectedITem = value;
-                NotifyOfPropertyChange();
+                NotifyOfPropertyChange(() => SelectedItem);
             }
         }
+
+        //private GestoModel _selectedGesto;
+
+        //public GestoModel SelectedGesto
+        //{
+        //    get
+        //    {
+        //        return _selectedGesto;
+        //    }
+        //    set
+        //    {
+        //        _selectedGesto = value;
+        //        SelectedEvento = null;
+        //        SelectedItem = value;
+        //        NotifyOfPropertyChange(() => SelectedItem);
+                
+
+        //    }
+        //}
+
+        //private GestoModel _selectedEvento;
+
+        //public GestoModel SelectedEvento
+        //{
+        //    get
+        //    {
+        //        return _selectedEvento;
+        //    }
+        //    set
+        //    {
+        //        _selectedEvento = value;
+        //        SelectedGesto = null;
+        //        SelectedItem = value;
+        //        NotifyOfPropertyChange(() => SelectedItem);
+                
+
+        //    }
+        //}
 
 
         private BindingList<EventoModel> _eventos;

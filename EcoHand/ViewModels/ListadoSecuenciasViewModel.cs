@@ -22,7 +22,7 @@ namespace EcoHand.ViewModels
         private IEventAggregator _events;
 
         private SimpleContainer _container;
-        public ListadoSecuenciasViewModel(IEventAggregator events, SimpleContainer container , ILoggedInUser user)
+        public ListadoSecuenciasViewModel(IEventAggregator events, SimpleContainer container, ILoggedInUser user)
         {
             _events = events;
             _events.Subscribe(this);
@@ -40,6 +40,14 @@ namespace EcoHand.ViewModels
             }
         }
 
+        public bool PuedeEditar
+        {
+            get
+            {
+                return SelectedSecuencia.UsuarioId == _user.Id;
+            }
+        }
+
 
         private SecuenciaModel _selectedSecuencia;
 
@@ -49,10 +57,11 @@ namespace EcoHand.ViewModels
             {
                 return _selectedSecuencia;
             }
-            set
+           set
             {
                 _selectedSecuencia = value;
-                NotifyOfPropertyChange(() => _selectedSecuencia);
+                NotifyOfPropertyChange(() => SelectedSecuencia);
+                NotifyOfPropertyChange(() => PuedeEditar);
                 LoadSecuenciaDetail();
             }
         }
@@ -79,7 +88,7 @@ namespace EcoHand.ViewModels
             Secuencias = new BindingList<SecuenciaModel>();
             foreach (var item in resp)
             {
-                
+
                 Secuencias.Add(new SecuenciaModel()
                 {
                     Descripcion = item.Descripcion,
@@ -100,15 +109,15 @@ namespace EcoHand.ViewModels
 
         }
 
-        public  void LoadEditarById(int Id)
+        public void LoadEditarById(int Id)
         {
 
             var conductor = this.Parent as ShellViewModel;
             var evento = new EditarSecuenciaEvent();
             evento.Secuencia = SelectedSecuencia;
-            
+
             conductor.LoadEditorSecuencias(evento);
-            
+
         }
 
         public async void EliminarSecuencia()
@@ -124,11 +133,12 @@ namespace EcoHand.ViewModels
         {
             var evento = new VerSecuenciaEvent();
             evento.Secuencia = SelectedSecuencia;
+            
             ActivateItem(_container.GetInstance<SecuenciaDetailsViewModel>());
-
             _events.PublishOnUIThread(evento);
+
         }
 
-        
+
     }
 }
