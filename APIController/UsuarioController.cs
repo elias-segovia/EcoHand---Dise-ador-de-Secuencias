@@ -8,6 +8,7 @@ using APIController.Model.DTO_IN;
 using APIController.Model;
 using Newtonsoft.Json;
 using System.Net;
+using APIController.Model.DTO_Out;
 
 namespace APIController
 {
@@ -17,18 +18,23 @@ namespace APIController
 
         private static string controller = "api/Usuarios";
 
-        public static async Task<bool> PostAsync(DTO_In_Usuario user)
+        public static async Task<Dto_Out> PostAsync(DTO_In_Usuario user)
         {
-
+            Dto_Out resp = new Dto_Out();
             using (var response = await _httpClient.PostAsJsonAsync<DTO_In_Usuario>(controller + "/Login", user))
             {
 
                 var result = await response.Content.ReadAsStringAsync();
+
                 
+
+                JsonConvert.PopulateObject(result, resp);
+
+                resp.Successfull = true;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    return resp;
                 }
                 else if(response.StatusCode == HttpStatusCode.BadRequest)
                 {
@@ -37,7 +43,8 @@ namespace APIController
 
                     if(errorCode.Message == ErrorCodes.USUARIO_INEXISTENTE)
                     {
-                        return false;
+                        resp.Successfull = false;
+                        return resp;
                     }
                 }
                 else
@@ -45,7 +52,7 @@ namespace APIController
                     throw new Exception(response.ReasonPhrase);
                 }
             }
-            return false;
+            return resp;
         }
 
         public static async Task<bool> RegitroAsync(DTO_In_Usuario user)

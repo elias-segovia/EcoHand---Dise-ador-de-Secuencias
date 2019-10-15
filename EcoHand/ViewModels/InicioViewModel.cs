@@ -98,15 +98,15 @@ namespace EcoHand.ViewModels
                 DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario, Contraseña);
                 try
                 {
-                    bool result = await UsuarioHandler.Ingresar(usuario);
+                    var result = await UsuarioHandler.Ingresar(usuario);
 
-                    if (result)
+                    if (result.Successfull)
                     {
 
                         Error = "";
 
-                        _loggedInUser.Id = 1;
-                        _loggedInUser.UserName = "pepe";
+                        _loggedInUser.Id = result.Id;
+                        _loggedInUser.UserName = result.Nombre;
 
                         _events.PublishOnUIThread(new LogOnEvent());
                         //ir a  home
