@@ -160,11 +160,23 @@ namespace EcoHand.ViewModels
                 Tipo = TipoEvento.SaltoFSR,
                 Nombre = "Salto Por FSR"
             };
+            EventoModel SaltoFSRNegativo = new EventoModel()
+            {
+                Tipo = TipoEvento.SaltoFSRNegativo,
+                Nombre = "Salto Por FSR falso"
+            };
+            EventoModel SaltoIncondicional = new EventoModel()
+            {
+                Tipo = TipoEvento.SaltoIncondicional,
+                Nombre = "Salto Incondicional"
+            };
 
             Eventos = new BindingList<EventoModel>();
 
             Eventos.Add(Tiempo);
             Eventos.Add(SaltoFSR);
+            Eventos.Add(SaltoIncondicional);
+            Eventos.Add(SaltoFSRNegativo);
 
         }
 

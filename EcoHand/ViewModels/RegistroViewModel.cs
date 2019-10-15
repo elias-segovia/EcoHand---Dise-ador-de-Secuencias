@@ -128,9 +128,9 @@ namespace EcoHand.ViewModels
 
             DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario, Contraseña, Email);
 
-            bool result = await UsuarioHandler.Registrar(usuario);
+            var result = await UsuarioHandler.Registrar(usuario);
 
-            if (!result)
+            if (!result.Successfull)
             {
 
                 ErrorUsuario = "Error al crear el usuario";

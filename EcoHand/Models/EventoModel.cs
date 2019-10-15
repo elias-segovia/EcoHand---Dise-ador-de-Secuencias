@@ -34,6 +34,14 @@ namespace EcoHand.Models
                 case TipoEvento.Tiempo:
                     return "TT";
                 case TipoEvento.SaltoFSR:
+                    return "I1";
+                case TipoEvento.SaltoFSRNegativo:
+                    return "I0";
+                case TipoEvento.SaltoIncondicional:
+                    return "XX";
+                case TipoEvento.SaltoMusculo:
+                    return "S1";
+                case TipoEvento.SaltoMusculoRelajado:
                     return "S0";
                 default: return "";
 

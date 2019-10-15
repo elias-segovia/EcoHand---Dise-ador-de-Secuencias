@@ -12,12 +12,15 @@ namespace EcoHand.Models
     {
         [XmlEnum(Name = "Tiempo")]
         Tiempo, 
-        [XmlEnum(Name ="EMG1")]
-        SaltoMusculo1,
-        SaltoMusculo2,
+        [XmlEnum(Name ="EMG0")]
+        SaltoMusculo,
+        [XmlEnum(Name = "EMG1")]
+        SaltoMusculoRelajado,
+        [XmlEnum(Name ="Incondicional")]
         SaltoIncondicional,
         [XmlEnum(Name ="FSR")]
-        SaltoFSR
-
+        SaltoFSR,
+        [XmlEnum(Name ="FSRNeg")]
+        SaltoFSRNegativo
     }
 }

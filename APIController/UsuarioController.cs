@@ -55,26 +55,30 @@ namespace APIController
             return resp;
         }
 
-        public static async Task<bool> RegitroAsync(DTO_In_Usuario user)
+        public static async Task<Dto_Out> RegitroAsync(DTO_In_Usuario user)
         {
-
+            Dto_Out resp = new Dto_Out();
             using (var response = await _httpClient.PostAsJsonAsync<DTO_In_Usuario>(controller + "/User", user))
             {
 
                 var result = await response.Content.ReadAsStringAsync();
 
+                JsonConvert.PopulateObject(result, resp);
+
+                resp.Successfull = true;
+
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    return resp;
                 }
                 else if (response.StatusCode == HttpStatusCode.BadRequest)
                 {
-
+                    resp.Successfull = false;
                     var errorCode = JsonConvert.DeserializeObject<ErrorModel>(result);
 
                     if (errorCode.Message == ErrorCodes.USUARIO_EXISTENTE)
                     {
-                        return false;
+                        return resp;
                     }
                 }
                 else
@@ -82,7 +86,7 @@ namespace APIController
                     throw new Exception(response.ReasonPhrase);
                 }
             }
-            return false;
+            return resp;
         }
 
     }

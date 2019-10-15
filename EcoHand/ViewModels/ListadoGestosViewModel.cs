@@ -11,21 +11,20 @@ using System.Threading.Tasks;
 
 namespace EcoHand.ViewModels
 {
-    public class ListadoGestosViewModel : Conductor<object>, IHandle<EditarGestoEvent>
+    public class ListadoGestosViewModel : Conductor<object>
     {
 
         public int Id { get; set; }
 
         private ILoggedInUser _user;
 
-        private IEventAggregator _events;
+        
 
-        private SimpleContainer _container;
-        public ListadoGestosViewModel(IEventAggregator events, SimpleContainer container)
+       
+        public ListadoGestosViewModel(ILoggedInUser user)
         {
-            _events = events;
-            _events.Subscribe(this);
-            _container = container;
+            _user = user;
+          
         }
 
         protected override async void OnViewLoaded(object view)
@@ -138,9 +137,6 @@ namespace EcoHand.ViewModels
             ActivateItem(new HandDetailsViewModel(SelectedGesto));
         }
 
-        public void Handle(EditarGestoEvent message)
-        {
-
-        }
+    
     }
 }

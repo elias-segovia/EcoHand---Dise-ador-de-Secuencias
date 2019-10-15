@@ -22,11 +22,12 @@ namespace EcoHand.ViewModels
         private IEventAggregator _events;
 
         private SimpleContainer _container;
-        public ListadoSecuenciasViewModel(IEventAggregator events, SimpleContainer container)
+        public ListadoSecuenciasViewModel(IEventAggregator events, SimpleContainer container , ILoggedInUser user)
         {
             _events = events;
             _events.Subscribe(this);
             _container = container;
+            _user = user;
         }
 
         protected override async void OnViewLoaded(object view)

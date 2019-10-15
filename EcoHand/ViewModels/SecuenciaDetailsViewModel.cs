@@ -70,18 +70,12 @@ namespace EcoHand.ViewModels
         private bool _eventoAgregado;
 
 
-        private IEventAggregator _events;
-
-        private ILoggedInUser _user;
+   
 
 
-
-        public SecuenciaDetailsViewModel(IEventAggregator events, ILoggedInUser user)
+        public SecuenciaDetailsViewModel( )
         {
-            _events = events;
-            _events.Subscribe(this);
-            _user = user;
-
+           
             Secuencia = new BindingList<Secuenciable>();
 
         }

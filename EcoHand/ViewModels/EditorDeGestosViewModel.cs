@@ -59,17 +59,6 @@ namespace EcoHand.ViewModels
             }
         }
 
-        ////property for the pulgar distal movement
-        //int m_pulgar_distal_angle;
-        //public int pulgar_distal_angle
-        //{
-        //    get { return m_pulgar_distal_angle; }
-        //    set
-        //    {
-        //        move_distal(value, "pulgar", new Point3D(0.7, 0.5, 1.9), new Vector3D(1, 0.4, 0));
-        //        m_pulgar_distal_angle = value;
-        //    }
-        //}
 
         string nombre;
 
@@ -89,18 +78,6 @@ namespace EcoHand.ViewModels
             }
         }
 
-        ////property for the indice distal movement
-        //int m_indice_distal_angle;
-        //public int indice_distal_angle
-        //{
-        //    get { return m_indice_distal_angle; }
-        //    set
-        //    {
-        //        move_distal(value, "indice", new Point3D(0.5, 0, 2.5), new Vector3D(0, 1, 0));
-        //        m_indice_distal_angle = value;
-        //    }
-        //}
-
         int m_mayor_proximal_angle;
         public int Mayor_proximal_angle
         {
@@ -116,17 +93,6 @@ namespace EcoHand.ViewModels
             }
         }
 
-        ////property for the mayor distal movement
-        //int m_mayor_distal_angle;
-        //public int mayor_distal_angle
-        //{
-        //    get { return m_mayor_distal_angle; }
-        //    set
-        //    {
-        //        move_distal(value, "mayor", new Point3D(0.6, -0.13, 2.545), new Vector3D(0, 1, 0));
-        //        m_mayor_distal_angle = value;
-        //    }
-        //}
 
         int m_anular_proximal_angle;
         public int Anular_proximal_angle
@@ -142,17 +108,6 @@ namespace EcoHand.ViewModels
             }
         }
 
-        ////property for the anular distal movement
-        //int m_anular_distal_angle;
-        //public int anular_distal_angle
-        //{
-        //    get { return m_anular_distal_angle; }
-        //    set
-        //    {
-        //        move_distal(value, "anular", new Point3D(0.66, -0.388, 2.47), new Vector3D(0, 1, 0));
-        //        m_anular_distal_angle = value;
-        //    }
-        //}
 
         int m_meñique_proximal_angle;
 
@@ -169,17 +124,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        ////property for the meñique distal movement
-        //int m_meñique_distal_angle;
-        //public int meñique_distal_angle
-        //{
-        //    get { return m_meñique_distal_angle; }
-        //    set
-        //    {
-        //        move_distal(value, "meñique", new Point3D(0.674, -0.61, 2.27), new Vector3D(0, 1, 0));
-        //        m_meñique_distal_angle = value;
-        //    }
-        //}
+
 
         public string NombreGesto { get => nombre; set { nombre = value; NotifyOfPropertyChange(); } }
         public string Descripcion { get => descripcion; set { descripcion = value; NotifyOfPropertyChange(); } }
@@ -263,27 +208,7 @@ namespace EcoHand.ViewModels
             mybox.Height = 0.01;
             mybox.Width = 0.3;
             mybox.Length = 0.3;
-            //boxX = 0.01;
-            //boxY = 0.3;
-            //boxZ = 0.3;
-            //m_helix_viewport.Children.Add(mybox);
-            //boxcontrol.DataContext = this;
 
-            //aplicar transformaciones al modelo 3D
-            //var transforms = new Transform3DGroup();
-            //// resize model 3D
-            ////ScaleTransform3D myScale = new ScaleTransform3D(3,2.5,2.5);
-            ////rotate whole skeleton to have it upright
-            // RotateTransform3D myRotateTransform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1, 1, 0), 90));
-            //myRotateTransform.CenterX = 0;
-            //myRotateTransform.CenterY = 0;
-            //myRotateTransform.CenterZ = 0;
-            //  transforms.Children.Add(myRotateTransform);
-            ////transforms.Children.Add(myScale);
-            //  hand.Transform = transforms;
-
-            //set datacontext for the sliders and helper
-            //overall_grid.DataContext = this;
         }
 
        
@@ -453,30 +378,7 @@ namespace EcoHand.ViewModels
             LoadListaDeGestos();
         }
 
-        //private void Salir(object sender, RoutedEventArgs e)
-        //{
-        //    // Configure the message box to be displayed
-        //    string messageBoxText = "¿Estás seguro/a que quieres salir del programa?";
-        //    string caption = "Mensaje";
-        //    MessageBoxButton button = MessageBoxButton.YesNo;
-        //    MessageBoxImage icon = MessageBoxImage.Warning;
 
-        //    // Display message box
-        //    MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
-
-        //    // Process message box results
-        //    switch (result)
-        //    {
-        //        case MessageBoxResult.Yes:
-        //            System.Windows.Application.Current.Shutdown();
-        //            break;
-        //        case MessageBoxResult.No:
-        //            // User pressed No button
-        //            break;
-        //    }
-        //}
-
-        
 
         private void ActualizarGesto(GestoModel gesto)
         {

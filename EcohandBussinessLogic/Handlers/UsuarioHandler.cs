@@ -18,7 +18,7 @@ namespace EcohandBussinessLogic.Handlers
 
         }
 
-        public static async Task<bool> Registrar(DTO_In_Usuario usuario)
+        public static async Task<Dto_Out> Registrar(DTO_In_Usuario usuario)
         {
 
             return await UsuarioController.RegitroAsync(usuario);
