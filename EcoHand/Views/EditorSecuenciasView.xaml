@@ -37,7 +37,7 @@
             <TabItem Header="Gestos">
 
                 <ListBox  x:Name="Gestos" 
-                 SelectedItem="{Binding SelectedItem}">
+                 SelectedItem="{Binding SelectedGesto}">
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -50,7 +50,7 @@
             </TabItem>
             <TabItem Header="Eventos">
                 <ListBox  x:Name="Eventos" 
-                 SelectedItem="{Binding SelectedItem}">
+                 SelectedItem="{Binding SelectedEvento}">
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>

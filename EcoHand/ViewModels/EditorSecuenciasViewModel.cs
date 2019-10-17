@@ -99,52 +99,56 @@ namespace EcoHand.ViewModels
         {
             get
             {
-                return _selectedITem;
+                if (SelectedGesto != null)
+                    return SelectedGesto;
+                if (SelectedEvento != null)
+                    return SelectedEvento;
+                return null;
+            }
+      
+        }
+
+
+
+        private GestoModel _selectedGesto;
+
+        public GestoModel SelectedGesto
+        {
+            get
+            {
+                return _selectedGesto;
             }
             set
             {
-                _selectedITem = value;
-                NotifyOfPropertyChange(() => SelectedItem);
+               
+                _selectedEvento = null;
+                NotifyOfPropertyChange(() => SelectedEvento);
+                _selectedGesto = value;
+                NotifyOfPropertyChange(() => SelectedGesto);
+
+
             }
         }
 
-        //private GestoModel _selectedGesto;
+        private EventoModel _selectedEvento;
 
-        //public GestoModel SelectedGesto
-        //{
-        //    get
-        //    {
-        //        return _selectedGesto;
-        //    }
-        //    set
-        //    {
-        //        _selectedGesto = value;
-        //        SelectedEvento = null;
-        //        SelectedItem = value;
-        //        NotifyOfPropertyChange(() => SelectedItem);
+        public EventoModel SelectedEvento
+        {
+            get
+            {
+                return _selectedEvento;
+            }
+            set
+            {
+                _selectedGesto = null;
+                NotifyOfPropertyChange(() => SelectedGesto);
+                _selectedEvento = value;
                 
+                NotifyOfPropertyChange(() => SelectedEvento);
 
-        //    }
-        //}
 
-        //private GestoModel _selectedEvento;
-
-        //public GestoModel SelectedEvento
-        //{
-        //    get
-        //    {
-        //        return _selectedEvento;
-        //    }
-        //    set
-        //    {
-        //        _selectedEvento = value;
-        //        SelectedGesto = null;
-        //        SelectedItem = value;
-        //        NotifyOfPropertyChange(() => SelectedItem);
-                
-
-        //    }
-        //}
+            }
+        }
 
 
         private BindingList<EventoModel> _eventos;
