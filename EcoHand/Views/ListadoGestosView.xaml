@@ -56,8 +56,8 @@
 
         <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
 
-        <Button Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" HorizontalAlignment="Right" > Editar </Button>
-        <Button Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="0,0,150,0" HorizontalAlignment="Right" MinWidth="120" MaxWidth="200" >Eliminar</Button>
+        <Button Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" Margin="225,0,0,0" >Editar</Button>
+        <Button Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="0,0,225,0"  MinWidth="120" MaxWidth="200" >Eliminar</Button>
 
     </Grid>
 </UserControl>

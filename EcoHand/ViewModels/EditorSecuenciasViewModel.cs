@@ -93,7 +93,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-        private Secuenciable _selectedITem;
+       // private Secuenciable _selectedITem;
 
         public Secuenciable SelectedItem
         {
@@ -120,7 +120,7 @@ namespace EcoHand.ViewModels
             }
             set
             {
-               
+               //fix choto pero parece q anda
                 _selectedEvento = null;
                 NotifyOfPropertyChange(() => SelectedEvento);
                 _selectedGesto = value;
