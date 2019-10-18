@@ -316,21 +316,21 @@ namespace EcoHand.ViewModels
         }
 
 
-        public void GuardarGesto()
+        public async void GuardarGesto()
         {
             if(Editando)
             {
-                EditarGestoAsync();
+               await EditarGestoAsync();
             }
             else
             {
-                CrearGesto();
+                await CrearGesto();
             }
             
 
         }
 
-        private async void EditarGestoAsync()
+        private async Task EditarGestoAsync()
         {
 
 
@@ -360,7 +360,7 @@ namespace EcoHand.ViewModels
 
         }
 
-        private void CrearGesto()
+        private async Task CrearGesto()
         {
             APIController.Model.GestoModel gesto = new APIController.Model.GestoModel()
             {
@@ -374,7 +374,7 @@ namespace EcoHand.ViewModels
                 Nombre = this.NombreGesto,
                 UsuarioID = _user.Id
             };
-            GestoHandler.GuardarGesto(gesto);
+            await GestoHandler.GuardarGesto(gesto);
             LoadListaDeGestos();
         }
 

@@ -29,7 +29,7 @@ namespace EcoHand.Handlers
 
 
 
-        public static async void GuardarGesto(GestoModel gesto)
+        public static async Task GuardarGesto(GestoModel gesto)
         {
 
             await GestosController.PostAsync(gesto);
