@@ -63,7 +63,8 @@ namespace EcoHand.Models
                 Nombre = this.Nombre,
                 Descripcion = this.Descripcion,
                 Posicion = this.Posicion,
-                ValorEntrada = this.ValorEntrada
+                ValorEntrada = this.ValorEntrada,
+                Tipo = this.Tipo
             };
         }
 

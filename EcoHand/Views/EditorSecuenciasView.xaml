@@ -70,16 +70,17 @@
         <GroupBox Header="Secuencia"  Margin=" 10 0 10 10"   Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Column="2" MinHeight="400"
                    MaxHeight="400" MinWidth="300">
             <ScrollViewer VerticalScrollBarVisibility="auto">
-                <ItemsControl x:Name="Secuencia" Width="205">
-                    <ItemsControl.ItemTemplate>
+                <ListBox x:Name="Secuencia" Width="205"
+                         SelectedItem ="item">
+                    <ListBox.ItemTemplate>
                         <DataTemplate>
 
                             <TextBox Margin="0 0 0 5" IsReadOnly="True" TextAlignment="Center" Text="{Binding Path=DisplayPos, Mode=OneWay}"/>
 
                         </DataTemplate>
-                    </ItemsControl.ItemTemplate>
+                    </ListBox.ItemTemplate>
 
-                </ItemsControl>
+                </ListBox>
             </ScrollViewer>
         </GroupBox>
 
