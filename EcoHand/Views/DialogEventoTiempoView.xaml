@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="Mensaje" FontSize="18" FontStretch="Expanded" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-1.02,-0.625"  Height="26" Width="224" Text="Ingrese el Tiempo de Espera"/>
         <Slider x:Name="Input" Minimum="0" Maximum="10" HorizontalAlignment="Center" Height="23" VerticalAlignment="Top" Width="110" Margin="88,51,87,0"/>
-        <Button x:Name="Aceptar" Background="LightGray" Content="OK" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" Margin="45,25,0,0" Grid.Row="1"/>
-        <Button x:Name="Cancel" Background="LightGray" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Margin="161,25,0,0" Grid.Row="1"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="Aceptar" Background="LightGray" Content="Aceptar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" Margin="45,25,0,0" Grid.Row="1"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="Cancel" Background="LightGray" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Margin="161,25,0,0" Grid.Row="1"/>
         <TextBlock x:Name="InputShow" HorizontalAlignment="Left" Margin="122,73,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="1.224,0.062"/>
     </Grid>
 
