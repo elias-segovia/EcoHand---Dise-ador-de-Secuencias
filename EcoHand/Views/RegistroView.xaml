@@ -45,8 +45,8 @@
         <Label Grid.Column="1" Grid.Row="3" Margin="0 5 0 5" Content="Correo:"/>
         <TextBox Grid.Column="2" Grid.Row="3" Margin="0 5 0 5" Name="Email" TextWrapping="Wrap" FontStyle="Italic" Foreground="Gray"/>
         <Label Grid.Column="1" Grid.Row="4" Margin="0 5 0 5" Content="Contraseña:" />
-        <Button Foreground="White" Name="CrearUsuario" Grid.Column="1" Grid.Row="5" Margin="0 20 10 5"  HorizontalAlignment="Stretch"  MaxWidth="120" Content="Crear Cuenta"/>
-        <Button Foreground="White" Name="Cancelar" Grid.Column="2" Grid.Row="5" Margin="0 20 0 5"  HorizontalAlignment="Stretch" MaxWidth="120"  Content="Cancelar"/>
+        <Button Style="{StaticResource RadioButton}" Foreground="White" Name="CrearUsuario" Grid.Column="1" Grid.Row="5" Margin="0 20 10 5"  HorizontalAlignment="Stretch"  MaxWidth="120" Content="Crear Cuenta" Width="350"/>
+        <Button Style="{StaticResource RadioButton}" Foreground="White" Name="Cancelar" Grid.Column="2" Grid.Row="5" Margin="0 20 0 5"  HorizontalAlignment="Stretch" MaxWidth="120"  Content="Cancelar" />
         <PasswordBox Grid.Column="2" Grid.Row="4"  Margin="0 5 0 5"  Name="Contraseña"/>
         <Label Name="ErrorUsuario" Grid.Row="2"   Grid.Column="3" VerticalContentAlignment="Bottom" FontSize="12" Foreground="Red" />
         <Label Name="ErrorEmail" Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Bottom" FontSize="12" Foreground="Red"/>
