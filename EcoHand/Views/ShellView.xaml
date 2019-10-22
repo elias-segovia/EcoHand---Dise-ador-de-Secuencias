@@ -18,7 +18,7 @@
         mc:Ignorable="d"
         Title="EcoHand"
         WindowState="Maximized"
-        Icon="../../Recursos/img/ByN.png"
+        Icon="../../Recursos/img/LOGOBYN.png"
         >
     <Grid>
         <Grid.RowDefinitions>
