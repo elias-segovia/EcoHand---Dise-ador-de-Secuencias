@@ -16,7 +16,8 @@
         FontFamily="{DynamicResource MaterialDesignFont}"          
              
         mc:Ignorable="d"
-        Title="EcoHand" Height="600" Width="1000"
+        Title="EcoHand"
+        WindowState="Maximized"
         Icon="../../Recursos/img/Logo.png"
         >
     <Grid>
@@ -30,19 +31,19 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-   
-            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Visibility="{Binding MenuEsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadListaGesto]" >
-                    Gestos
-                </ListViewItem>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Visibility="{Binding MenuEsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadListaGesto]" >
+                Gestos
+            </ListViewItem>
             <ListViewItem cal:Message.Attach="[Event MouseDoubleClick] = [Action LoadSecuencias]" x:Name="LoadListaSecuencias">
-                    Secuencias
-                </ListViewItem>
-                <ListViewItem x:Name="LoadConfiguracion">
-                    Cuenta
-                </ListViewItem>
-            </StackPanel>
-   
+                Secuencias
+            </ListViewItem>
+            <ListViewItem x:Name="LoadConfiguracion">
+                Cuenta
+            </ListViewItem>
+        </StackPanel>
+
         <ContentControl Grid.Column="1" Grid.Row="1" x:Name="ActiveItem" />
 
     </Grid>

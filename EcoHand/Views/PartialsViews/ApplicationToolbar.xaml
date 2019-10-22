@@ -6,7 +6,7 @@
         <ResourceDictionary Source="/Views/Styles/Shared.xaml"/>
         <ResourceDictionary Source="/Views/Styles/ToolBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
+
     <ToolBar x:Key="MyToolbar" Height="120">
         <!--Archivo-->
         <GroupBox Header="Archivo" Style="{StaticResource ToolbarGroup}" Margin="5,3,3,3">
@@ -329,7 +329,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Source="Images/SendBackward.png" Width="16"/>
                                 <TextBlock Margin="3" Text="Enviar Atrás" VerticalAlignment="Center"  Grid.Column="1"/>
-                             </Grid>
+                            </Grid>
                         </Button.Content>
                     </Button>
                     <Button Margin="0,3,0,3" Padding="5" HorizontalContentAlignment="Left"
@@ -351,4 +351,6 @@
             </Grid>
         </GroupBox>
     </ToolBar>
+
+
 </ResourceDictionary>
