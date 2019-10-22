@@ -44,10 +44,8 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>-->
 
-        <Label Content="Bienvenido al Diseñador de Secuencias" Margin="419,60,431,549.667" FontSize="22" HorizontalAlignment="Center" Width="394" />
-
-        <Image MaxHeight="200"  Source="/Recursos/img/Logo.png" Margin="504,133,519,311.667" HorizontalAlignment="Center" Width="221"/>
-
+        <Label Content="Bienvenido al Diseñador de Secuencias" Margin="50" FontSize="22" HorizontalAlignment="Center" Width="394" />
+        <Image MaxHeight="200"  Source="/Recursos/img/Logo.png" Margin="0 100 0 300" HorizontalAlignment="Center" Width="221"/>
 
 
         <StackPanel Margin="439,381,393,240.667" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -66,9 +64,9 @@
             * Usuario o contraseña incorrecta, vuelva a intetarlo.
         </TextBlock>
 
-        <Button Style="{StaticResource RadioButton}" Name="Ingresar" Margin="385,558,659,64.667" Background="Black" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Content="Ingresar"  FontSize="15" FontWeight="Normal" Width="200" Height="30"/>
+        <Button Style="{StaticResource RadioButton}" Name="Ingresar" Margin="385,558,659,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Ingresar" Width="200" Height="30"/>
 
-        <Button Style="{StaticResource RadioButton}" Name="CrearCuenta" Margin="705,558,339,64.667" Background="Black" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Content="Crear Cuenta"   FontSize="15" FontWeight="Normal" Width="200" Height="30"  />
+        <Button Style="{StaticResource RadioButton}" Name="CrearCuenta" Margin="705,558,339,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Crear Cuenta" Width="200" Height="30"  />
 
 
     </Grid>
