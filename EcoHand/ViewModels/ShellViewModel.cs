@@ -27,7 +27,7 @@ namespace EcoHand.ViewModels
             _events = events;
             events.Subscribe(this);
             _container = container;
-    
+                        
             ActivateItem(_container.GetInstance<InicioViewModel>());
         }
 

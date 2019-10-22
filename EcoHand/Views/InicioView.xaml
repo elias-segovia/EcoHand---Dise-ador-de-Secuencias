@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mat ="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EcoHand.Views"
-        
+        xmlns:local="clr-namespace:EcoHand.Views"   
         xmlns:cal="http://www.caliburnproject.org" x:Class="EcoHand.Views.InicioView"
         
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -14,60 +13,65 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"          
-        
+        FontFamily="{DynamicResource MaterialDesignFont}"    
         
         mc:Ignorable="d"
-        Height="600" Width="1000">
-    <Grid>
-        <Grid.RowDefinitions>
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch" Height="652.667" Width="1243.667"
+    
+    
+    
+    >
+    <Grid HorizontalAlignment="Center">
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" MinHeight="62"/>
+            <RowDefinition Height="auto" MinHeight="31.333"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="412*"/>
+            <ColumnDefinition Width="auto" MinWidth="938.667"/>
+            <ColumnDefinition Width="409*"/>
             <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        
-        <Label   Grid.Column="2" Grid.Row="2" Content="Bienvenido al Diseñador de Secuencias"  FontSize="22"/>
+        </Grid.ColumnDefinitions>-->
 
-        <Image Grid.Column="2" Grid.Row="3" MaxHeight="200"  Source="/Recursos/img/Logo.png" />
+        <Label Content="Bienvenido al Diseñador de Secuencias" Margin="419,60,431,549.667" FontSize="22" HorizontalAlignment="Center" Width="394" />
 
-        <TextBlock Name="Error" Grid.Column="2" Grid.Row="4"
-               MaxWidth="360" TextWrapping="Wrap" HorizontalAlignment="Left"
-               Foreground="Red" Visibility="{Binding ErrorEsVisible , Converter={StaticResource BooleanToVisibilityConverter}}" >
-            Ingrese un Usuario y Contraseña Validos
-        </TextBlock>
-        
-        <StackPanel Margin="0 5 0 5" Grid.Column="2" Grid.Row="5" Orientation="Horizontal" >
-            <Label Margin=" 0 0 30 0" Grid.Row="5" Grid.Column="2" Content="Usuario:" />
+        <Image MaxHeight="200"  Source="/Recursos/img/Logo.png" Margin="504,133,519,311.667" HorizontalAlignment="Center" Width="221"/>
+
+
+
+        <StackPanel Margin="439,381,393,240.667" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Margin="0,0,30,-0.333" Grid.Row="4" Grid.Column="2" Content="Usuario:" Width="80" />
             <TextBox Name="Usuario" MinWidth="300" Text="Ingresar su nombre de usuario" TextWrapping="Wrap"  FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True" />
         </StackPanel>
-        
-        <StackPanel Margin="0,5,0,10" Grid.Column="2" Grid.Row="6" Orientation="Horizontal">
-            <Label Margin="0 0 5 0" Grid.Row="6" Grid.Column="2" Content="Contraseña:" />
-            <PasswordBox Name="Contraseña" MinWidth="300"  />
-        </StackPanel>
-        
-        <Button Name="Ingresar" Margin="0 0 0 5" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Grid.Column="2" Grid.Row="7"  Content="Ingresar"  FontWeight="Bold" />
 
-        <Button Name="CrearCuenta" Background="ForestGreen" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Grid.Column="2" Grid.Row="8"  Content="Crear Cuenta"  FontWeight="Bold" />
+        <StackPanel Margin="405,432,365,189.667" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Contraseña:" Width="139" Margin="0,0,0,-0.333" />
+            <PasswordBox Margin="0,0,24,-0.333" x:Name="Contraseña" MinWidth="300"  />
+        </StackPanel>
+
+        <TextBlock Name="Error" HorizontalAlignment="Center"
+               TextWrapping="Wrap"
+               Foreground="Red" Visibility="{Binding ErrorEsVisible , Converter={StaticResource BooleanToVisibilityConverter}}" Margin="408,498,374,126.667" Width="462" >
+            * Usuario o contraseña incorrecta, vuelva a intetarlo.
+        </TextBlock>
+
+        <Button Style="{StaticResource RadioButton}" Name="Ingresar" Margin="385,558,659,64.667" Background="Black" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Content="Ingresar"  FontSize="15" FontWeight="Normal" Width="200" Height="30"/>
+
+        <Button Style="{StaticResource RadioButton}" Name="CrearCuenta" Margin="705,558,339,64.667" Background="Black" BorderBrush="PapayaWhip" Foreground="White" HorizontalAlignment="Stretch"  Content="Crear Cuenta"   FontSize="15" FontWeight="Normal" Width="200" Height="30"  />
 
 
     </Grid>
 </UserControl>
-
         
         

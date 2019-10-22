@@ -24,6 +24,6 @@ namespace EcoHand.Views
             InitializeComponent();
         }
 
-        
+
     }
 }
