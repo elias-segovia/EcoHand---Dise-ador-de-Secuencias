@@ -33,19 +33,14 @@ namespace EcoHand.ViewModels
 
         public bool IsCancelled { get; set; }
 
+        public bool IsAccepted { get; set; }
 
-
-        public DialogEventoTiempoViewModel()
-        {
-            
-        }
 
       
-
         public void Aceptar()
         {
             IsCancelled = false;
-            
+            IsAccepted = true;
             TryClose(true);
         }
 

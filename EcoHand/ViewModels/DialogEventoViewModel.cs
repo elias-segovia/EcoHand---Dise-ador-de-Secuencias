@@ -17,6 +17,8 @@ namespace EcoHand.ViewModels
 
         private int _MaxPosicion;
 
+        
+
         public int Input
         {
             get { return _input; }
@@ -28,6 +30,8 @@ namespace EcoHand.ViewModels
         }
 
         public bool IsCancelled { get; set; }
+
+        public bool IsAccepted { get; set; }
 
 
         public DialogEventoViewModel(int maxPosicion)
@@ -43,7 +47,10 @@ namespace EcoHand.ViewModels
             IsCancelled = false;
 
             ValidarEntrada();
+
             TryClose(true);
+
+            IsAccepted = true;
         }
 
         private void ValidarEntrada()

@@ -9,6 +9,8 @@ namespace EcoHand.ViewModels
     public interface IDialogo
     {
         bool IsCancelled { get; set; }
+
+        bool IsAccepted { get; set; }
         int Input { get; set; }
     }
 }

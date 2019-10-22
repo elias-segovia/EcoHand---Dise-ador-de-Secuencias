@@ -280,7 +280,7 @@ namespace EcoHand.ViewModels
 
                 windowManager.ShowDialog(dialogo, null, settings);
 
-                if (dialogo.IsCancelled)
+                if (!dialogo.IsAccepted)
                 {
                     // Handle 
                     return;
