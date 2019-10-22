@@ -66,7 +66,7 @@
 
         </HelixToolkit:HelixViewport3D>
 
-        <Button x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
+        <Button Style="{StaticResource RadioButton}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
             
         </Button>
         

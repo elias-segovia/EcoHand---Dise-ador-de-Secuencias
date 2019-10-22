@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="Mensaje" FontSize="18" FontStretch="Expanded" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-1.02,-0.625"  Height="26" Width="224" Text="Ingrese la posición de salto"/>
         <TextBox x:Name="Input" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Width="45" Margin="119,51,121,0"/>
-        <Button x:Name="Aceptar" Background="LightGray" Content="OK" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" Margin="45,25,0,0" Grid.Row="1"/>
-        <Button x:Name="Cancel" Background="LightGray" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="161,25,0,0" Grid.Row="1"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="Aceptar" Background="LightGray" Content="Aceptar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="95" Margin="45,25,0,0" Grid.Row="1"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="Cancel" Background="LightGray" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="161,25,0,0" Grid.Row="1"/>
     </Grid>
 
 </UserControl>
