@@ -15,7 +15,7 @@ using System.Windows;
 
 namespace EcoHand.ViewModels
 {
-    public class EditorSecuenciasViewModel : Screen , IHandle<EditarSecuenciaEvent>
+    public class EditorSecuenciasViewModel : Screen, IHandle<EditarSecuenciaEvent>
     {
 
 
@@ -93,7 +93,7 @@ namespace EcoHand.ViewModels
             }
         }
 
-       // private Secuenciable _selectedITem;
+        // private Secuenciable _selectedITem;
 
         public Secuenciable SelectedItem
         {
@@ -105,7 +105,7 @@ namespace EcoHand.ViewModels
                     return SelectedEvento;
                 return null;
             }
-      
+
         }
 
 
@@ -120,7 +120,7 @@ namespace EcoHand.ViewModels
             }
             set
             {
-               //fix choto pero parece q anda
+                //fix choto pero parece q anda
                 _selectedEvento = null;
                 NotifyOfPropertyChange(() => SelectedEvento);
                 _selectedGesto = value;
@@ -143,7 +143,7 @@ namespace EcoHand.ViewModels
                 _selectedGesto = null;
                 NotifyOfPropertyChange(() => SelectedGesto);
                 _selectedEvento = value;
-                
+
                 NotifyOfPropertyChange(() => SelectedEvento);
 
 
@@ -169,7 +169,7 @@ namespace EcoHand.ViewModels
         private IEventAggregator _events;
 
         private ILoggedInUser _user;
-        private bool Editando ;
+        private bool Editando;
 
         public EditorSecuenciasViewModel(IEventAggregator events, ILoggedInUser user)
         {
@@ -191,26 +191,51 @@ namespace EcoHand.ViewModels
 
         private void CargarListaDeEventos()
         {
-            EventoModel Tiempo = new EventoModel()
+            EventoModel Tiempo = new TiempoEvento()
             {
                 Tipo = TipoEvento.Tiempo,
                 Nombre = "TIEMPO DE ESPERA",
 
             };
-            EventoModel SaltoFSR = new EventoModel()
+            EventoModel SaltoFSR = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoFSR,
                 Nombre = "Salto Por FSR"
             };
-            EventoModel SaltoFSRNegativo = new EventoModel()
+            EventoModel SaltoFSRNegativo = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoFSRNegativo,
                 Nombre = "Salto Por FSR falso"
             };
-            EventoModel SaltoIncondicional = new EventoModel()
+            EventoModel SaltoIncondicional = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoIncondicional,
                 Nombre = "Salto Incondicional"
+            };
+            EventoModel MoverPulgar = new MoverDedoEvento()
+            {
+                Tipo = TipoEvento.MoverPulgar,
+                Nombre = "Mover Pulgar"
+            };
+            EventoModel MoverIndice = new MoverDedoEvento()
+            {
+                Tipo = TipoEvento.MoverIndice,
+                Nombre = "Mover Indice"
+            };
+            EventoModel MoverMayor = new MoverDedoEvento()
+            {
+                Tipo = TipoEvento.MoverMayor,
+                Nombre = "Mover Mayor"
+            };
+            EventoModel MoverAnular = new MoverDedoEvento()
+            {
+                Tipo = TipoEvento.MoverAnular,
+                Nombre = "Mover Anular"
+            };
+            EventoModel MoverMeñique = new MoverDedoEvento()
+            {
+                Tipo = TipoEvento.MoverMeñique,
+                Nombre = "Mover Meñique"
             };
 
             Eventos = new BindingList<EventoModel>();
@@ -219,6 +244,11 @@ namespace EcoHand.ViewModels
             Eventos.Add(SaltoFSR);
             Eventos.Add(SaltoIncondicional);
             Eventos.Add(SaltoFSRNegativo);
+            Eventos.Add(MoverPulgar);
+            Eventos.Add(MoverIndice);
+            Eventos.Add(MoverMayor);
+            Eventos.Add(MoverAnular);
+            Eventos.Add(MoverMeñique);
 
         }
 
@@ -245,56 +275,64 @@ namespace EcoHand.ViewModels
             }
         }
 
-        public void  AgregarASecuencia()
+        public void AgregarASecuencia()
         {
 
             if (SelectedItem == null) return;
 
             SelectedItem.Posicion = Secuencia.Count();
 
-            if (SelectedItem.GetType().Name.StartsWith("EventoModel"))
-            {
-                var aux = SelectedItem as EventoModel;
+            Type itemType = SelectedItem.GetType();
 
-                int max;
-
-                WindowManager windowManager = new WindowManager();
-                dynamic settings = new ExpandoObject();
-                settings.WindowStyle = WindowStyle.ThreeDBorderWindow;
-                settings.Title = "Agregar Evento";
-                settings.WindowState = WindowState.Normal;
-                settings.ResizeMode = ResizeMode.NoResize;
-                IDialogo dialogo = null;
-
-                if (aux.Tipo == TipoEvento.Tiempo)
-                {
-                    dialogo = new DialogEventoTiempoViewModel();
-                }
-                else
-                {
-                    max = Secuencia.Count - 1;
-                    dialogo = new DialogEventoViewModel(max);
-
-                }
-
-
-                windowManager.ShowDialog(dialogo, null, settings);
-
-                if (!dialogo.IsAccepted)
-                {
-                    // Handle 
-                    return;
-                }
-                aux.ValorEntrada = dialogo.Input;
-
-                Secuencia.Add(aux.Clone());
-            }
-            else
+            if (itemType == typeof(GestoModel))
             {
                 var gesto = SelectedItem as GestoModel;
                 Secuencia.Add(gesto.Clone());
+                return;
             }
-            
+
+            WindowManager windowManager = new WindowManager();
+            dynamic settings = new ExpandoObject();
+            settings.WindowStyle = WindowStyle.ThreeDBorderWindow;
+            settings.Title = "Agregar Evento";
+            settings.WindowState = WindowState.Normal;
+            settings.ResizeMode = ResizeMode.NoResize;
+            IDialogo dialogo = null;
+
+            EventoModel aux = null;
+
+            if (itemType == typeof(TiempoEvento))
+            {
+                aux = SelectedItem as TiempoEvento;
+                dialogo = new DialogEventoTiempoViewModel();
+            }
+
+            if (itemType == typeof(MoverDedoEvento))
+            {
+                aux = SelectedItem as MoverDedoEvento;
+                dialogo = new DialogMoverDedoEvntViewModel();
+            }
+
+            if (itemType == typeof(SaltoEvento))
+            {
+                aux = SelectedItem as SaltoEvento;
+
+                dialogo = new DialogEventoViewModel(Secuencia.Count - 1);
+            }
+
+
+
+
+            windowManager.ShowDialog(dialogo, null, settings);
+
+            if (!dialogo.IsAccepted)
+            {
+                // Handle 
+                return;
+            }
+            aux.ValorEntrada = dialogo.Input;
+
+            Secuencia.Add(aux.Clone());
 
 
         }
@@ -312,7 +350,7 @@ namespace EcoHand.ViewModels
         {
 
             APIController.Model.Secuencia s = new APIController.Model.Secuencia();
-                       
+
 
             s.UsuarioID = _user.Id;
             s.Nombre = Nombre;
@@ -335,7 +373,7 @@ namespace EcoHand.ViewModels
             }
 
             LoadListaSecuencias();
-            
+
         }
 
         private void LoadListaSecuencias()
@@ -409,12 +447,20 @@ namespace EcoHand.ViewModels
 
         private BindingList<Secuenciable> ReconstruirSecuencia(string xmlCode)
         {
-            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
-            XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
-            System.IO.StringReader reader = new System.IO.StringReader(xmlCode); 
-            var list = (ListaSecuenciable)serializer.Deserialize(reader);
 
-            return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
+            try
+            {
+                Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
+                XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
+                System.IO.StringReader reader = new System.IO.StringReader(xmlCode);
+                var list = (ListaSecuenciable)serializer.Deserialize(reader);
+
+                return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
+            }
+            catch (Exception e )
+            {
+                return null;
+            }
 
         }
     }

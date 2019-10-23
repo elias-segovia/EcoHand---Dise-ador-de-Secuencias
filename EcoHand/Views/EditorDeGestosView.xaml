@@ -67,14 +67,14 @@
         </HelixToolkit:HelixViewport3D>
 
         <Button Style="{StaticResource RadioButton}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
-            
+
         </Button>
-        
+
         <StackPanel Margin="0,15,0,15" Grid.Row="4" Grid.Column="2" >
             <DockPanel>
                 <Label x:Name="Gesto">Nombre</Label>
                 <TextBox  VerticalAlignment="Center"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
-                
+
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
             <StackPanel HorizontalAlignment="Left">
@@ -85,6 +85,7 @@
 
             </StackPanel>
         </StackPanel>
+        <Button Style="{StaticResource RadioButton}" x:Name="Cancelar" Grid.Column="2" Grid.Row="6" Content="Cancelar" Margin="10,53,10,120" />
 
     </Grid>
 </UserControl>

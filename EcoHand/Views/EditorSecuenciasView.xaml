@@ -54,7 +54,7 @@
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                             
+
                             <TextBlock   Text="{Binding Path=Nombre}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -67,7 +67,7 @@
 
 
 
-        <GroupBox Header="Secuencia"  Margin=" 10 0 10 10"   Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Column="2" MinHeight="400"
+        <GroupBox Header="Secuencia"  Margin="24,0,271,160"   Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="5" Grid.Column="2" MinHeight="400"
                    MaxHeight="400" MinWidth="300">
             <ScrollViewer VerticalScrollBarVisibility="auto">
                 <ListBox x:Name="Secuencia" Width="205"
@@ -85,19 +85,20 @@
         </GroupBox>
 
 
-        <Button Style="{StaticResource RadioButton}" x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="4" Margin="20 0 20 0" Content="Agregar" />
-        <Button Style="{StaticResource RadioButton}" x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="4" Margin="20 0 20 0" Content="Quitar"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="5" Margin="24,123,16,100" Content="Agregar" />
+        <Button Style="{StaticResource RadioButton}" x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="4" Margin="34,122,6,101" Content="Quitar" Grid.RowSpan="2"/>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="5" Margin="20 30 0 0" Orientation="Vertical" Grid.RowSpan="2">
+        <StackPanel Grid.Row="1" Grid.Column="4" Margin="28,30,47,0" Orientation="Vertical" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <Label>Nombre :</Label>
             <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Nombre" MinWidth="200"  MaxWidth="200"></TextBox>
             <Label>Descripcion :</Label>
             <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
             <Button Style="{StaticResource RadioButton}" x:Name="GuardarSecuencia" Margin="0 10 0 0" Content="Guardar" />
+            <Button Style="{StaticResource RadioButton}" x:Name="Cancelar" Margin="0 60 0 0" Content="Cancelar" />
         </StackPanel>
 
-        
+
 
 
     </Grid>

@@ -95,14 +95,19 @@ namespace EcoHand.ViewModels
 
         private BindingList<Secuenciable> ReconstruirSecuencia(string xmlCode)
         {
-            
-            Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
-            XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
-            System.IO.StringReader reader = new System.IO.StringReader(xmlCode);
-            var list = (ListaSecuenciable)serializer.Deserialize(reader);
+            try
+            {
+                Type[] types = { typeof(Secuenciable), typeof(GestoModel), typeof(EventoModel), typeof(TipoEvento) };
+                XmlSerializer serializer = new XmlSerializer(typeof(ListaSecuenciable), types);
+                System.IO.StringReader reader = new System.IO.StringReader(xmlCode);
+                var list = (ListaSecuenciable)serializer.Deserialize(reader);
 
-            return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
-
+                return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
         }
     }        
         
