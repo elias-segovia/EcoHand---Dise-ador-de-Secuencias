@@ -18,19 +18,21 @@ namespace EcoHand.ViewModels
 
         private ILoggedInUser _user;
 
-        
 
-       
+
+
         public ListadoGestosViewModel(ILoggedInUser user)
         {
             _user = user;
-          
+
         }
 
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
+            
             await CargarListaDeGestosAsync();
+            
             if (Gestos.Count > 0)
             {
                 SelectedGesto = Gestos.First();
@@ -70,11 +72,53 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private bool _misGestosSelected;
+
+        public bool MisGestosSelected
+        {
+            get { return _misGestosSelected; }
+            set
+            {
+                _misGestosSelected = value;
+                NotifyOfPropertyChange(() => MisGestosSelected);
+                RefrescarGestos();
+            }
+        }
+
+        private bool _todosSelected;
+
+        public bool TodosSelected
+        {
+            get { return _todosSelected; }
+            set
+            {
+                _todosSelected = value;
+                NotifyOfPropertyChange(() => TodosSelected);
+                
+            }
+        }
+
+        private async void RefrescarGestos()
+        {
+            await CargarListaDeGestosAsync();
+            NotifyOfPropertyChange(() => Gestos);
+            if (Gestos.Count > 0)
+            {
+                SelectedGesto = Gestos.First();
+            }
+        }
+
 
         //public BindableCollection<GestoModel> Gestos { get; set; }
         private async Task CargarListaDeGestosAsync()
         {
             var resp = await GestoHandler.ObtenerListaDeGestosAsync();
+
+            if(MisGestosSelected == true)
+            {
+                resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
+            }
+
             Gestos = new BindingList<GestoModel>();
             foreach (var item in resp)
             {
@@ -133,10 +177,10 @@ namespace EcoHand.ViewModels
 
         public async Task LoadHandAsync()
         {
-            
+
             ActivateItem(new HandDetailsViewModel(SelectedGesto));
         }
 
-    
+
     }
 }

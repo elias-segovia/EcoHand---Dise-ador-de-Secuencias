@@ -41,8 +41,8 @@
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
             <StackPanel HorizontalAlignment="Left">
-                <Label x:Name="Descripcionlbl">Descripcion</Label>
-                <TextBox AcceptsReturn="true" IsReadOnly="True" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
+                <Label x:Name="Descripcionlbl" Content="Descripcion"/>
+                <TextBox AcceptsReturn="true" IsReadOnly="True" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200" RenderTransformOrigin="1.389,3.12"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left">
 

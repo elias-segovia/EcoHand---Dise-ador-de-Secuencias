@@ -159,10 +159,13 @@
     <Compile Include="Models\EventoModel.cs" />
     <Compile Include="Models\GestoModel.cs" />
     <Compile Include="Models\ILoggedInUser.cs" />
+    <Compile Include="Models\MoverDedoEvento.cs" />
+    <Compile Include="Models\SaltoEvento.cs" />
     <Compile Include="Models\Secuenciable.cs" />
     <Compile Include="Models\ListaSecuenciable.cs" />
     <Compile Include="Models\LoggedInUser.cs" />
     <Compile Include="Models\SecuenciaModel.cs" />
+    <Compile Include="Models\TiempoEvento.cs" />
     <Compile Include="Models\TipoEvento.cs" />
     <Compile Include="PathFinder.cs" />
     <Compile Include="RubberbandAdorner.cs" />

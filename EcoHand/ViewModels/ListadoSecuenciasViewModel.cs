@@ -66,6 +66,41 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private bool _misSecuenciasSelected;
+
+        public bool MisGestosSelected
+        {
+            get { return _misSecuenciasSelected; }
+            set
+            {
+                _misSecuenciasSelected = value;
+                NotifyOfPropertyChange(() => MisGestosSelected);
+                RefrescarGestos();
+            }
+        }
+
+        private bool _todosSelected;
+
+        public bool TodosSelected
+        {
+            get { return _todosSelected; }
+            set
+            {
+                _todosSelected = value;
+                NotifyOfPropertyChange(() => TodosSelected);
+
+            }
+        }
+
+        private async void RefrescarGestos()
+        {
+            await CargarSecuencias();
+            NotifyOfPropertyChange(() => Secuencias);
+            if (Secuencias.Count > 0)
+            {
+                SelectedSecuencia = Secuencias.First();
+            }
+        }
 
 
         private BindingList<SecuenciaModel> _secuencias;
@@ -85,7 +120,14 @@ namespace EcoHand.ViewModels
         private async Task CargarSecuencias()
         {
             var resp = await SecuenciaHandler.GetSecuenciasAsync();
+
+            if (MisGestosSelected)
+            {
+                resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
+            }
+
             Secuencias = new BindingList<SecuenciaModel>();
+
             foreach (var item in resp)
             {
 

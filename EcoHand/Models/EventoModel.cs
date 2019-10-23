@@ -21,11 +21,25 @@ namespace EcoHand.Models
         {
             get
             {
-                return ObtenerCodigo() + ValorEntrada.ToString("X2");
+                return ObtenerCodigo() + ObtenerValorEnHexa();
             }
         }
 
-        
+
+        private string ObtenerValorEnHexa()
+        {
+            switch (Tipo)
+            {
+                case TipoEvento.Tiempo:
+                    return (25.5 * ValorEntrada).ToString("X2");
+
+                default:
+                    return ValorEntrada.ToString("X2");
+
+            }
+        }
+
+
         private string ObtenerCodigo()
         {
             //segun el tipo tiene un prefijo 

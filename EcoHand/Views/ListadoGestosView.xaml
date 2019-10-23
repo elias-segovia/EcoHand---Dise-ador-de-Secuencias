@@ -19,7 +19,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
-   
+
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -40,24 +40,26 @@
         <Button Style="{StaticResource RadioButton}" Grid.Column="1" Grid.Row="1"  Content="Nuevo" x:Name="LoadEditorDeGestos" />
 
 
-        <ListBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Gestos" 
-                 SelectedItem="{Binding SelectedGesto}">
+        <ListBox Grid.Row="2" Grid.Column="1" x:Name="Gestos" 
+                 SelectedItem="{Binding SelectedGesto}" Margin="0,40,0,0">
 
             <ListBox.ItemTemplate>
-               <DataTemplate>
-                  <TextBlock   Text="{Binding Path=Nombre}"/>
-               </DataTemplate>
+                <DataTemplate>
+                    <TextBlock   Text="{Binding Path=Nombre}"/>
+                </DataTemplate>
             </ListBox.ItemTemplate>
 
         </ListBox>
-        
-        
-        
+
+
+
 
         <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
 
         <Button Style="{StaticResource RadioButton}" Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" Margin="225,0,0,0" >Editar</Button>
         <Button Style="{StaticResource RadioButton}" Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="0,0,225,0"  MinWidth="120" MaxWidth="200" >Eliminar</Button>
+        <RadioButton x:Name="TodosSelected"  Content="Todos" Grid.Column="1" HorizontalAlignment="Left" Margin="8,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <RadioButton x:Name="MisGestosSelected" Content="Mis  Gestos" Grid.Column="1" HorizontalAlignment="Left" Margin="93,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
