@@ -21,7 +21,7 @@ namespace EcoHand.ViewModels
         private string _contraseña;
 
         private IEventAggregator _events;
-        public InicioViewModel( IEventAggregator events , ILoggedInUser user)
+        public InicioViewModel(IEventAggregator events, ILoggedInUser user)
         {
             _events = events;
             _loggedInUser = user;
@@ -80,6 +80,9 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private bool _cargando;
+        public bool Cargando { get { return _cargando; } set { _cargando = value; NotifyOfPropertyChange(() => Cargando); } }
+
 
 
 
@@ -98,6 +101,8 @@ namespace EcoHand.ViewModels
                 DTO_In_Usuario usuario = new DTO_In_Usuario(Usuario, Contraseña);
                 try
                 {
+                    Cargando = true;
+                    Error = "";
                     var result = await UsuarioHandler.Ingresar(usuario);
 
                     if (result.Successfull)
@@ -109,11 +114,13 @@ namespace EcoHand.ViewModels
                         _loggedInUser.UserName = result.Nombre;
 
                         _events.PublishOnUIThread(new LogOnEvent());
+
                         //ir a  home
                     }
                     else
                     {
                         Error = "El usuario o contraseña no es valido";
+                        Cargando = false;
                     }
                 }
                 catch (Exception e)

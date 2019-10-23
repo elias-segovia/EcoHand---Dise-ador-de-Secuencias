@@ -470,5 +470,8 @@
   <ItemGroup>
     <Resource Include="Recursos\img\LOGOBYN.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\img\giphy.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

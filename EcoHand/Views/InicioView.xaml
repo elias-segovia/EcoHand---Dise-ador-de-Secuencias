@@ -23,34 +23,19 @@
     
     >
     <Grid HorizontalAlignment="Center">
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto" MinHeight="62"/>
-            <RowDefinition Height="auto" MinHeight="31.333"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="412*"/>
-            <ColumnDefinition Width="auto" MinWidth="938.667"/>
-            <ColumnDefinition Width="409*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>-->
 
-        <Label Content="Bienvenido al Diseñador de Secuencias" Margin="50" FontSize="22" HorizontalAlignment="Center" Width="394" />
+
+        <Image HorizontalAlignment="Left" Height="171" Source="/Recursos/img/giphy.gif" VerticalAlignment="Top" Width="214" Margin="814,379,0,0"
+               Visibility="{Binding Cargando, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+
+        <Label Content="Bienvenido al Diseñador de Secuencias" Margin="433,50,417,50" FontSize="22" HorizontalAlignment="Center" Width="394" />
         <Image MaxHeight="200"  Source="/Recursos/img/Logo.png" Margin="0 100 0 300" HorizontalAlignment="Center" Width="221"/>
 
 
         <StackPanel Margin="439,381,393,240.667" Orientation="Horizontal" HorizontalAlignment="Center">
             <Label Margin="0,0,30,-0.333" Grid.Row="4" Grid.Column="2" Content="Usuario:" Width="80" />
-            <TextBox Name="Usuario" MinWidth="300" Text="Ingresar su nombre de usuario" TextWrapping="Wrap"  FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="Usuario" MinWidth="300" Text="Ingresar su nombre de usuario" TextWrapping="Wrap"  FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True" />
         </StackPanel>
 
         <StackPanel Margin="405,432,365,189.667" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -58,15 +43,13 @@
             <PasswordBox Margin="0,0,24,-0.333" x:Name="Contraseña" MinWidth="300"  />
         </StackPanel>
 
-        <TextBlock Name="Error" HorizontalAlignment="Center"
+        <TextBlock x:Name="Error" HorizontalAlignment="Center"
                TextWrapping="Wrap"
-               Foreground="Red" Visibility="{Binding ErrorEsVisible , Converter={StaticResource BooleanToVisibilityConverter}}" Margin="408,498,374,126.667" Width="462" >
-            * Usuario o contraseña incorrecta, vuelva a intetarlo.
-        </TextBlock>
+               Foreground="Red" Visibility="{Binding ErrorEsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="416,498,366,127" Width="462" ><Run Text="* Usuario o contraseña incorrecta, vuelva a intetarlo."/></TextBlock>
 
-        <Button Style="{StaticResource RadioButton}" Name="Ingresar" Margin="385,558,659,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Ingresar" Width="200" Height="30"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="Ingresar" Margin="385,558,659,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Ingresar" Width="200" Height="30"/>
 
-        <Button Style="{StaticResource RadioButton}" Name="CrearCuenta" Margin="705,558,339,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Crear Cuenta" Width="200" Height="30"  />
+        <Button Style="{StaticResource RadioButton}" x:Name="CrearCuenta" Margin="705,558,339,64.667" BorderBrush="PapayaWhip" HorizontalAlignment="Stretch"  Content="Crear Cuenta" Width="200" Height="30"  />
 
 
     </Grid>
