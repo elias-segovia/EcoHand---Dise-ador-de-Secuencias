@@ -346,6 +346,13 @@ namespace EcoHand.ViewModels
             NotifyOfPropertyChange(() => Secuencia);
         }
 
+        public void Cancelar ()
+        {
+            var shell = this.Parent as ShellViewModel;
+
+            shell.LoadSecuencias();
+        }
+
         public async void GuardarSecuencia()
         {
 
@@ -457,7 +464,7 @@ namespace EcoHand.ViewModels
 
                 return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
             }
-            catch (Exception e )
+            catch (Exception ex )
             {
                 return null;
             }

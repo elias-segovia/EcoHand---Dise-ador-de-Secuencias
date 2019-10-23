@@ -330,6 +330,13 @@ namespace EcoHand.ViewModels
 
         }
 
+        public void Cancelar()
+        {
+            var shell = this.Parent as ShellViewModel;
+
+            shell.LoadListaGesto();
+        }
+
         private async Task EditarGestoAsync()
         {
 
