@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EcoHand.ViewModels
 {
@@ -39,9 +40,9 @@ namespace EcoHand.ViewModels
         {
             base.OnViewLoaded(view);
 
-            await CargarListaDeGestosAsync();
+            MisGestosSelected = true;
 
-            if (Gestos.Count > 0)
+            if (Gestos?.Count > 0)
             {
                 SelectedGesto = Gestos.First();
             }
@@ -109,7 +110,7 @@ namespace EcoHand.ViewModels
         {
             await CargarListaDeGestosAsync();
             NotifyOfPropertyChange(() => Gestos);
-            if (Gestos.Count > 0)
+            if (Gestos?.Count > 0)
             {
                 SelectedGesto = Gestos.First();
             }
@@ -119,31 +120,43 @@ namespace EcoHand.ViewModels
         //public BindableCollection<GestoModel> Gestos { get; set; }
         private async Task CargarListaDeGestosAsync()
         {
-            var resp = await GestoHandler.ObtenerListaDeGestosAsync();
 
-            if (MisGestosSelected == true)
-            {
-                resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
-            }
 
-            Gestos = new BindingList<GestoModel>();
-            foreach (var item in resp)
+            try
             {
-                Gestos.Add(new GestoModel()
+                var resp = await GestoHandler.ObtenerListaDeGestosAsync();
+
+                if (MisGestosSelected == true)
                 {
-                    Descripcion = item.Descripcion,
-                    FechaCreacion = item.FechaCreacion,
-                    FechaModificacion = item.FechaModificacion,
-                    ID = item.ID,
-                    Nombre = item.Nombre,
-                    PosAnular = item.PosAnular,
-                    Posindice = item.Posindice,
-                    PosMayor = item.PosMayor,
-                    PosMeñique = item.PosMeñique,
-                    PosPulgar = item.PosPulgar,
-                    UsuarioID = item.UsuarioID
-                });
+                    resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
+                }
+
+                Gestos = new BindingList<GestoModel>();
+                foreach (var item in resp)
+                {
+                    Gestos.Add(new GestoModel()
+                    {
+                        Descripcion = item.Descripcion,
+                        FechaCreacion = item.FechaCreacion,
+                        FechaModificacion = item.FechaModificacion,
+                        ID = item.ID,
+                        Nombre = item.Nombre,
+                        PosAnular = item.PosAnular,
+                        Posindice = item.Posindice,
+                        PosMayor = item.PosMayor,
+                        PosMeñique = item.PosMeñique,
+                        PosPulgar = item.PosPulgar,
+                        UsuarioID = item.UsuarioID
+                    });
+                }
+
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error Al cargar los gestos");
+            }
+
         }
 
         public void LoadEditorDeGestos()

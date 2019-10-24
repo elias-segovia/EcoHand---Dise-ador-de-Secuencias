@@ -62,8 +62,7 @@
 
             </Style>
 
-            <Style TargetType="Button" x:Key="MyButton2">
-                <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Style TargetType="Button" x:Key="RadioButtonCancel">
                 <Setter Property="Background" Value="Black" />
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="FontSize" Value="15" />
@@ -73,33 +72,32 @@
                 <Setter Property="TextBlock.TextAlignment" Value="Center" />
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            
-                                <Grid Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="MyContentPresenter" 
-                                          Content="{TemplateBinding Content}"
-                                          HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center" />
-                                </Grid>
-                        
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10" Background="Black" BorderBrush="#ccc" BorderThickness="0,1,1,0" >
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-
                 <Style.Triggers>
                     <Trigger Property="IsEnabled" Value="False">
-                        <Setter Property="OverridesDefaultStyle" Value="True" />
-                        <Setter Property="Background" Value="LightGray" />
-                        <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="15" />
-                        <Setter Property="FontWeight" Value="Normal" />
-                        <Setter Property="Width" Value="200" />
-                        <Setter Property="Height" Value="30" />
-                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
-                        
+                        <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="LightGray" BorderBrush="#ccc" BorderThickness="0,1,1,0" >
+                                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                        </Setter>
                     </Trigger>
                 </Style.Triggers>
+
             </Style>
+
+            
 
         </ResourceDictionary>
     </Application.Resources>

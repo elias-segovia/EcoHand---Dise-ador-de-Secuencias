@@ -29,7 +29,7 @@ namespace EcoHand.Models
 
         protected override string ObtenerValorEnHexa()
         {
-            return Int64.Parse((ValorEntrada * 25.5).ToString()).ToString("X2");
+            return Int64.Parse((Math.Round(ValorEntrada * 25.5)).ToString()).ToString("X2");
         }
     }
 }

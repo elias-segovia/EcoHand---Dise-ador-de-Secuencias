@@ -126,6 +126,7 @@ namespace EcoHand.ViewModels
                 catch (Exception e)
                 {
                     Error = e.Message;
+                    Cargando = false;
                 }
             }
             else

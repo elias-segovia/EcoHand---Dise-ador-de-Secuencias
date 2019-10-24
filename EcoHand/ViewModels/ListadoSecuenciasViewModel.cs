@@ -33,18 +33,30 @@ namespace EcoHand.ViewModels
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
-            await CargarSecuencias();
-            if (Secuencias.Count > 0)
+
+            MisGestosSelected = true;
+
+            if (Secuencias?.Count > 0)
             {
                 SelectedSecuencia = Secuencias.First();
             }
         }
 
-        public bool PuedeEditar
+
+
+        public bool CanLoadEditarById
         {
             get
             {
-                return SelectedSecuencia.UsuarioId == _user.Id;
+                return SelectedSecuencia?.UsuarioId == _user.Id;
+            }
+        }
+
+        public bool CanEliminarSecuencia
+        {
+            get
+            {
+                return SelectedSecuencia?.UsuarioId == _user.Id;
             }
         }
 
@@ -61,7 +73,8 @@ namespace EcoHand.ViewModels
             {
                 _selectedSecuencia = value;
                 NotifyOfPropertyChange(() => SelectedSecuencia);
-                NotifyOfPropertyChange(() => PuedeEditar);
+                NotifyOfPropertyChange(() => CanEliminarSecuencia);
+                NotifyOfPropertyChange(() => CanLoadEditarById);
                 LoadSecuenciaDetail();
             }
         }

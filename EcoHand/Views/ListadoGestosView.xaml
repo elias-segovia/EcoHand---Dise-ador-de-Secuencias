@@ -54,8 +54,8 @@
 
         <ContentControl Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
 
-        <Button Style="{StaticResource MyButton2}"  Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" Margin="225,0,0,0" >Editar</Button>
-        <Button Style="{StaticResource MyButton2}" Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="0,0,225,0"  MinWidth="120" MaxWidth="200" >Eliminar</Button>
+        <Button Style="{StaticResource RadioButtonCancel}"  Grid.Row="3" x:Name="LoadEditarById" Grid.Column="3" MinWidth="120" MaxWidth="200" Margin="225,0,0,0" >Editar</Button>
+        <Button Style="{StaticResource RadioButtonCancel}" Grid.Row="3" x:Name="EliminarGesto" Grid.Column="3" Margin="102,0,358,0"  MinWidth="120" MaxWidth="200" >Eliminar</Button>
         <RadioButton x:Name="TodosSelected"  Content="Todos" Grid.Column="1" HorizontalAlignment="Left" Margin="8,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
         <RadioButton x:Name="MisGestosSelected" Content="Mis  Gestos" Grid.Column="1" HorizontalAlignment="Left" Margin="93,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 

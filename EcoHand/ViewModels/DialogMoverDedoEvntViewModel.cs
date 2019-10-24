@@ -9,7 +9,7 @@ namespace EcoHand.ViewModels
 {
     public class DialogMoverDedoEvntViewModel : Screen , IDialogo
     {
-        #region Agregar Evento MSj
+ 
 
         private int _input;
 
@@ -52,7 +52,6 @@ namespace EcoHand.ViewModels
             this.TryClose(false);
         }
 
-        #endregion
 
     }
 }
