@@ -18,27 +18,34 @@ namespace EcoHand.ViewModels
 
         private ILoggedInUser _user;
 
-
-
-
+                
         public ListadoGestosViewModel(ILoggedInUser user)
         {
             _user = user;
 
         }
 
+        public bool CanLoadEditarById
+        {
+            get { return _user.Id == SelectedGesto?.UsuarioID; }
+        }
+
+        public bool CanEliminarGesto
+        {
+            get { return _user.Id == SelectedGesto?.UsuarioID; }
+        }
+
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
-            
+
             await CargarListaDeGestosAsync();
-            
+
             if (Gestos.Count > 0)
             {
                 SelectedGesto = Gestos.First();
             }
         }
-
 
         private GestoModel _selectedGesto;
 
@@ -52,12 +59,12 @@ namespace EcoHand.ViewModels
             {
                 _selectedGesto = value;
                 NotifyOfPropertyChange(() => SelectedGesto);
+                NotifyOfPropertyChange(() => CanLoadEditarById);
+                NotifyOfPropertyChange(() => CanEliminarGesto);
                 LoadHandAsync();
 
             }
         }
-
-
 
         private BindingList<GestoModel> _gestos;
 
@@ -94,7 +101,7 @@ namespace EcoHand.ViewModels
             {
                 _todosSelected = value;
                 NotifyOfPropertyChange(() => TodosSelected);
-                
+
             }
         }
 
@@ -114,7 +121,7 @@ namespace EcoHand.ViewModels
         {
             var resp = await GestoHandler.ObtenerListaDeGestosAsync();
 
-            if(MisGestosSelected == true)
+            if (MisGestosSelected == true)
             {
                 resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
             }
