@@ -85,8 +85,8 @@
         </GroupBox>
 
 
-        <Button Style="{StaticResource RadioButton}" x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="5" Margin="24,123,16,100" Content="Agregar" />
-        <Button Style="{StaticResource RadioButton}" x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="4" Margin="34,122,6,101" Content="Quitar" Grid.RowSpan="2"/>
+        <Button Style="{StaticResource RadioButton}" x:Name="AgregarASecuencia" Grid.Column="2" Grid.Row="5" Margin="24,100,16,100" Content="Agregar" />
+        <Button Style="{StaticResource RadioButton}" x:Name="EliminarDeSecuencia"  Grid.Column="3" Grid.Row="4" Margin="34,100,6,101" Content="Quitar" Grid.RowSpan="2"/>
 
 
         <StackPanel Grid.Row="1" Grid.Column="4" Margin="28,30,47,0" Orientation="Vertical" Grid.RowSpan="2" Grid.ColumnSpan="2">
