@@ -317,7 +317,7 @@ namespace EcoHand.ViewModels
             {
                 aux = SelectedItem as SaltoEvento;
 
-                dialogo = new DialogEventoViewModel(Secuencia.Count - 1);
+                dialogo = new DialogEventoViewModel();
             }
 
 

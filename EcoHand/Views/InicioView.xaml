@@ -25,7 +25,7 @@
     <Grid HorizontalAlignment="Center">
 
 
-        <Image HorizontalAlignment="Left" Height="171" Source="/Recursos/img/giphy.gif" VerticalAlignment="Top" Width="214" Margin="814,379,0,0"
+        <local:Spinner HorizontalAlignment="Left" Height="84"  VerticalAlignment="Top" Width="75" Margin="619,482,0,0"
                Visibility="{Binding Cargando, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
 

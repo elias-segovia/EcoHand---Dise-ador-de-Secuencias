@@ -14,9 +14,7 @@ namespace EcoHand.ViewModels
         
 
         private int _input;
-
-        private int _MaxPosicion;
-
+        
         
 
         public int Input
@@ -34,10 +32,10 @@ namespace EcoHand.ViewModels
         public bool IsAccepted { get; set; }
 
 
-        public DialogEventoViewModel(int maxPosicion)
+        public DialogEventoViewModel()
         {
             
-            _MaxPosicion = maxPosicion;
+            
         }
 
       
@@ -58,11 +56,7 @@ namespace EcoHand.ViewModels
             if (Input < 0)
                 Input = 0;
      
-            else
-            {
-                //es por salto
-                Input = Input > _MaxPosicion ? _MaxPosicion : Input;
-            }
+       
         }
 
         public void Cancel()
