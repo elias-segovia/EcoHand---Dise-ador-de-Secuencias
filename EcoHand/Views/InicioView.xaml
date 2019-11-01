@@ -34,7 +34,7 @@
 
 
         <StackPanel Margin="439,381,393,240.667" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label Margin="0,0,30,-0.333" Grid.Row="4" Grid.Column="2" Content="Usuario:" Width="80" />
+            <Label Margin="0,0,30,-0.333" Grid.Row="4" Grid.Column="2" Content="Usuario:" Width="83" />
             <TextBox x:Name="Usuario" MinWidth="300" Text="Ingresar su nombre de usuario" TextWrapping="Wrap"  FontStyle="Italic" Foreground="Gray" AutomationProperties.IsRequiredForForm="True" />
         </StackPanel>
 
