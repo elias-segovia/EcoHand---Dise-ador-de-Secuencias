@@ -71,11 +71,11 @@
                    MaxHeight="400" MinWidth="300">
             <ScrollViewer VerticalScrollBarVisibility="auto">
                 <ListBox x:Name="Secuencia" Width="205"
-                         SelectedItem ="item">
+                         SelectedItem ="{Binding SelectedFromSecuencia}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
 
-                            <TextBox Margin="0 0 0 5" IsReadOnly="True" TextAlignment="Center" Text="{Binding Path=DisplayPos, Mode=OneWay}"/>
+                            <TextBlock Margin="0 0 0 5"  TextAlignment="Center" Text="{Binding Path=DisplayPos, Mode=OneWay}"/>
 
                         </DataTemplate>
                     </ListBox.ItemTemplate>

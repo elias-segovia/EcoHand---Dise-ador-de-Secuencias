@@ -79,13 +79,11 @@ namespace EcoHand.ViewModels
 
         public void LoadEditor()
         {
-            // ActivateItem(new EditorDeGestosViewModel());
             ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
         }
 
         public void LoadEditor(EditarGestoEvent events)
         {
-            // ActivateItem(new EditorDeGestosViewModel());
             ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
             _events.PublishOnUIThread(events);
         }
@@ -93,7 +91,6 @@ namespace EcoHand.ViewModels
         public void Handle(LogOnEvent message)
         {
             EstaLogueado = true;
-            //puuedo pasar los datos del usuario ACA
             LoadListaGesto();
         }
 

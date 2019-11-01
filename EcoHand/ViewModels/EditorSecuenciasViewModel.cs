@@ -34,6 +34,20 @@ namespace EcoHand.ViewModels
             }
         }
 
+        private Secuenciable _selectedFromSecuencia;
+
+        public Secuenciable SelectedFromSecuencia
+        {
+            get { return _selectedFromSecuencia; }
+            set
+            {
+                _selectedFromSecuencia = value;
+                NotifyOfPropertyChange(() => SelectedFromSecuencia);
+                NotifyOfPropertyChange(() => CanEliminarDeSecuencia);
+            }
+        }
+
+
         private string _nombre;
 
         public string Nombre
@@ -254,24 +268,31 @@ namespace EcoHand.ViewModels
 
         private async Task CargarListaDeGestosAsync()
         {
-            var resp = await GestoHandler.ObtenerListaDeGestosAsync();
-            Gestos = new BindingList<GestoModel>();
-            foreach (var item in resp)
+            try
             {
-                Gestos.Add(new GestoModel()
+                var resp = await GestoHandler.ObtenerListaDeGestosAsync();
+                Gestos = new BindingList<GestoModel>();
+                foreach (var item in resp)
                 {
-                    Descripcion = item.Descripcion,
-                    FechaCreacion = item.FechaCreacion,
-                    FechaModificacion = item.FechaModificacion,
-                    ID = item.ID,
-                    Nombre = item.Nombre,
-                    PosAnular = item.PosAnular,
-                    Posindice = item.Posindice,
-                    PosMayor = item.PosMayor,
-                    PosMeñique = item.PosMeñique,
-                    PosPulgar = item.PosPulgar,
-                    UsuarioID = item.UsuarioID
-                });
+                    Gestos.Add(new GestoModel()
+                    {
+                        Descripcion = item.Descripcion,
+                        FechaCreacion = item.FechaCreacion,
+                        FechaModificacion = item.FechaModificacion,
+                        ID = item.ID,
+                        Nombre = item.Nombre,
+                        PosAnular = item.PosAnular,
+                        Posindice = item.Posindice,
+                        PosMayor = item.PosMayor,
+                        PosMeñique = item.PosMeñique,
+                        PosPulgar = item.PosPulgar,
+                        UsuarioID = item.UsuarioID
+                    });
+                }
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Error al cargar secuencias", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
 
@@ -338,15 +359,28 @@ namespace EcoHand.ViewModels
         }
 
 
-
+        public bool CanEliminarDeSecuencia
+        {
+            get { return SelectedFromSecuencia != null; }
+        }
         public void EliminarDeSecuencia()
         {
-            if (Secuencia.Count == 0) return;
-            this.Secuencia.RemoveAt(Secuencia.Count - 1);
+            for (int i = SelectedFromSecuencia.Posicion; i < Secuencia.Count; i++)
+            {
+                var secuenciable = Secuencia.ElementAt(i);
+                secuenciable.Posicion = i - 1;
+                
+            }
+
+            this.Secuencia.Remove(SelectedFromSecuencia);
+
+            Secuencia = new BindingList<Secuenciable>(Secuencia);
+
             NotifyOfPropertyChange(() => Secuencia);
+            
         }
 
-        public void Cancelar ()
+        public void Cancelar()
         {
             var shell = this.Parent as ShellViewModel;
 
@@ -367,16 +401,24 @@ namespace EcoHand.ViewModels
 
             s.CodigoEjecutable = CrearArduinoCodigo();
 
-            if (Editando)
+            try
             {
-                s.FechaCreacion = _secuenciaModel.FechaCreacion;
-                s.ID = _secuenciaModel.ID;
-                await SecuenciaHandler.Editar(s);
+
+                if (Editando)
+                {
+                    s.FechaCreacion = _secuenciaModel.FechaCreacion;
+                    s.ID = _secuenciaModel.ID;
+                    await SecuenciaHandler.Editar(s);
+                }
+                else
+                {
+                    s.FechaCreacion = DateTime.Now;
+                    await SecuenciaHandler.Crear(s);
+                }
             }
-            else
+            catch
             {
-                s.FechaCreacion = DateTime.Now;
-                await SecuenciaHandler.Crear(s);
+                System.Windows.Forms.MessageBox.Show("Error al guardar secuencia", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
 
             LoadListaSecuencias();
@@ -464,8 +506,9 @@ namespace EcoHand.ViewModels
 
                 return new BindingList<Secuenciable>(list.ElementosDeSecuencia);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error al obtener secuencia", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return null;
             }
 

@@ -40,6 +40,7 @@ namespace EcoHand.Models
                        "D3" + (PosMayor*4).ToString("X2") +
                        "D4" + (PosAnular*4).ToString("X2") +
                        "D5" + (PosMeñique*4).ToString("X2");
+                
             }
         }
 

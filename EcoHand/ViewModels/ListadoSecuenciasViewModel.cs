@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EcoHand.ViewModels
 {
@@ -30,7 +31,7 @@ namespace EcoHand.ViewModels
             _user = user;
         }
 
-        protected override async void OnViewLoaded(object view)
+        protected override  void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
 
@@ -109,7 +110,7 @@ namespace EcoHand.ViewModels
         {
             await CargarSecuencias();
             NotifyOfPropertyChange(() => Secuencias);
-            if (Secuencias.Count > 0)
+            if (Secuencias?.Count > 0)
             {
                 SelectedSecuencia = Secuencias.First();
             }
@@ -132,28 +133,36 @@ namespace EcoHand.ViewModels
 
         private async Task CargarSecuencias()
         {
-            var resp = await SecuenciaHandler.GetSecuenciasAsync();
 
-            if (MisGestosSelected)
+            try
             {
-                resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
-            }
+                var resp = await SecuenciaHandler.GetSecuenciasAsync();
 
-            Secuencias = new BindingList<SecuenciaModel>();
-
-            foreach (var item in resp)
-            {
-
-                Secuencias.Add(new SecuenciaModel()
+                if (MisGestosSelected)
                 {
-                    Descripcion = item.Descripcion,
-                    ID = item.ID,
-                    FechaActualizacion = item.FechaModificacion,
-                    FechaCreacion = item.FechaCreacion,
-                    Nombre = item.Nombre,
-                    XmlCode = item.CodigoEstructura,
-                    UsuarioId = item.UsuarioID
-                });
+                    resp = resp.Where(x => x.UsuarioID == _user.Id).ToList();
+                }
+
+                Secuencias = new BindingList<SecuenciaModel>();
+
+                foreach (var item in resp)
+                {
+
+                    Secuencias.Add(new SecuenciaModel()
+                    {
+                        Descripcion = item.Descripcion,
+                        ID = item.ID,
+                        FechaActualizacion = item.FechaModificacion,
+                        FechaCreacion = item.FechaCreacion,
+                        Nombre = item.Nombre,
+                        XmlCode = item.CodigoEstructura,
+                        UsuarioId = item.UsuarioID
+                    });
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error al cargar Secuencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -177,11 +186,18 @@ namespace EcoHand.ViewModels
 
         public async void EliminarSecuencia()
         {
-            await SecuenciaHandler.EliminarAsync(SelectedSecuencia.ID);
-            this.Secuencias.Remove(SelectedSecuencia);
 
-            NotifyOfPropertyChange(() => Secuencias);
+            try
+            {
+                await SecuenciaHandler.EliminarAsync(SelectedSecuencia.ID);
+                this.Secuencias.Remove(SelectedSecuencia);
 
+                NotifyOfPropertyChange(() => Secuencias);
+            }
+            catch
+            {
+                MessageBox.Show("Error al Eliminar la secuencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void LoadSecuenciaDetail()

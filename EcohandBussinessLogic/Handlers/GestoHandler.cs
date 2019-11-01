@@ -43,17 +43,8 @@ namespace EcoHand.Handlers
 
         public static async Task EditarGestoAsync(GestoModel gesto)
         {
-            try
-            {
-                await GestosController.EditarAsync(gesto);
-            }
-            catch
-            {
-
-            }
-
+            await GestosController.EditarAsync(gesto);
         }
-        
+
     }
 }
- 

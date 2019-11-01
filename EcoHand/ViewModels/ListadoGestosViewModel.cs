@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace EcoHand.ViewModels
 {
@@ -36,7 +36,7 @@ namespace EcoHand.ViewModels
             get { return _user.Id == SelectedGesto?.UsuarioID; }
         }
 
-        protected override async void OnViewLoaded(object view)
+        protected override  void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
 
@@ -154,7 +154,7 @@ namespace EcoHand.ViewModels
             catch (Exception)
             {
 
-                MessageBox.Show("Error Al cargar los gestos");
+               MessageBox.Show("Error al cargar los gestos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -163,24 +163,20 @@ namespace EcoHand.ViewModels
         {
             var conductor = this.Parent as ShellViewModel;
             conductor.LoadEditor();
-            //conductor.ActivateItem(new EditorDeGestosViewModel());
-            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
-
+       
         }
 
-        public async void LoadEditarById(int Id)
+        public  void LoadEditarById(int Id)
         {
 
-            //ActivateItem(_container.GetInstance<EditorDeGestosViewModel>());
+           
             var conductor = this.Parent as ShellViewModel;
             var evente = new EditarGestoEvent();
             evente.Gesto = SelectedGesto;
-            //evente.Gesto = await GestoHandler.ObtenerGestoPorId(SelectedGesto.ID);
+           
             conductor.LoadEditor(evente);
 
-            //_events.PublishOnUIThread(evente);
-
-            //conductor.LoadEditor();
+       
 
 
 
@@ -188,10 +184,17 @@ namespace EcoHand.ViewModels
 
         public async void EliminarGesto()
         {
-            await GestoHandler.EliminarGesto(SelectedGesto.ID);
-            this.Gestos.Remove(SelectedGesto);
+            try
+            {
+                await GestoHandler.EliminarGesto(SelectedGesto.ID);
+                this.Gestos.Remove(SelectedGesto);
 
-            NotifyOfPropertyChange(() => Gestos);
+                NotifyOfPropertyChange(() => Gestos);
+            }
+            catch
+            {
+                MessageBox.Show("Error al Eliminar el gesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
