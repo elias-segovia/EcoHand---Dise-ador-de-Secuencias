@@ -32,24 +32,24 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan ="3">
-            <StackPanel HorizontalAlignment="Left"  Width="237">
+        <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan ="3" Width="300">
+            <StackPanel HorizontalAlignment="Left" Width="300">
                 <Label>Pulgar:</Label>
                 <Slider Name="Pulgar_Proximal_Angle" Minimum="0" Maximum="90" Value="{Binding Pulgar_proximal_angle}"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left"  Width="237">
+            <StackPanel HorizontalAlignment="Left"  Width="300">
                 <Label>Indice:</Label>
                 <Slider Name="Indice_Proximal_Angle" Minimum="0" Maximum="45" Value ="{Binding Indice_proximal_angle}" />
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Width="237">
+            <StackPanel HorizontalAlignment="Left" Width="300">
                 <Label>Mayor:</Label>
                 <Slider Name="Mayor_Proximal_Angle"  Minimum ="0"  Maximum="45" Value="{Binding Mayor_proximal_angle}"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left"  Width="237">
+            <StackPanel HorizontalAlignment="Left"  Width="300">
                 <Label>Anular:</Label>
                 <Slider Name="Anular_Proximal_Angle" Minimum="0" Maximum="45" Value="{Binding Anular_proximal_angle}"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left"  Width="237">
+            <StackPanel HorizontalAlignment="Left"  Width="300">
                 <Label>Meñique:</Label>
                 <Slider Name="Meñique_Proximal_Angle" Maximum="45" Minimum="0" Value="{Binding Meñique_proximal_angle}"/>
             </StackPanel>
@@ -66,26 +66,25 @@
 
         </HelixToolkit:HelixViewport3D>
 
-        <Button Style="{StaticResource RadioButton}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" >
 
-        </Button>
 
-        <StackPanel Margin="0,15,0,15" Grid.Row="4" Grid.Column="2" >
+        <StackPanel Margin="0,30,0,30" Grid.Row="4" Grid.Column="2"  Grid.ColumnSpan ="3" HorizontalAlignment="Center">
             <DockPanel>
-                <Label x:Name="Gesto">Nombre</Label>
-                <TextBox  VerticalAlignment="Center"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
-
+                <Label x:Name="Gesto">Nombre:</Label>
+                <TextBox  VerticalAlignment="Center"  x:Name="NombreGesto" Width="300"></TextBox>
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
-            <StackPanel HorizontalAlignment="Left">
-                <Label x:Name="Descripcionlbl">Descripcion</Label>
-                <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
-            </StackPanel>
+            <DockPanel HorizontalAlignment="Left">
+                <Label x:Name="Descripcionlbl">Descripción:</Label>
+                <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"  Width="300"></TextBox>
+            </DockPanel>
             <StackPanel HorizontalAlignment="Left">
 
             </StackPanel>
         </StackPanel>
-        <Button Style="{StaticResource RadioButton}" x:Name="Cancelar" Grid.Column="2" Grid.Row="6" Content="Cancelar" Margin="10,13,10,120" />
+
+        <Button Style="{StaticResource RadioButton}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" Margin="0 50 250 50"></Button>
+        <Button Style="{StaticResource RadioButton}" x:Name="Cancelar" Grid.Column="2" Grid.Row="5" Content="Cancelar" Margin="250 50 50 50" />
 
     </Grid>
 </UserControl>

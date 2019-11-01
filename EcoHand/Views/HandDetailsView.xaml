@@ -35,15 +35,15 @@
         </HelixToolkit:HelixViewport3D>
         <StackPanel  Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" >
             <DockPanel>
-                <Label x:Name="Gesto">Nombre</Label>
-                <TextBox   VerticalAlignment="Center" IsReadOnly="True"  x:Name="NombreGesto" MinWidth="80" MaxWidth="180"></TextBox>
+                <Label x:Name="Gesto">Nombre:</Label>
+                <TextBox  VerticalAlignment="Center" IsReadOnly="True" x:Name="NombreGesto" MinWidth="280" MaxWidth="380"></TextBox>
                 <Label Visibility="Hidden"  >Autor:</Label>
                 <Label x:Name="Autor" Content=""></Label>
             </DockPanel>
-            <StackPanel HorizontalAlignment="Left">
-                <Label x:Name="Descripcionlbl" Content="Descripcion"/>
-                <TextBox AcceptsReturn="true" IsReadOnly="True" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200" RenderTransformOrigin="1.389,3.12"/>
-            </StackPanel>
+            <DockPanel HorizontalAlignment="Left">
+                <Label x:Name="Descripcionlbl" Content="Descripción:"/>
+                <TextBox AcceptsReturn="true" IsReadOnly="True" TextWrapping="Wrap" x:Name="Descripcion"  MinWidth="260" MaxWidth="380" Height="auto" RenderTransformOrigin="1.389,3.12"/>
+            </DockPanel>
             <StackPanel HorizontalAlignment="Left">
 
             </StackPanel>

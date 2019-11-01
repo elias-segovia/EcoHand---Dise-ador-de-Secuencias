@@ -43,10 +43,14 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 30 0 0" Orientation="Vertical" >
-            <Label>Nombre :</Label>
-            <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Nombre" MinWidth="200"  MaxWidth="200"></TextBox>
-            <Label>Descripcion :</Label>
-            <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"  MaxWidth="200"></TextBox>
+            <DockPanel HorizontalAlignment="Left">
+                <Label Margin="0 0 0 20">Nombre:</Label>
+                <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Nombre" MinWidth="280" MaxWidth="380" Margin="0 0 0 20"></TextBox>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left">
+            <Label>Descripción:</Label>
+                <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion" MinWidth="260" MaxWidth="380" Height="auto"></TextBox>
+            </DockPanel>
         </StackPanel>
 
         
