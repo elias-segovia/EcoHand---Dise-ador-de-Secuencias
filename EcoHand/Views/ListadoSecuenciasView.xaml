@@ -50,8 +50,8 @@
         </ListBox>
 
 
-        <ContentControl Grid.Column="3" Margin ="60,0,0,0 "  Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
-        <Button Style="{StaticResource RadioButton}" Grid.Row="3" Grid.Column="1"  Content="Nuevo" x:Name="LoadEditorSecuencias" MinWidth="120" MaxWidth="200" Margin="100,50,0,0"/>
+        <ContentControl Grid.Column="3" Margin ="60,30,0,0 "  Grid.Row="1" Grid.RowSpan="2" x:Name="ActiveItem" />
+        <Button Style="{StaticResource RadioButton}" Grid.Row="1" Grid.Column="1"  Content="Nuevo" x:Name="LoadEditorSecuencias" MinWidth="120" MaxWidth="200" />
         <Button Style="{StaticResource RadioButtonCancel}" Grid.Row="3" Grid.Column="3" x:Name="LoadEditarById"  MinWidth="120" MaxWidth="200" Margin="0,50,500,0" >Editar</Button>
         <Button Style="{StaticResource RadioButtonCancel}" Grid.Row="3" Grid.Column="3" x:Name="EliminarSecuencia" MinWidth="120" MaxWidth="200" Margin="100,50,0,0">Eliminar</Button>
         <RadioButton x:Name="TodosSelected"  Content="Todos" Grid.Column="1" HorizontalAlignment="Left" Margin="8,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
