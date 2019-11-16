@@ -16,43 +16,40 @@ namespace EcoHand.ViewModels
 
 
 
-        private bool _EstaLogueado;
+
 
         private IEventAggregator _events;
 
         private SimpleContainer _container;
 
-        public ShellViewModel(SimpleContainer container, IEventAggregator events)
+        private ILoggedInUser _user;
+
+        private string _userName;
+
+        public string UserName
+        {
+            get
+            {
+                return _userName;
+            }
+            set
+            {
+                _userName = value;
+                NotifyOfPropertyChange(() => UserName);
+            }
+        }
+
+        public ShellViewModel(SimpleContainer container, IEventAggregator events , ILoggedInUser user)
         {
             _events = events;
             events.Subscribe(this);
             _container = container;
-                        
-            ActivateItem(_container.GetInstance<InicioViewModel>());
+            _user = user;
+            UserName = user.UserName;
+            
+            ActivateItem(_container.GetInstance<ListadoGestosViewModel>());
         }
 
-
-        public bool EstaLogueado
-        {
-            get
-            {
-                return _EstaLogueado;
-            }
-            set
-            {
-                _EstaLogueado = value;
-                NotifyOfPropertyChange(() => MenuEsVisible);
-            }
-        }
-
-
-        public bool MenuEsVisible
-        {
-            get
-            {
-                return EstaLogueado;
-            }
-        }
 
         public BindableCollection<GestoModel> Gestos { get; set; }
 
@@ -88,9 +85,14 @@ namespace EcoHand.ViewModels
             _events.PublishOnUIThread(events);
         }
 
+        public void LogOut()
+        {
+            var parent = Parent as MainViewModel;
+            parent.LoadInicio();
+        }
+
         public void Handle(LogOnEvent message)
         {
-            EstaLogueado = true;
             LoadListaGesto();
         }
 
