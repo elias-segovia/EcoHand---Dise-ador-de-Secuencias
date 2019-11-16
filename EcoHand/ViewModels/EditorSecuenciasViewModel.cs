@@ -30,6 +30,7 @@ namespace EcoHand.ViewModels
             {
                 _secuencia = value;
                 NotifyOfPropertyChange(() => Secuencia);
+                NotifyOfPropertyChange(() => CanGuardarSecuencia);
 
             }
         }
@@ -60,6 +61,7 @@ namespace EcoHand.ViewModels
             {
                 _nombre = value;
                 NotifyOfPropertyChange(() => Nombre);
+                NotifyOfPropertyChange(() => CanGuardarSecuencia);
             }
         }
 
@@ -161,6 +163,16 @@ namespace EcoHand.ViewModels
                 NotifyOfPropertyChange(() => SelectedEvento);
 
 
+            }
+        }
+
+
+        public bool CanGuardarSecuencia
+        {
+            get
+            {
+                return
+                Nombre?.Length > 0 && Nombre.Trim().Length > 0 && Secuencia?.Count > 0;
             }
         }
 
@@ -309,6 +321,9 @@ namespace EcoHand.ViewModels
             {
                 var gesto = SelectedItem as GestoModel;
                 Secuencia.Add(gesto.Clone());
+
+                NotifyOfPropertyChange(() => CanGuardarSecuencia);
+
                 return;
             }
 
@@ -355,6 +370,8 @@ namespace EcoHand.ViewModels
 
             Secuencia.Add(aux.Clone());
 
+            NotifyOfPropertyChange(() => CanGuardarSecuencia);
+
 
         }
 
@@ -369,7 +386,7 @@ namespace EcoHand.ViewModels
             {
                 var secuenciable = Secuencia.ElementAt(i);
                 secuenciable.Posicion = i - 1;
-                
+
             }
 
             this.Secuencia.Remove(SelectedFromSecuencia);
@@ -378,7 +395,9 @@ namespace EcoHand.ViewModels
 
 
             NotifyOfPropertyChange(() => Secuencia);
-            
+
+            NotifyOfPropertyChange(() => CanGuardarSecuencia);
+
         }
 
         public void Cancelar()
@@ -393,7 +412,7 @@ namespace EcoHand.ViewModels
 
             int id = _secuenciaModel != null ? _secuenciaModel.ID : -1;
 
-            if (await SecuenciaHandler.EsNombreRepetidoAsync(Nombre, id)) 
+            if (await SecuenciaHandler.EsNombreRepetidoAsync(Nombre, id))
             {
                 MessageBox.Show("El nombre ingresado ya se encuentra registrado, por favor ingreso otro", "Nombre Repetido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

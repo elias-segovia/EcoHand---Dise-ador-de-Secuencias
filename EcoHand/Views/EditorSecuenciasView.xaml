@@ -91,7 +91,7 @@
                 <TextBox AcceptsReturn="true" TextWrapping="Wrap" x:Name="Descripcion"></TextBox>
             </DockPanel>
             <DockPanel Margin="5,20,10,0">
-                <Button Width="180" Style="{StaticResource RadioButton}" x:Name="GuardarSecuencia" Margin="0 0 10 0" Content="Guardar" />
+                <Button Width="180" Style="{StaticResource RadioButtonCancel}" x:Name="GuardarSecuencia" Margin="0 0 10 0" Content="Guardar" />
                 <Button Width="180" Style="{StaticResource RadioButton}" x:Name="Cancelar"  Content="Cancelar" />
             </DockPanel>
         </StackPanel>

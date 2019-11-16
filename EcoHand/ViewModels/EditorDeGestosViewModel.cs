@@ -126,7 +126,7 @@ namespace EcoHand.ViewModels
 
 
 
-        public string NombreGesto { get => nombre; set { nombre = value; NotifyOfPropertyChange(); } }
+        public string NombreGesto { get => nombre; set { nombre = value; NotifyOfPropertyChange(() => NombreGesto); NotifyOfPropertyChange(() => CanGuardarGesto); } }
         public string Descripcion { get => descripcion; set { descripcion = value; NotifyOfPropertyChange(); } }
 
         public bool Editando = false;
@@ -334,7 +334,7 @@ namespace EcoHand.ViewModels
         {
             get
             {
-                return NombreGesto?.Length > 0;
+               return NombreGesto?.Length > 0 && NombreGesto.Trim().Length > 0;
             }
         }
 

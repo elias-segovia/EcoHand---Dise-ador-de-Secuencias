@@ -81,7 +81,7 @@
   
         </StackPanel>
 
-        <Button Style="{StaticResource RadioButton}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" ></Button>
+        <Button Style="{StaticResource RadioButtonCancel}" x:Name="GuardarGesto" Grid.Column="2" Grid.Row="5" Content="Guardar" ></Button>
         <Button Style="{StaticResource RadioButton}" x:Name="Cancelar" Grid.Column="1" Grid.Row="5" Content="Cancelar"  />
 
     </Grid>
