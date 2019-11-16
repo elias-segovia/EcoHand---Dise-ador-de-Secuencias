@@ -14,10 +14,10 @@ using System.Windows.Media.Media3D;
 
 namespace EcoHand.ViewModels
 {
-    public class EditorDeGestosViewModel: Screen , IHandle<EditarGestoEvent>
+    public class EditorDeGestosViewModel : Screen, IHandle<EditarGestoEvent>
     {
 
-       
+
 
         #region Modelo3D Variables
         //modelo de la mano agrupando todas las partes
@@ -38,7 +38,7 @@ namespace EcoHand.ViewModels
         Model3D anular_distal;
         Model3D meñique_proximal;
         Model3D meñique_distal;
-#endregion
+        #endregion
 
         #region Modelo Mano Variables
         int m_pulgar_proximal_angle;
@@ -54,8 +54,8 @@ namespace EcoHand.ViewModels
                 Move_proximal(value, "pulgar", new Vector3D(-1, 0, 0), new Point3D(13, 71, 4));
                 m_pulgar_proximal_angle = value;
 
-                
-     
+
+
             }
         }
 
@@ -138,7 +138,7 @@ namespace EcoHand.ViewModels
 
         //Property for the binding with the hand
         public Model3D Our_Model { get; set; }
-        
+
         private void AgregarRecursos()
         {
             hand.Children.Add(mano_sin_dedos);
@@ -211,7 +211,7 @@ namespace EcoHand.ViewModels
 
         }
 
-       
+
         void Move_proximal(int angle, string dedo, Vector3D vec, Point3D punto)
         {
             //rotate the object by "angle", the vector describes the axis
@@ -318,16 +318,24 @@ namespace EcoHand.ViewModels
 
         public async void GuardarGesto()
         {
-            if(Editando)
+            if (Editando)
             {
-               await EditarGestoAsync();
+                await EditarGestoAsync();
             }
             else
             {
                 await CrearGesto();
             }
-            
 
+
+        }
+
+        public bool CanGuardarGesto
+        {
+            get
+            {
+                return NombreGesto?.Length > 0;
+            }
         }
 
         public void Cancelar()
@@ -339,7 +347,11 @@ namespace EcoHand.ViewModels
 
         private async Task EditarGestoAsync()
         {
-
+            if (await GestoHandler.EsNombreRepetido(NombreGesto, MiGesto.ID))
+            {
+                MessageBox.Show("El nombre ingresado ya se encuentra registrado, por favor ingreso otro", "Nombre Repetido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
             APIController.Model.GestoModel gesto = new APIController.Model.GestoModel()
             {
@@ -361,7 +373,7 @@ namespace EcoHand.ViewModels
 
             await GestoHandler.EditarGestoAsync(gesto);
 
-            
+
             LoadListaDeGestos();
 
 
@@ -369,6 +381,13 @@ namespace EcoHand.ViewModels
 
         private async Task CrearGesto()
         {
+
+            if (await GestoHandler.EsNombreRepetido(NombreGesto))
+            {
+                MessageBox.Show("El nombre ingresado ya se encuentra registrado, por favor ingreso otro", "Nombre Repetido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             APIController.Model.GestoModel gesto = new APIController.Model.GestoModel()
             {
                 PosPulgar = Pulgar_proximal_angle,
@@ -387,6 +406,7 @@ namespace EcoHand.ViewModels
 
 
 
+
         private void ActualizarGesto(GestoModel gesto)
         {
             //Actualizo los valores de la mano.
@@ -396,7 +416,7 @@ namespace EcoHand.ViewModels
             this.Anular_proximal_angle = gesto.PosAnular;
             this.Meñique_proximal_angle = gesto.PosMeñique;
 
-  
+
 
         }
 

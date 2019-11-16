@@ -44,5 +44,10 @@ namespace EcohandBussinessLogic.Handlers
             
 
         }
+
+        public static Task<bool> EsNombreRepetido(string nombre, int iD)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

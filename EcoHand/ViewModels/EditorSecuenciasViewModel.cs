@@ -389,6 +389,11 @@ namespace EcoHand.ViewModels
 
         public async void GuardarSecuencia()
         {
+            if (await SecuenciaHandler.EsNombreRepetido(Nombre, _secuenciaModel.ID)) 
+            {
+                MessageBox.Show("El nombre ingresado ya se encuentra registrado, por favor ingreso otro", "Nombre Repetido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
             APIController.Model.Secuencia s = new APIController.Model.Secuencia();
 

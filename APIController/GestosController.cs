@@ -37,6 +37,38 @@ namespace APIController
             }
         }
 
+
+
+        public static async Task<GetGestoPorNombreResponse> GetGestoPorNombre(string nombre)
+        {
+            GetGestoPorNombreResponse result = new GetGestoPorNombreResponse();
+            using (var response = await _httpClient.GetAsync(controller + "?nombreGesto=" + nombre))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string res = await response.Content.ReadAsStringAsync();
+                    if (!res.Equals("null"))
+                    {
+                        GestoModel gesto = new GestoModel();
+
+                        JsonConvert.PopulateObject(res, gesto);
+
+                        result.Gesto = gesto;
+
+                        result.Exitoso = true;
+                    }
+                }
+                else
+                {
+                   
+                    result.Exitoso = false;
+                    
+                }
+
+                return result;
+            }
+        }
+
         public static async Task EditarAsync(GestoModel gesto)
         {
             using (var response = await _httpClient.PutAsJsonAsync(controller, gesto))

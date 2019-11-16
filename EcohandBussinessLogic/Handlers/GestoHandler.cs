@@ -24,8 +24,18 @@ namespace EcoHand.Handlers
             var gesto = await GestosController.GetGestosById(id);
 
             return gesto.Result;
+            
 
         }
+
+        public static async Task<bool>  EsNombreRepetido(string nombre)
+        {
+
+            var gesto = await GestosController.GetGestoPorNombre(nombre);
+
+            return gesto.Exitoso;
+        }
+
 
 
 
@@ -46,5 +56,20 @@ namespace EcoHand.Handlers
             await GestosController.EditarAsync(gesto);
         }
 
+        public static async Task<bool> EsNombreRepetido(string nombreGesto, int iD)
+        {
+            bool resp = false;
+
+            var gesto = await GestosController.GetGestoPorNombre(nombreGesto);
+
+            if(gesto.Exitoso)
+            {
+                resp = gesto.Gesto.ID != iD;
+            }
+
+
+            return resp;
+            
+        }
     }
 }

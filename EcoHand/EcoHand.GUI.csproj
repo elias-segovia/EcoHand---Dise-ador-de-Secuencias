@@ -187,6 +187,9 @@
     <Compile Include="ViewModels\ListadoGestosViewModel.cs" />
     <Compile Include="ViewModels\RegistroViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\CuentaView.xaml.cs">
+      <DependentUpon>CuentaView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DialogMoverDedoEvntView.xaml.cs">
       <DependentUpon>DialogMoverDedoEvntView.xaml</DependentUpon>
     </Compile>
@@ -284,6 +287,10 @@
     <Page Include="Resources\ToolboxItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CuentaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DialogMoverDedoEvntView.xaml">
       <Generator>MSBuild:Compile</Generator>
