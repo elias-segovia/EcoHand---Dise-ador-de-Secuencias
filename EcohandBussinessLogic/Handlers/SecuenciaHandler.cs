@@ -45,9 +45,20 @@ namespace EcohandBussinessLogic.Handlers
 
         }
 
-        public static Task<bool> EsNombreRepetido(string nombre, int iD)
+        public static async Task<bool> EsNombreRepetidoAsync(string nombre, int iD)
         {
-            throw new NotImplementedException();
+            bool resp = false;
+
+            var sec = await SecuenciaController.GetSecuenciaPorNombreAsync(nombre);
+
+            if (sec.Exitoso)
+            {
+                resp = sec.Secuencia.ID != iD;
+            }
+
+
+            return resp;
+
         }
     }
 }

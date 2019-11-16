@@ -52,6 +52,7 @@
     <Compile Include="Responses\GetGestoPorNombreResponse.cs" />
     <Compile Include="Responses\GetGestosByUserIdResponse.cs" />
     <Compile Include="Responses\GetGestosResponse.cs" />
+    <Compile Include="Responses\GetSecuenciaPorNombreResponse.cs" />
     <Compile Include="SecuenciaController.cs" />
     <Compile Include="UsuarioController.cs" />
   </ItemGroup>

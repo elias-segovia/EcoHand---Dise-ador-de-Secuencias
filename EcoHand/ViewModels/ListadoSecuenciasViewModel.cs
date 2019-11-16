@@ -192,7 +192,11 @@ namespace EcoHand.ViewModels
                 await SecuenciaHandler.EliminarAsync(SelectedSecuencia.ID);
                 this.Secuencias.Remove(SelectedSecuencia);
 
+                SelectedSecuencia = Secuencias.Count > 0 ? Secuencias.First() : null;
+
                 NotifyOfPropertyChange(() => Secuencias);
+
+                NotifyOfPropertyChange(() => SelectedSecuencia);
             }
             catch
             {

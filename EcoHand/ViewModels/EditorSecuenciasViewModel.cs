@@ -376,6 +376,7 @@ namespace EcoHand.ViewModels
 
             Secuencia = new BindingList<Secuenciable>(Secuencia);
 
+
             NotifyOfPropertyChange(() => Secuencia);
             
         }
@@ -389,7 +390,10 @@ namespace EcoHand.ViewModels
 
         public async void GuardarSecuencia()
         {
-            if (await SecuenciaHandler.EsNombreRepetido(Nombre, _secuenciaModel.ID)) 
+
+            int id = _secuenciaModel != null ? _secuenciaModel.ID : -1;
+
+            if (await SecuenciaHandler.EsNombreRepetidoAsync(Nombre, id)) 
             {
                 MessageBox.Show("El nombre ingresado ya se encuentra registrado, por favor ingreso otro", "Nombre Repetido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

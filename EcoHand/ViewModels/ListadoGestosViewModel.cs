@@ -189,7 +189,11 @@ namespace EcoHand.ViewModels
                 await GestoHandler.EliminarGesto(SelectedGesto.ID);
                 this.Gestos.Remove(SelectedGesto);
 
+                SelectedGesto = Gestos.Count > 0 ? Gestos.First() : null;
+                
                 NotifyOfPropertyChange(() => Gestos);
+
+                NotifyOfPropertyChange(() => SelectedGesto);
             }
             catch
             {
