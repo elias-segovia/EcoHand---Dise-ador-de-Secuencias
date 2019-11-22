@@ -13,7 +13,9 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"          
+        FontFamily="{DynamicResource MaterialDesignFont}"   
+        
+       Icon="/Recursos/img/Logo.png"
              
         mc:Ignorable="d"
         Title="EcoHand"

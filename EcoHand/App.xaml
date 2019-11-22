@@ -11,20 +11,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.grey.xaml" />
                
 
-                <!--Recursos de SecuenciaView-->
-                <ResourceDictionary Source="Resources/Styles/Shared.xaml"/>
-                <ResourceDictionary Source="Resources/Styles/ToolBar.xaml"/>
-                <ResourceDictionary Source="Resources/Styles/GroupBox.xaml"/>
-                <ResourceDictionary Source="Resources/Styles/Expander.xaml"/>
-                <ResourceDictionary Source="Resources/Styles/ScrollBar.xaml"/>
-                <ResourceDictionary Source="Resources/ApplicationToolbar.xaml"/>
-                <ResourceDictionary Source="Resources/DesignerItem.xaml"/>
-                <ResourceDictionary Source="Resources/ToolboxItem.xaml"/>
-                <ResourceDictionary Source="Resources/Toolbox.xaml"/>
-                <ResourceDictionary Source="Resources/Connection.xaml"/>
-                <ResourceDictionary Source="Resources/Stencils/SymbolStencils.xaml"/>
-                <ResourceDictionary Source="Resources/Stencils/FlowChartStencils.xaml"/>
-                <ResourceDictionary Source="Resources/Stencils/ShapeStencils.xaml"/>
 
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="Bootstrapper" />

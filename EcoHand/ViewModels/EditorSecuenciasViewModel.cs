@@ -264,6 +264,18 @@ namespace EcoHand.ViewModels
                 Nombre = "Mover Meñique"
             };
 
+            EventoModel SaltoMuscular = new SaltoEvento()
+            {
+                Tipo = TipoEvento.SaltoMusculo,
+                Nombre = "Salto Muscular"
+            };
+
+            EventoModel SaltoMuscularNegativo = new SaltoEvento()
+            {
+                Tipo = TipoEvento.SaltoMusculoRelajado,
+                Nombre = "Salto Musculo Relajado"
+            };
+
             Eventos = new BindingList<EventoModel>();
 
             Eventos.Add(Tiempo);
@@ -275,6 +287,8 @@ namespace EcoHand.ViewModels
             Eventos.Add(MoverMayor);
             Eventos.Add(MoverAnular);
             Eventos.Add(MoverMeñique);
+            Eventos.Add(SaltoMuscular);
+            Eventos.Add(SaltoMuscularNegativo);
 
         }
 
