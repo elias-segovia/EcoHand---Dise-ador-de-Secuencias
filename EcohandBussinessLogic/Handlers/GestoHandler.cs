@@ -15,7 +15,7 @@ namespace EcoHand.Handlers
         {
             var gestos = await GestosController.GetGestos();
 
-            return gestos.Result;
+            return gestos.Result.OrderBy(x => x.Nombre).ToList();
         }
 
         public static async Task<GestoModel> ObtenerGestoPorId(int id)

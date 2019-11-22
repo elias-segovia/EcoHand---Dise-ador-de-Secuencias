@@ -220,18 +220,18 @@ namespace EcoHand.ViewModels
             EventoModel Tiempo = new TiempoEvento()
             {
                 Tipo = TipoEvento.Tiempo,
-                Nombre = "TIEMPO DE ESPERA",
+                Nombre = "Tiempo de Espera",
 
             };
             EventoModel SaltoFSR = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoFSR,
-                Nombre = "Salto Por FSR"
+                Nombre = "Salto al detectar fuerza"
             };
             EventoModel SaltoFSRNegativo = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoFSRNegativo,
-                Nombre = "Salto Por FSR falso"
+                Nombre = "Salto sin detectar fuerza "
             };
             EventoModel SaltoIncondicional = new SaltoEvento()
             {
@@ -267,13 +267,13 @@ namespace EcoHand.ViewModels
             EventoModel SaltoMuscular = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoMusculo,
-                Nombre = "Salto Muscular"
+                Nombre = "Salto Movimiento Muscular"
             };
 
             EventoModel SaltoMuscularNegativo = new SaltoEvento()
             {
                 Tipo = TipoEvento.SaltoMusculoRelajado,
-                Nombre = "Salto Musculo Relajado"
+                Nombre = "Salto Sin Movimiento Muscular"
             };
 
             Eventos = new BindingList<EventoModel>();
